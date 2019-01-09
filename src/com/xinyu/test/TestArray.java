@@ -210,6 +210,13 @@ public class TestArray
             return length;
         }
         int temp = 0, j = length - 1;
+        /**
+         * 整体思路是冒泡排序相同的
+         * 第一层循环，循环每一个数字i，
+         * 第二层循环，从当前数字i 往后循环每一个数字j，
+         * 如果发现i和j相等了，那么把j，用第三层循环，把j循环挪动到末尾，
+         * 同时，数组的长度减一
+         */
         for (int i = 0; i <= j; i++) {//遍历每一个数
             for (int k = i + 1; k <= j; ) {
                 if (nums[i] == nums[k]) {
