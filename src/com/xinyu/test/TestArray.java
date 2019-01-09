@@ -10,9 +10,10 @@ public class TestArray
 //        int [] testArray = new int[]{1,4,3,33,5,0,2,0,53,0,24,0};
 //        int [] testArray = new int[]{0,0,0};
 //        int [] testArray = new int[]{1,0};
-        int [] testArray = new int[]{0,1,2,2,3,0,4,2};
+        int [] testArray = new int[]{0,0,1,1,1,2,2,3,3,4,0};
 //        moveZeroes(testArray);
-        int i = removeElement(testArray, 2);
+//        int i = removeElement(testArray, 2);
+        int i = removeDuplicates(testArray);
         System.out.println("i :" + i);
         printArray(testArray);
         System.out.println(testArray);
@@ -177,6 +178,75 @@ public class TestArray
 
     }
 
+    /**
+     *   删除排序数组中的重复项
+     给定一个排序数组，你需要在原地删除重复出现的元素，使得每个元素只出现一次，返回移除后数组的新长度。
+
+     不要使用额外的数组空间，你必须在原地修改输入数组并在使用 O(1) 额外空间的条件下完成。
+
+     示例 1:
+
+     给定数组 nums = [1,1,2],
+
+     函数应该返回新的长度 2, 并且原数组 nums 的前两个元素被修改为 1, 2。
+
+     你不需要考虑数组中超出新长度后面的元素。
+     示例 2:
+
+     给定 nums = [0,0,1,1,1,2,2,3,3,4],
+
+     函数应该返回新的长度 5, 并且原数组 nums 的前五个元素被修改为 0, 1, 2, 3, 4。
+
+     你不需要考虑数组中超出新长度后面的元素。
+     */
+
+    public static int removeDuplicates(int[] nums) {
+        if (nums == null) {
+            return 0;
+        }
+
+        int length = nums.length;
+        if (length < 2) {
+            return length;
+        }
+        int temp = 0, j = length - 1;
+        for (int i = 0; i <= j; i++) {//遍历每一个数
+            for (int k = i + 1; k <= j; ) {
+                if (nums[i] == nums[k]) {
+                    int m = k + 1;
+                    for (int q = k; m <= j; m++) {
+                        if (nums[q] != nums[m]) {
+                            temp = nums[q];
+                            nums[q] = nums[m];
+                            nums[m] = temp;
+                            q = m;
+                        }
+                    }
+                    j--;
+                } else {
+                    k++;
+                }
+            }
+        }
+        return ++j;
+
+        /**
+         * 下面是网上最快的解答，但是有问题，
+         * 有的测试案例，返回的结果是不正确的。
+         * 比如，{0,0,1,1,2,2,0}
+         */
+//        if (nums.length == 0) return 0;
+//        if (nums.length == 1) return 1;
+//        int length = 1;
+//        int currentPos = 0;
+//        for (int i = 1; i < nums.length; i++) {
+//            if (nums[currentPos] != nums[i]) {
+//                length++;
+//                nums[++currentPos] = nums[i];
+//            }
+//        }
+//        return length;
+    }
 
 
 
