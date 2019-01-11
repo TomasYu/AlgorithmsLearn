@@ -10,10 +10,14 @@ public class TestArray
 //        int [] testArray = new int[]{1,4,3,33,5,0,2,0,53,0,24,0};
 //        int [] testArray = new int[]{0,0,0};
 //        int [] testArray = new int[]{1,0};
-        int [] testArray = new int[]{4,4,1,1,1,0,0,4,4,0};
+//        int [] testArray = new int[]{4,4,1,1,1,0,0,4,4,0};
+        int [] testArray = new int[]{9,1,8,1,3,4,7,2,8};
 //        moveZeroes(testArray);
 //        int i = removeElement(testArray, 2);
-        int i = removeDuplicates2(testArray);
+//        int i = removeDuplicates2(testArray);
+        long l = System.nanoTime();
+        int i = findKthLargest(testArray,4);
+        System.out.println("耗时："+(System.nanoTime() - l)+"纳秒");
         System.out.println("i :" + i);
         printArray(testArray);
         System.out.println(testArray);
@@ -276,6 +280,7 @@ public class TestArray
      你不需要考虑数组中超出新长度后面的元素。
      */
     public static int removeDuplicates2(int[] nums) {
+        long l = System.nanoTime();
         if (nums == null) {
             return 0;
         }
@@ -313,6 +318,7 @@ public class TestArray
                 }
             }
         }
+        System.out.println("耗时："+(System.nanoTime() - l)+"纳秒");
         return ++j;
 
         /**
@@ -348,6 +354,85 @@ public class TestArray
 //            }
 //        }
 //        return k ;
+    }
+
+    public static int findKthLargest(int[] nums, int k) {
+        if (nums ==null) {
+            return 0;
+        }
+        if (k <1) {
+            return -1;
+        }
+        int len = nums.length;
+        int temp;
+        for (int i = 0; i < len; i++) {
+            for (int j = i + 1; j < len; j++) {
+                if (nums[i] < nums[j]) {
+                    temp = nums[j];
+                    nums[j] = nums[i];
+                    nums[i] = temp;
+                }
+            }
+            if (i == k) {
+                break;
+            }
+        }
+                return nums[k -1];
+//
+//        int left=0,right=nums.length-1;
+//        while(left<right){
+//            int pivot = partition(nums, left,right);
+//            if(pivot ==k-1) {
+//                return nums[pivot];
+//            } else if(pivot>k-1){
+//                right=pivot-1;
+//            } else {
+//                left=pivot+1;
+//            }
+//        }
+//        return nums[left];
+    }
+
+    private static int partition(int[] nums,int left,int right) {
+        //先获取三个数的中位数
+        int pivot = median3(nums,left,right);
+        //int pivot = nums[left];
+
+        int start=left,end=right-1;
+        while(start<end) {
+            //从pivot左边找起，停在第一个比pivot小的地方，等待交换
+            while(nums[++start]>pivot) {}
+            //从pivot右边朝气，停在第一个比pivot大的地方，等待交换
+            while(nums[--end]<pivot) {}
+            if(start<end) {
+                swap(nums,start,end);
+            }
+        }
+        //此时，交换start与pivot
+        swap(nums,start, right-1);
+        return start;
+    }
+
+    private static int median3(int[] nums,int left, int right){
+        int median=(left+right)/2;
+        if(nums[left]<nums[median]) {
+            swap(nums, left, median);
+        }
+        if(nums[left]<nums[right]) {
+            swap(nums,left, right);
+        }
+        if(nums[median]<nums[right]) {
+            swap(nums, median, right);
+        }
+        swap(nums, median, right-1);
+        return nums[right-1];
+
+    }
+
+    private static void swap(int[] nums, int left, int right) {
+        int temp = nums[left];
+        nums[left] = nums[right];
+        nums[right] = temp;
     }
 
 
