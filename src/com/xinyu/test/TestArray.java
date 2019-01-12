@@ -11,14 +11,14 @@ public class TestArray
 //        int [] testArray = new int[]{0,0,0};
 //        int [] testArray = new int[]{1,0};
 //        int [] testArray = new int[]{4,4,1,1,1,0,0,4,4,0};
-        int [] testArray = new int[]{9,1,8,1,3,4,7,2,8};
+        int [] testArray = new int[]{-50,-49,-49,-48,-47,-45,-43,-41,-41,-41,-40,-40,-39,-39,-38,-37,-37,-36,-36,-35,-35,-33,-33,-32,-31,-31,-30,-30,-29,-28,-25,-24,-21,-19,-18,-18,-14,-13,-10,-10,-9,-9,-9,-6,-6,-5,-1,1,7,10,10,11,13,14,14,15,20,21,21,22,23,25,26,27,30,30,31,32,33,35,36,38,40,40,41,41,42,44,46,46,46,46,46,47,48,0};
+        int [] testArray2 = new int[]{33};
 //        moveZeroes(testArray);
 //        int i = removeElement(testArray, 2);
 //        int i = removeDuplicates2(testArray);
         long l = System.nanoTime();
-        int i = findKthLargest(testArray,4);
+        merge(testArray,testArray.length-1,testArray2,testArray2.length);
         System.out.println("耗时："+(System.nanoTime() - l)+"纳秒");
-        System.out.println("i :" + i);
         printArray(testArray);
         System.out.println(testArray);
 
@@ -435,5 +435,116 @@ public class TestArray
         nums[right] = temp;
     }
 
+
+    /**
+     * 合并两个有序数组
+     给定两个有序整数数组 nums1 和 nums2，将 nums2 合并到 nums1 中，使得 num1 成为一个有序数组。
+
+     说明:
+
+     初始化 nums1 和 nums2 的元素数量分别为 m 和 n。
+     你可以假设 nums1 有足够的空间（空间大小大于或等于 m + n）来保存 nums2 中的元素。
+     示例:
+
+     输入:
+     nums1 = [1,2,3,0,0,0], m = 3
+     nums2 = [2,5,6],       n = 3
+
+     输出: [1,2,2,3,5,6]
+     */
+
+    public static void merge(int[] nums1, int m, int[] nums2, int n) {
+        if (nums1 == null || nums1.length == 0 || nums1.length < m+n) {
+            return;
+        }
+        if (nums2 == null || nums2.length == 0) {
+            return;
+        }
+        if (m ==0) {
+            for (int i : nums2) {
+                nums1[m++] = i;
+            }
+            return;
+        }
+
+        // 找到第二个数组应该插入的起始位置  startInset 这个位置开始往后插入数组2的数据。包好startInset 这个位置
+        int startInsert = 0;
+        int nums2Min = nums2[0];
+        while (nums2Min >= nums1[startInsert] && startInsert <m){
+            startInsert++;
+        }
+        // 找到第二个数组应该结束插入的位置   这个位置之后的数组1里面的数据  会被直接挪到最后面  不包含该位置
+        int endInsert = m>=1 ? m -1 : 0;
+        int nums2Max = nums2[n-1];
+        if (nums2Max > nums1[endInsert]) {
+//            endInsert = m;
+        }else {
+            while (endInsert >=0 && nums2Max <= nums1[endInsert] ){
+                    endInsert--;
+            }
+        }
+        //需要处理有些时候  startInsert 比 endInsert 还要大的问题  该场景是1,2,3,4,5,0  插入数字3 就会出现
+        if (endInsert <=startInsert) {
+            endInsert =startInsert;
+        }
+
+        /**
+         * 将数组1里面比数组2大的部分  挪到最后
+         */
+        for (int i = m-1; i > endInsert; i--) {
+            nums1[i+n] = nums1[i];
+            nums1[i] = 0;
+        }
+
+        /**
+         * 从起始插入位置startInsert 到插入完数组1中最大的数的索引位置之间
+         * 从后往前，插入n1 n2 中比较大的数字
+         */
+        for (int j =m + n  -(m > endInsert ? (m- endInsert -1) : 0) -1; j>=startInsert;j--){
+
+            if (endInsert>=0) {
+                if (n>=1 && nums2[n-1] > nums1[endInsert]) {
+                    nums1[j]=nums2[n-1];
+                    n--;
+                }else {
+                    nums1[j] = nums1[endInsert];
+                    endInsert--;
+                }
+            }else {
+                if (n>=1 ) {
+                    nums1[j]=nums2[n-1];
+                    n--;
+                }
+            }
+        }
+
+
+//            int n1 = m - 1;
+//            int n2 = n - 1;
+//            int curr = m + n - 1;
+//            while(n1 >= 0 && n2 >=0) {
+//                if (nums1[n1] >= nums2[n2]) {
+//                    nums1[curr] = nums1[n1];
+//                    curr --;
+//                    n1 --;
+//                } else {
+//                    nums1[curr] = nums2[n2];
+//                    curr --;
+//                    n2 --;
+//                }
+//            }
+//
+//            // while(n1 >= 0) {
+//            //         nums1[curr] = nums1[n1];
+//            //         curr --;
+//            //         n1 --;
+//            // }
+//
+//            while(n2 >= 0) {
+//                nums1[curr] = nums2[n2];
+//                curr --;
+//                n2 --;
+//            }
+    }
 
 }
