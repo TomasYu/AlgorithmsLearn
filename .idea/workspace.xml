@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ddcc14d9-ed9d-4787-abea-7813d2a6c7a2" name="Default" comment="增加：第三天的练习">
+    <list default="true" id="ddcc14d9-ed9d-4787-abea-7813d2a6c7a2" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -428,7 +428,14 @@
       <option name="project" value="LOCAL" />
       <updated>1547003447258</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="增加：工作路径的修改">
+      <created>1547466364929</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1547466364929</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TodoView">
@@ -511,7 +518,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="增加：第二天的练习" />
     <MESSAGE value="增加：第三天的练习" />
-    <option name="LAST_COMMIT_MESSAGE" value="增加：第三天的练习" />
+    <MESSAGE value="增加：工作路径的修改" />
+    <option name="LAST_COMMIT_MESSAGE" value="增加：工作路径的修改" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
