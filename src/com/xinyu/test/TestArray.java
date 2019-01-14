@@ -1,5 +1,7 @@
 package com.xinyu.test;
 
+import java.util.Arrays;
+
 /**
  * Created by zy on 2019/1/4.
  */
@@ -11,13 +13,21 @@ public class TestArray
 //        int [] testArray = new int[]{0,0,0};
 //        int [] testArray = new int[]{1,0};
 //        int [] testArray = new int[]{4,4,1,1,1,0,0,4,4,0};
-        int [] testArray = new int[]{-50,-49,-49,-48,-47,-45,-43,-41,-41,-41,-40,-40,-39,-39,-38,-37,-37,-36,-36,-35,-35,-33,-33,-32,-31,-31,-30,-30,-29,-28,-25,-24,-21,-19,-18,-18,-14,-13,-10,-10,-9,-9,-9,-6,-6,-5,-1,1,7,10,10,11,13,14,14,15,20,21,21,22,23,25,26,27,30,30,31,32,33,35,36,38,40,40,41,41,42,44,46,46,46,46,46,47,48,0};
-        int [] testArray2 = new int[]{33};
+//        int [] testArray = new int[]{-50,-49,-49,-48,-47,-45,-43,-41,-41,-41,-40,-40,-39,-39,-38,-37,-37,-36,-36,-35,-35,-33,-33,-32,-31,-31,-30,-30,-29,-28,-25,-24,-21,-19,-18,-18,-14,-13,-10,-10,-9,-9,-9,-6,-6,-5,-1,1,7,10,10,11,13,14,14,15,20,21,21,22,23,25,26,27,30,30,31,32,33,35,36,38,40,40,41,41,42,44,46,46,46,46,46,47,48,0};
+//        int [] testArray2 = new int[]{33};
 //        moveZeroes(testArray);
 //        int i = removeElement(testArray, 2);
 //        int i = removeDuplicates2(testArray);
         long l = System.nanoTime();
-        merge(testArray,testArray.length-1,testArray2,testArray2.length);
+//        merge(testArray,testArray.length-1,testArray2,testArray2.length);
+        /**
+         * test sum
+         */
+        int [] testArray = new int[]{-1,0};
+        testArray = twoSum(testArray,-1);
+
+
+
         System.out.println("耗时："+(System.nanoTime() - l)+"纳秒");
         printArray(testArray);
         System.out.println(testArray);
@@ -545,6 +555,113 @@ public class TestArray
 //                curr --;
 //                n2 --;
 //            }
+    }
+
+
+    /**
+     * 两数之和 II - 输入有序数组
+     给定一个已按照升序排列 的有序数组，找到两个数使得它们相加之和等于目标数。
+
+     函数应该返回这两个下标值 index1 和 index2，其中 index1 必须小于 index2。
+
+     说明:
+
+     返回的下标值（index1 和 index2）不是从零开始的。
+     你可以假设每个输入只对应唯一的答案，而且你不可以重复使用相同的元素。
+     示例:
+
+     输入: numbers = [2, 7, 11, 15], target = 9
+     输出: [1,2]
+     解释: 2 与 7 之和等于目标数 9 。因此 index1 = 1, index2 = 2 。
+     */
+
+    public static int[] twoSum(int[] numbers, int target) {
+        int[]result = {0,0};
+        int length = numbers.length;
+        if (length <2) {
+            return result;
+        }
+        int endIndex = length -1;
+        int startIndex = 0;
+        //找到比target 小的第一个数  需要考虑有负数的情况
+//        while (endIndex >=0 && numbers[endIndex] >= target){
+//            endIndex--;
+//        }
+//        // 该数组没有满足条件的
+//        if (endIndex == 0) {
+//            return result;
+//        }
+
+        //从最小的那个数 往前遍历循环  如果当前的这个数 和前面的数都不符合  该数pass
+        //遍历的时候，当前的数和在遍历的数 如果比要找的数大 后面直接不用遍历
+        //直接遍历下一个数
+
+        //优化点：  1. 一层for 循环就可以  不要想的太复杂  2.遍历的时候，当前的数和在遍历的数 如果比要找的数小 前面的直接不用遍历
+        out:for (; endIndex > 0; endIndex--) {
+            for (; startIndex <endIndex; startIndex++) {
+                int sum = numbers[endIndex] + numbers[startIndex];
+                if (sum == target) {
+                    break out;
+                }else if (sum > target){
+                    //结束层循环
+//                    i = endIndex;
+                    break;
+                }
+
+            }
+        }
+        //最后返回两个索引
+        result[0] = ++startIndex;
+        result[1] = ++endIndex;
+        return result;
+
+        //双索引遍历  只遍历了一遍  代码也易读 易维护
+//        int left = 0;
+//        int right = numbers.length - 1;
+//        while (left < right) {
+//            if (numbers[left] + numbers[right] > target) {
+//                right--;
+//            } else if (numbers[left] + numbers[right] == target){
+//                return new int[] {left + 1, right + 1};
+//            } else {
+//                left++;
+//            }
+//        }
+//
+//        return null;
+
+
+        //网上最快的 通过2分查找   确实 两个数只和  要么是两个一样的中间数  要么是一个比他大的数  一个比他小的数加起来的
+        // 因为二分法查找的两个数的合  所以二分法查找的一定在第一个数的右边  所以下面numbers[load - 1] 里面的load - 1 不可能是-1
+//        int[] ans = new int[2];
+//        int half = target / 2;
+//        int load = Arrays.binarySearch(numbers, half) >= 0 ? Arrays.binarySearch(numbers, half)
+//                : Arrays.binarySearch(numbers, half) * -1 - 1;
+//        if (numbers[load - 1] + numbers[load] == target) {
+//            ans[0] = load;
+//            ans[1] = load + 1;
+//            return ans;
+//        }
+//        if (numbers[load] + numbers[load + 1] == target) {
+//            ans[0] = load + 1;
+//            ans[1] = load + 2;
+//            return ans;
+//        }
+//        int start = load - 1;
+//        int end = load;
+//        while (start >= 0 && end < numbers.length) {
+//            if (numbers[start] + numbers[end] > target) {
+//                start--;
+//            } else if (numbers[start] + numbers[end] < target) {
+//                end++;
+//            } else {
+//                ans[0] = start + 1;
+//                ans[1] = end + 1;
+//                return ans;
+//            }
+//        }
+//        return null;
+
     }
 
 }
