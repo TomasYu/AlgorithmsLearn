@@ -27,6 +27,9 @@ public class TestArray
         testArray = twoSum(testArray,-1);
 
 
+        boolean palindrome = isPalindrome("0P");
+        System.out.println("isPalindrome:" + palindrome);
+
 
         System.out.println("耗时："+(System.nanoTime() - l)+"纳秒");
         printArray(testArray);
@@ -662,6 +665,143 @@ public class TestArray
 //        }
 //        return null;
 
+    }
+
+
+    /**
+     *  验证回文串
+     给定一个字符串，验证它是否是回文串，只考虑字母和数字字符，可以忽略字母的大小写。
+
+     说明：本题中，我们将空字符串定义为有效的回文串。
+
+     示例 1:
+
+     输入: "A man, a plan, a canal: Panama"
+     输出: true
+     示例 2:
+
+     输入: "race a car"
+     输出: false
+     */
+    public static boolean isPalindrome(String s) {
+//        第一版本
+//        String string = s.replaceAll(" ", "");
+//        int length = string.length();
+//        if (length == 0 || length == 1) {
+//            return true;
+//        }
+//        for (int i = 0,j =length-1; j > 0 && j>i;) {
+//            char headChar = string.charAt(i);
+//            if (!Character.isDigit(headChar) &&  !Character.isAlphabetic(headChar)) {
+//                i++;
+//                continue;
+//            }
+//
+//            char endChar = string.charAt(j);
+//            if (!Character.isDigit(endChar) &&  !Character.isAlphabetic(endChar)) {
+//                j--;
+//                continue;
+//            }
+//            if (headChar != endChar && (Character.isLowerCase(headChar)? Character.toUpperCase(headChar) : Character.toLowerCase(headChar)) != endChar) {
+//                return false;
+//            }else {
+//                i++;
+//                j--;
+//            }
+//
+//        }
+//        return true;
+
+//// 第二版本   去掉s.replaceAll(" ", "")  直接减低了20ms
+//        int length = s.length();
+//        if (length == 0 || length == 1) {
+//            return true;
+//        }
+//        for (int i = 0,j =length-1; j > 0 && j>i;) {
+//            char headChar = s.charAt(i);
+//            if (!Character.isDigit(headChar) &&  !Character.isAlphabetic(headChar)) {
+//                i++;
+//                continue;
+//            }
+//
+//            char endChar = s.charAt(j);
+//            if (!Character.isDigit(endChar) &&  !Character.isAlphabetic(endChar)) {
+//                j--;
+//                continue;
+//            }
+//            if (headChar != endChar && (Character.isLowerCase(headChar)? Character.toUpperCase(headChar) : Character.toLowerCase(headChar)) != endChar) {
+//                return false;
+//            }else {
+//                i++;
+//                j--;
+//            }
+//
+//        }
+//        return true;
+
+
+
+        // 第三版本   去掉s.replaceAll(" ", "")  直接减低了20ms
+//        char[] chars = s.toCharArray();
+//        int length = chars.length;
+//        if (length == 0 || length == 1) {
+//            return true;
+//        }
+//        for (int i = 0,j =length-1; j > 0 && j>i;) {
+//            char headChar = chars[i];
+//            if (!Character.isDigit(headChar) &&  !Character.isAlphabetic(headChar)) {
+//                i++;
+//                continue;
+//            }
+//
+//            char endChar = chars[j];
+//            if (!Character.isDigit(endChar) &&  !Character.isAlphabetic(endChar)) {
+//                j--;
+//                continue;
+//            }
+//            if (headChar != endChar && (Character.isLowerCase(headChar)? Character.toUpperCase(headChar) : Character.toLowerCase(headChar)) != endChar) {
+//                return false;
+//            }else {
+//                i++;
+//                j--;
+//            }
+//
+//        }
+//        return true;
+
+
+        //第四版本
+        int length = s.length();
+        if (length == 0 || length == 1) {
+            return true;
+        }
+        for (int i = 0,j =length-1; j>i;) {
+            char headChar = s.charAt(i);
+            if (headChar >= 'A' && headChar<= 'Z'){//抓换成小写
+                headChar +=32;
+            }else if (! ((headChar >= 'a' && headChar<= 'z')  || (headChar >= '0' && headChar<='9'))){
+                i++;
+                continue;
+            }
+
+
+            char endChar = s.charAt(j);
+            if (endChar >= 'A' && endChar<= 'Z'){//抓换成小写
+                endChar +=32;
+            }else if (! ((endChar >= 'a' && endChar<= 'z')  || (endChar >= '0' && endChar<='9'))){
+                j--;
+                continue;
+            }
+
+            if (headChar != endChar ) {
+                return false;
+            }else {
+                i++;
+                j--;
+            }
+
+        }
+        return true;
     }
 
 }
