@@ -31,6 +31,12 @@ public class TestArray
         System.out.println("isPalindrome:" + palindrome);
 
 
+        /**
+         *  test 元音字母
+         */
+        reverseVowels("hello");
+
+
         System.out.println("耗时："+(System.nanoTime() - l)+"纳秒");
         printArray(testArray);
         System.out.println(testArray);
@@ -803,5 +809,84 @@ public class TestArray
         }
         return true;
     }
+
+    /*
+    反转字符串中的元音字母
+    编写一个函数，以字符串作为输入，反转该字符串中的元音字母。
+
+    示例 1:
+
+    输入: "hello"
+    输出: "holle"
+    示例 2:
+
+    输入: "leetcode"
+    输出: "leotcede"
+    说明:
+    元音字母不包含字母"y"。
+    a e i o u
+    */
+
+    public static String reverseVowels(String s) {
+        if (s == null || s.length()==0) {
+            return s;
+        }
+        char[] chars = s.toCharArray();
+        int length = chars.length;
+        char temp;
+        for (int i = 0 , j = length -1 ; j > i ;){
+            if (!(chars[i] == 'a' || chars[i] == 'e' ||chars[i] == 'i' ||chars[i] == 'o' ||chars[i] == 'u'||chars[i] == 'A' || chars[i] == 'E' ||chars[i] == 'I' ||chars[i] == 'O' ||chars[i] == 'U')) {
+                i++;
+                continue;
+            }
+
+            if (!(chars[j] == 'a' || chars[j] == 'e' ||chars[j] == 'i' ||chars[j] == 'o' ||chars[j] == 'u'|| chars[j] == 'A' || chars[j] == 'E' ||chars[j] == 'I' ||chars[j] == 'O' ||chars[j] == 'U')) {
+                j--;
+                continue;
+            }
+            temp = chars[i];
+            chars[i] = chars[j];
+            chars[j] = temp;
+            i ++ ;
+            j -- ;
+        }
+
+        return String.valueOf(chars);
+
+//        boolean[] flags = new boolean[126];
+//        flags['a'] = true;
+//        flags['e'] = true;
+//        flags['i'] = true;
+//        flags['o'] = true;
+//        flags['u'] = true;
+//        flags['A'] = true;
+//        flags['E'] = true;
+//        flags['I'] = true;
+//        flags['O'] = true;
+//        flags['U'] = true;
+//        char[] arr = s.toCharArray();
+//        int left = 0, right = arr.length - 1;
+//        while (left < right) {
+//            if (!flags[arr[left]]) {
+//                left++;
+//                continue;
+//            }
+//            if (!flags[arr[right]]) {
+//                right--;
+//                continue;
+//            }
+//            swap(arr, left, right);
+//            left++;
+//            right--;
+//        }
+//        return String.valueOf(arr);
+    }
+
+    private static void swap(char[] arr, int i, int j) {
+        char tmp = arr[i];
+        arr[i] = arr[j];
+        arr[j] = tmp;
+    }
+
 
 }
