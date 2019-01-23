@@ -45,6 +45,13 @@ public class TestArray
         System.out.println("maxArea: "+maxArea);
 
 
+        /**
+         * test minSubArrayLen
+         */
+        int minSubArrayLen = minSubArrayLen(5, new int[]{1,1,1,3,2,1,1});
+        System.out.println("minSubArrayLen : " + minSubArrayLen);
+
+
         System.out.println("耗时："+(System.nanoTime() - l)+"纳秒");
         printArray(testArray);
         System.out.println(testArray);
@@ -1000,6 +1007,137 @@ public class TestArray
 //                return max;
 //            }
 //        }
+
+    }
+
+
+    /*
+    长度最小的子数组
+    给定一个含有 n 个正整数的数组和一个正整数 s ，找出该数组中满足其和 ≥ s 的长度最小的连续子数组。如果不存在符合条件的连续子数组，返回 0。
+
+    示例:
+
+    输入: s = 7, nums = [2,3,1,2,4,3]
+    输出: 2
+    解释: 子数组 [4,3] 是该条件下的长度最小的连续子数组。
+    进阶:
+
+    如果你已经完成了O(n) 时间复杂度的解法, 请尝试 O(n log n) 时间复杂度的解法。*/
+    public static int minSubArrayLen(int s, int[] nums) {
+
+/*        第一版:   思路有问题  213
+                [12,28,83,4,25,26,25,2,25,25,25,12]*/
+//        if (nums == null || nums.length == 0) {
+//            return 0;
+//        }
+//
+//        int maxNumber = 0;
+//        int maxNumIndex = 0;
+//        int total = 0;
+//        int length = nums.length;
+//        for (int i = 0; i < length; i++){
+//            if (nums[i] > maxNumber) {
+//                maxNumber = nums[i];
+//                maxNumIndex = i;
+//            }
+//            total += nums[i];
+//        }
+//
+//        if (total < s){
+//            return  0;
+//        }else if (maxNumber >= s){
+//            return maxNumIndex;
+//        }
+//        int min = 0;
+//
+//        total = 0;
+//        int lenghth1 = 0;
+//        // 从 maxIndex 往后遍历
+//        for (int number = maxNumIndex; number < length ; number++) {
+//            total += nums[number];
+//            lenghth1 ++;
+//            if (total >= s) {
+//                min = lenghth1;
+//                break;
+//            }
+//        }
+//        total = 0;
+//        int lenghth2 = 0;
+//        // 从 maxindex 向前遍历
+//        for (int number = maxNumIndex; number >=0 ; number--) {
+//            total += nums[number];
+//            lenghth2 ++;
+//            if (total >= s) {
+//                min =min !=0 ? Math.min(min,lenghth2) : lenghth2;
+//                break;
+//            }
+//        }
+//        int lenghth3 = 0;
+//        if (maxNumIndex != 0 && maxNumIndex != length -1) {
+//            lenghth3 = 1;
+//            // 从maxIndex 从中间往两边遍历
+//            for (int i = maxNumIndex-1 ,j= maxNumIndex+1; j >0 && j< length  && i < length && i>=0 ;i ++,j--) {
+//                total += nums[i]+nums[j];
+//                lenghth3 +=2;
+//                if (total >= s) {
+//                    min =min !=0 ? Math.min(min,lenghth3) : lenghth3;
+//                    break;
+//                }
+//            }
+//        }
+//        return min;
+
+        // 最笨重的方法  第二版
+//        if (nums == null || nums.length == 0) {
+//            return 0;
+//        }
+//
+//        int maxNumber = 0;
+//        int total = 0;
+//        int length = nums.length;
+//        for (int i = 0; i < length; i++){
+//            if (nums[i] > maxNumber) {
+//                maxNumber = nums[i];
+//            }
+//            total += nums[i];
+//        }
+//
+//        if (total < s){
+//            return  0;
+//        }else if (maxNumber >= s){
+//            return 1;
+//        }
+//
+//        int minCont = 0;
+//        for (int i = 0; i < length; i++) {
+//            total = 0 ;
+//            total += nums[i];
+//            for (int j = i+1;j < length;j++){
+//                total += nums[j];
+//                if (total >= s) {
+//                    minCont =minCont !=0 ? Math.min(j-i,minCont) :j-i;
+//                    break;
+//                }
+//            }
+//        }
+//        return ++minCont;
+
+        // copy from leetcode.com
+        if (null == nums || nums.length == 0) { return 0; }
+        int i = 0, j = 0;
+        int sum = 0, minLen = Integer.MAX_VALUE;
+        while (j < nums.length) {
+            sum += nums[j++];
+            if (sum < s) { continue; }
+            while (sum >= s) {
+                sum -= nums[i];
+                i++;
+            }
+            minLen = Math.min(minLen, j - i + 1);
+        }
+        return (minLen == Integer.MAX_VALUE) ? 0 : minLen;
+
+
 
     }
 
