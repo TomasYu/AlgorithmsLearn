@@ -8,14 +8,10 @@ import java.util.Arrays;
 public class TestArray
 {
     public static void main(String[] args) {
-//        int [] testArray = new int[]{1,4,3,33,5,0,2,0,53,0,24,0};
-//        int [] testArray = new int[]{1,4,3,33,5,0,2,0,53,0,24,0};
-//        int [] testArray = new int[]{0,0,0};
-//        int [] testArray = new int[]{1,0};
-//        int [] testArray = new int[]{4,4,1,1,1,0,0,4,4,0};
+        int [] testArray = new int[]{1,4,3,33,5,0,2,0,53,0,24,0};
 //        int [] testArray = new int[]{-50,-49,-49,-48,-47,-45,-43,-41,-41,-41,-40,-40,-39,-39,-38,-37,-37,-36,-36,-35,-35,-33,-33,-32,-31,-31,-30,-30,-29,-28,-25,-24,-21,-19,-18,-18,-14,-13,-10,-10,-9,-9,-9,-6,-6,-5,-1,1,7,10,10,11,13,14,14,15,20,21,21,22,23,25,26,27,30,30,31,32,33,35,36,38,40,40,41,41,42,44,46,46,46,46,46,47,48,0};
 //        int [] testArray2 = new int[]{33};
-//        moveZeroes(testArray);
+        moveZeroes(testArray);
 //        int i = removeElement(testArray, 2);
 //        int i = removeDuplicates2(testArray);
         long l = System.nanoTime();
@@ -23,8 +19,8 @@ public class TestArray
         /**
          * test sum
          */
-        int [] testArray = new int[]{-1,0};
-        testArray = twoSum(testArray,-1);
+//        int [] testArray = new int[]{-1,0};
+//        testArray = twoSum(testArray,-1);
 
 
         boolean palindrome = isPalindrome("0P");
@@ -73,31 +69,31 @@ public class TestArray
      */
     public static void moveZeroes(int[] nums) {
         //下面是我的解决方法
-        int len = nums.length;
-        int zeroeSize = 0;
-        int temp;
-
-        for (int i = 0; i < len - zeroeSize; i++) {
-            if (nums[i] == 0) {
-                temp = i +1 ;
-                int lianXuZeroe = 1;
-                while (temp < len - zeroeSize && nums[temp] == 0){
-                    zeroeSize ++;
-                    temp ++ ;
-                    lianXuZeroe ++;
-                }
-                for (int j = i; j < len; j++) {
-                    if (j + lianXuZeroe < len) {
-                        nums[j] = nums[j+lianXuZeroe];
-                    }
-                }
-                zeroeSize ++;
-            }
-        }
-
-        for (int i = 0; i < zeroeSize; i++) {
-            nums[len -1 -i] = 0;
-        }
+//        int len = nums.length;
+//        int zeroeSize = 0;
+//        int temp;
+//
+//        for (int i = 0; i < len - zeroeSize; i++) {
+//            if (nums[i] == 0) {
+//                temp = i +1 ;
+//                int lianXuZeroe = 1;
+//                while (temp < len - zeroeSize && nums[temp] == 0){
+//                    zeroeSize ++;
+//                    temp ++ ;
+//                    lianXuZeroe ++;
+//                }
+//                for (int j = i; j < len; j++) {
+//                    if (j + lianXuZeroe < len) {
+//                        nums[j] = nums[j+lianXuZeroe];
+//                    }
+//                }
+//                zeroeSize ++;
+//            }
+//        }
+//
+//        for (int i = 0; i < zeroeSize; i++) {
+//            nums[len -1 -i] = 0;
+//        }
 
         //下面是别人的解决方法  耗时不到一秒  没有循环移动数组
 //        if (nums == null || nums.length < 2) {
@@ -112,15 +108,53 @@ public class TestArray
 //            }
 //        }
 
+        // 我后来，复盘的时候，模拟最优解决方法的思路   发现自己还有很多需要学习的
+        // 脑子不够用 就画图 一步一步的画图  就知道做了这一步， 下一步怎么做
+//        if (nums == null || nums.length == 0) {
+//            return;
+//        }
+//        int length = nums.length;
+//        int j = -1 ;
+//        for (int i = 0; i < length; i++) {
+//            if (nums[i] == 0) {
+//                if (j == -1) {
+//                    j =i;
+//                }
+//            }else {
+//                if (j != -1) {
+//                    nums[j] = nums[i];
+//                    nums[i] = 0;
+//                    j ++ ;
+//                }
+//            }
+//        }
 
+        if (nums == null || nums.length == 0) {
+            return;
+        }
+        int length = nums.length;
+        int j = 0 ,temp ;
+        for (int i = 0; i < length; i++) {
+            if (nums[i] == 0) {
+//                if (j == -1) {
+//                    j =i;
+//                }
+            }else {
+//                if (j != -1) {
+                    temp = nums[j];
+                    nums[j] = nums[i];
+                    nums[i] = temp;
+                    j ++ ;
+//                }
+            }
+        }
 
 
     }
 
+    @Deprecated
     public static void printArray(int[] array){
-        for (int i = 0; i < array.length; i++) {
-            System.out.println("第"+ i +"个元素是："+array[i]);
-        }
+        Utils.printArray(array);
     }
 
     /**
