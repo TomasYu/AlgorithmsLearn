@@ -64,9 +64,41 @@ public class TestArray2 {
         输入: [7,6,4,3,1]
         输出: 0
         解释: 在这种情况下, 没有交易完成, 所以最大利润为 0*/
-        int[] testArray=new int[]{1,2,7,4};
-        int maxProfit = maxProfit(testArray);
-        System.out.println("最大的收益是："+maxProfit);
+//        int[] testArray=new int[]{1,2,7,4};
+//        int maxProfit = maxProfit(testArray);
+//        System.out.println("最大的收益是："+maxProfit);
+
+
+        /**
+         * 旋转数组
+         给定一个数组，将数组中的元素向右移动 k 个位置，其中 k 是非负数。
+
+         示例 1:
+
+         输入: [1,2,3,4,5,6,7] 和 k = 3
+         输出: [5,6,7,1,2,3,4]
+         解释:
+         向右旋转 1 步: [7,1,2,3,4,5,6]
+         向右旋转 2 步: [6,7,1,2,3,4,5]
+         向右旋转 3 步: [5,6,7,1,2,3,4]
+         示例 2:
+
+         输入: [-1,-100,3,99] 和 k = 2
+         输出: [3,99,-1,-100]
+         解释:
+         向右旋转 1 步: [99,-1,-100,3]
+         向右旋转 2 步: [3,99,-1,-100]
+         说明:
+
+         尽可能想出更多的解决方案，至少有三种不同的方法可以解决这个问题。
+         要求使用空间复杂度为 O(1) 的原地算法。
+         */
+        int[] testArray=new int[]{1,2,3,4,5};
+        System.out.println("原始数组：");
+        Utils.printArray(testArray);
+        rotate(testArray,2);
+        Utils.printArray(testArray);
+
     }
 
 
@@ -340,5 +372,78 @@ public class TestArray2 {
 //        return maxprofit;
 
 
+    }
+
+    /**
+     * 大概思路是，从数组的末尾开始，把现在的数据放到每隔K的位置上，
+     * 超过了数组长度，就取余。
+     * 如果执行了一圈，回到了开始替换的位置，那么执行下一圈。
+     *比如：
+     原始数组：[1,2,3,4]
+     第一次把4放到数组第二的位置，并把2缓存起来
+     数组：[1,4,3,4]
+     第二次把数组第四的位置，缓存起来，并把缓存的2放到数组第四的位置，
+     数组：[1,4,3,2]
+     这时候发现又回到了原来的位置，那么本次循环结束，从第三个位置开始，继续循环
+     数组：[3,4,3,2]
+     数组：[3,4,1,2]
+     数组：[3,4,1,2]
+
+     * 如果执行过程中从来没回到过原来的位置，那么替换N 次以后，就是
+     * 最终的数组，所有的数据都换了一下位置。
+     *比如：
+     * 原始数组：[1,2,3,4,5]
+     * 第一次，把第五的位置数组，放到第二个，因为k是2，并且第二个位置的2 要缓存起来
+     * 数组：[1,5,3,4,5]
+     * 第二次，把第四个位置的4缓存起来，然后把缓存的2放到第四个位置
+     数组：[1,5,3,2,5]
+     第三次，把第一个位置的1缓存起来，然后把缓存的4放到第一个位置
+     数组：[4,5,3,2,5]
+     这种是永远都不会回到之前替换过的位置，替换N次结束即可
+     数组：[4,5,1,2,5]
+     数组：[4,5,1,2,3]
+     数组：[4,5,1,2,3]
+     *
+     * 时间复杂度是n*k,网上最快的算是0m，说实话，我有点不服气
+     * 因为他们用了新的数组，开辟了新的内存空间。
+     *
+     * @param nums
+     * @param k
+     */
+    public static void rotate(int[] nums, int k) {
+        if (nums == null || nums.length == 0 || k==0) {
+            return;
+        }
+        int temp ,temp2;
+        int length = nums.length;
+        if (k > length) {
+            k = k%length;
+        }
+        if (length == k || k==0) {
+            return;
+        }
+        int count =0;
+        out:for (int i = length - 1; i >= length - 1 - k; i--) {
+                temp = nums[i];
+                for (int j = (i + k) % length; j <= i; j = (j + k) % length) {
+                    temp2 = nums[j];
+                    nums[j] = temp;
+                    temp = temp2;
+                    count ++;
+                    Utils.printArray(nums);
+                    if (count == length) {
+                        break out;
+                    }
+                    if (j == i) {
+                        break;
+                    }
+                }
+        }
+
+        //网上最快的算法，很不要脸。。。
+//        k=k%nums.length;
+//        int[] tmp=nums.clone();
+//        System.arraycopy(tmp,tmp.length-k,nums,0,k);
+//        System.arraycopy(tmp,0,nums,k,tmp.length-k);
     }
 }
