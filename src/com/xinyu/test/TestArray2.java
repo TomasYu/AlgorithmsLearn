@@ -93,11 +93,35 @@ public class TestArray2 {
          尽可能想出更多的解决方案，至少有三种不同的方法可以解决这个问题。
          要求使用空间复杂度为 O(1) 的原地算法。
          */
-        int[] testArray=new int[]{1,2,3,4,5};
-        System.out.println("原始数组：");
-        Utils.printArray(testArray);
-        rotate(testArray,2);
-        Utils.printArray(testArray);
+//        int[] testArray=new int[]{1,2,3,4,5};
+//        System.out.println("原始数组：");
+//        Utils.printArray(testArray);
+//        rotate(testArray,2);
+//        Utils.printArray(testArray);
+
+
+        /**
+         * 存在重复
+         给定一个整数数组，判断是否存在重复元素。
+
+         如果任何值在数组中出现至少两次，函数返回 true。如果数组中每个元素都不相同，则返回 false。
+
+         示例 1:
+
+         输入: [1,2,3,1]
+         输出: true
+         示例 2:
+
+         输入: [1,2,3,4]
+         输出: false
+         示例 3:
+
+         输入: [1,1,1,3,3,4,3,2,4,2]
+         输出: true
+         */
+        int[] testArray = new int[]{};
+        System.out.println(containsDuplicate(testArray));
+
 
     }
 
@@ -447,5 +471,66 @@ public class TestArray2 {
 //        int[] tmp=nums.clone();
 //        System.arraycopy(tmp,tmp.length-k,nums,0,k);
 //        System.arraycopy(tmp,0,nums,k,tmp.length-k);
+    }
+
+    public static boolean containsDuplicate(int[] nums) {
+        // 第一版 耗时371ms
+//        if (nums == null) {
+//            return false;
+//        }
+//        if (nums.length <1) {
+//            return false;
+//        }
+//        int length = nums.length;
+//        for (int i = 0,j=length -1; i < j; i++,j--) {
+//            if (nums[i] == nums[j]) {
+//                return true;
+//            }
+//            for (int k = i+1; k < j;k++){
+//                if (nums[i] == nums[k] || nums[j]== nums[k]) {
+//                    return true;
+//                }
+//            }
+//        }
+//        return false;
+        //第二版  耗时8 ms 是第一版本的几十倍
+        if (nums == null) {
+            return false;
+        }
+        if (nums.length < 2  ) {
+            return false;
+        }
+        Arrays.sort(nums);
+        int temp = nums[0];
+        for (int i = 1; i < nums.length; i++) {
+            if (nums[i] == temp) {
+                return true;
+            }else {
+                temp = nums[i];
+            }
+        }
+        return false;
+
+        //网上最快的
+//        if(nums.length < 2){
+//            return false;
+//        }
+//        int max = nums[0];
+//        for(int i = 1;i < nums.length;i++){
+//            if(nums[i] > max){
+//                max = nums[i];
+//            }else if(nums[i] == max){
+//                return true;
+//            }else{
+//                for (int j = i - 1;j >= 0;j--){
+//                    if(nums[i] == nums[j]){
+//                        return true;
+//                    }
+//                }
+//            }
+//        }
+//        return false;
+
+
     }
 }
