@@ -140,8 +140,32 @@ public class TestArray2 {
          输入: [4,1,2,1,2]
          输出: 4
          */
-        int []arr = new int[]{1,1,2};
-        System.out.println(singleNumber(arr));;
+//        int []arr = new int[]{1,1,2};
+//        System.out.println(singleNumber(arr));;
+
+        /**
+         * 两个数组的交集 II
+         给定两个数组，编写一个函数来计算它们的交集。
+
+         示例 1:
+
+         输入: nums1 = [1,2,2,1], nums2 = [2,2]
+         输出: [2,2]
+         示例 2:
+
+         输入: nums1 = [4,9,5], nums2 = [9,4,9,8,4]
+         输出: [4,9]
+         说明：
+
+         输出结果中每个元素出现的次数，应与元素在两个数组中出现的次数一致。
+         我们可以不考虑输出结果的顺序。
+         进阶:
+
+         如果给定的数组已经排好序呢？你将如何优化你的算法？
+         如果 nums1 的大小比 nums2 小很多，哪种方法更优？
+         如果 nums2 的元素存储在磁盘上，磁盘内存是有限的，并且你不能一次加载所有的元素到内存中，你该怎么办？
+         */
+        Utils.printArray(intersect(new int[]{3,1,2},new int[]{1,3}));;
     }
 
 
@@ -616,6 +640,97 @@ public class TestArray2 {
         return nums[0];
 
         //总结：  所有的数字都是二进制，时刻铭记
+
+    }
+
+    public static int[] intersect(int[] nums1, int[] nums2) {
+
+        // 第一版：
+//        if (nums1 == null || nums1.length ==0 || nums2 == null || nums2.length == 0) {
+//            return new int[0];
+//        }
+//
+//        int num1Len = nums1.length;
+//        int num2Len = nums2.length;
+//        int pos = 0;
+//        int arr[] = new int[Math.min(num1Len,num2Len)];
+//        if (num1Len > num2Len) {
+//            for (int i = 0,j; i < num2Len; i++) {
+//                j = 0;
+//                while (j < num1Len && nums2[i] != nums1[j++]){}
+//                j--;
+//                if (nums1[j] == nums2[i]) {
+//                    if (j != num1Len -1) {
+//                        nums1[j] = nums1[num1Len -1];
+//                        num1Len --;
+//                    }
+//                    else {
+//                        num1Len --;
+//                    }
+//                    arr[pos++] = nums2[i];
+//                }
+//            }
+//        }else {
+//            for (int i = 0,j; i < num1Len; i++) {
+//                j = 0;
+//                while (j < num2Len && nums1[i] != nums2[j++]){}
+//                j--;
+//                if (nums2[j] == nums1[i]) {
+//                    if (j != num2Len -1) {
+//                        nums2[j] = nums2[num2Len -1];
+//                        num2Len --;
+//                    }
+//                    else {
+//                        num2Len --;
+//                    }
+//                    arr[pos++] = nums1[i];
+//                }
+//            }
+//        }
+//        if (pos != -1) {
+//            int[] result = new int[pos];
+//            System.arraycopy(arr,0,result,0,pos);
+//            return result;
+//        }else {
+//            return new int[0];
+//        }
+
+
+        // 第二版
+        if (nums1 == null || nums1.length ==0 || nums2 == null || nums2.length == 0) {
+            return new int[0];
+        }
+
+        int num1Len = nums1.length;
+        int num2Len = nums2.length;
+        if (num1Len < num2Len) {
+            return intersect(nums2 , nums1);
+        }
+        int pos = 0;
+        int arr[] = new int[Math.min(num1Len,num2Len)];
+
+        for (int i = 0,j; i < num2Len; i++) {
+            j = 0;
+            while (j < num1Len && nums2[i] != nums1[j++]){}
+            j--;
+            if (nums1[j] == nums2[i]) {
+                if (j != num1Len -1) {
+                    nums1[j] = nums1[num1Len -1];
+                    num1Len --;
+                }
+                else {
+                    num1Len --;
+                }
+                arr[pos++] = nums2[i];
+            }
+        }
+        if (pos != -1) {
+            int[] result = new int[pos];
+            System.arraycopy(arr,0,result,0,pos);
+            return result;
+        }else {
+            return new int[0];
+        }
 
     }
 }
