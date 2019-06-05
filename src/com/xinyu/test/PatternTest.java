@@ -198,16 +198,37 @@ public class PatternTest {
 //            System.out.println("not find");
 //        }
 
-        Pattern p = Pattern.compile("(\\w{3}){3}");
-        Matcher m = p.matcher("aaabbbccc");
+//        Pattern p = Pattern.compile("(\\w{3}){3}");
+//        Matcher m = p.matcher("aaabbbccc");
+//        if (m.find()) {
+//            System.out.println(m.group());
+//            System.out.println(m.groupCount());
+//        }else {
+//            System.out.println("not find");
+//        }
+
+
+//        Pattern p = Pattern.compile("aaa\\p{Lower}");
+//        Matcher m = p.matcher("aaaa");
+//        if (m.find()) {
+//            System.out.println(m.group());
+//            System.out.println(m.groupCount());
+//        }else {
+//            System.out.println("not find");
+//        }
+
+//        http://ascii.911cha.com/
+
+
+
+        Pattern p = Pattern.compile("(a)(b)(c)");
+        Matcher m = p.matcher("abc");
         if (m.find()) {
             System.out.println(m.group());
             System.out.println(m.groupCount());
         }else {
             System.out.println("not find");
         }
-
-
 
     }
 
