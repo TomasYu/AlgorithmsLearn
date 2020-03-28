@@ -39,4 +39,9 @@ public class TestArray23 {
 
 
     }
+
+    private boolean isBadVersion(int mid) {
+        int num = 9;
+        return true;
+    }
 }
