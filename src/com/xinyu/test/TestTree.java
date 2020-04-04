@@ -19,7 +19,7 @@ public class TestTree {
         System.out.println(integers);
 
 
-        List<Integer> integers2 = inorderTraversal3(treeNode);
+        List<Integer> integers2 = postorderTraversal2(treeNode);
 
         System.out.println(integers2);
 
@@ -150,6 +150,65 @@ public class TestTree {
             //右节点
             reverse(node.right,linkedList);
         }
+    }
+
+
+    /**
+     * 给定一个二叉树，返回它的 后序 遍历。
+
+     示例:
+
+     输入: [1,null,2,3]
+     1
+     \
+     2
+     /
+     3
+
+     输出: [3,2,1]
+     *
+     */
+
+    public static List<Integer> postorderTraversal(TreeNode root) {
+        List<Integer> result = new LinkedList<>();
+        reversePO(root,result);
+        return result;
+    }
+
+    private static void reversePO(TreeNode root, List<Integer> result) {
+        if (root != null) {
+            reversePO(root.left,result);
+            reversePO(root.right,result);
+            result.add(root.val);
+        }
+    }
+
+
+    public static List<Integer> postorderTraversal2(TreeNode root) {
+        List<Integer> result = new LinkedList<>();
+        LinkedList<TreeNode> stack = new LinkedList<>();
+        stack.offer(root);
+        while (!stack.isEmpty()){
+            TreeNode treeNode = stack.pollLast();
+            if (treeNode == null) {
+                continue;
+            }
+            if (treeNode.left == null && treeNode.right == null) {
+                result.add(treeNode.val);
+                continue;
+            }
+            stack.add(treeNode);
+
+            if (treeNode.right != null) {
+                stack.offer(treeNode.right);
+            }
+
+            if (treeNode.left != null) {
+                stack.offer(treeNode.left);
+            }
+            treeNode.left = treeNode.right = null;
+        }
+        return result;
     }
 
 
