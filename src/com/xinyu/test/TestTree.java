@@ -24,6 +24,16 @@ public class TestTree {
         System.out.println(integers2);
 
 
+
+        TreeNode treeNode2 = new TreeNode(3);
+        treeNode2.left = new TreeNode(9);
+        treeNode2.right = new TreeNode(20);
+        treeNode2.right.left = new TreeNode(15);
+        treeNode2.right.right = new TreeNode(7);
+        List<List<Integer>> lists = levelOrder(treeNode2);
+        System.out.println(lists);
+
+
     }
 
     /**
@@ -211,5 +221,57 @@ public class TestTree {
         return result;
     }
 
+
+    /**
+     *
+     * 二叉树的层序遍历
+     给你一个二叉树，请你返回其按 层序遍历 得到的节点值。 （即逐层地，从左到右访问所有节点）。
+
+
+
+     示例：
+     二叉树：[3,9,20,null,null,15,7],
+
+     3
+     / \
+     9  20
+     /  \
+     15   7
+     返回其层次遍历结果：
+
+     [
+     [3],
+     [9,20],
+     [15,7]
+     ]
+     */
+    public static List<List<Integer>> levelOrder(TreeNode root) {
+        List<List<Integer>> result = new LinkedList();
+        List <TreeNode>list = new LinkedList<>();
+        if (root != null) {
+            list.add(root);
+        }
+        reverseLO(list,result);
+        return result;
+    }
+
+    private static void reverseLO(List<TreeNode> list, List<List<Integer>> result) {
+        if (list.isEmpty()) {
+            return;
+        }
+        List<Integer> line = new LinkedList<>();
+        List <TreeNode>lineTree = new LinkedList<>();
+        for (TreeNode treeNode : list) {
+            line.add(treeNode.val);
+            if (treeNode.left != null) {
+                lineTree.add(treeNode.left);
+            }
+            if (treeNode.right != null) {
+                lineTree.add(treeNode.right);
+            }
+        }
+        result.add(line);
+        reverseLO(lineTree,result);
+    }
 
 }
