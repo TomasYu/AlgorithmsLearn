@@ -19,6 +19,11 @@ public class TestTree {
         System.out.println(integers);
 
 
+        List<Integer> integers2 = inorderTraversal3(treeNode);
+
+        System.out.println(integers2);
+
+
     }
 
     /**
@@ -65,7 +70,87 @@ public class TestTree {
     }
 
 
+    /**
+     * 给定一个二叉树，返回它的中序 遍历。
 
+     示例:
+
+     输入: [1,null,2,3]
+     1
+     \
+     2
+     /
+     3
+
+     输出: [1,3,2]
+     */
+    public static List<Integer> inorderTraversal(TreeNode root) {
+        LinkedList<Integer> linkedList = new LinkedList<>();
+        LinkedList<TreeNode> stack = new LinkedList<>();
+        stack.offer(root);
+        while (!stack.isEmpty()) {
+            TreeNode poll = stack.pollLast();
+            if (poll == null) {
+                continue;
+            }
+            if (poll.left == null && poll.right == null) {
+                linkedList.offer(poll.val);
+                continue;
+            }
+
+            TreeNode right = poll.right;
+            if (right != null) {
+                stack.offer(right);
+            }
+            if (poll.left != null) {
+                stack.offer(poll);
+                stack.offer(poll.left);
+            }else {
+                linkedList.offer(poll.val);
+                continue;
+            }
+
+            poll.left = null;
+            poll.right = null;
+        }
+
+        return linkedList;
+    }
+
+
+    public static List<Integer> inorderTraversal2(TreeNode root) {
+        LinkedList<Integer> linkedList = new LinkedList<>();
+        LinkedList<TreeNode> stack = new LinkedList<>();
+        TreeNode mCur = root;
+        while (mCur != null || !stack.isEmpty()) {
+            while (mCur != null) {
+                stack.offer(mCur);
+                mCur = mCur.left;
+            }
+            TreeNode treeNode = stack.pollLast();
+            linkedList.offer(treeNode.val);
+            mCur = treeNode.right;
+        }
+
+        return linkedList;
+    }
+
+    public static List<Integer> inorderTraversal3(TreeNode root) {
+        LinkedList<Integer> linkedList = new LinkedList<>();
+        reverse(root,linkedList);
+        return linkedList;
+    }
+
+    private static void reverse(TreeNode node,LinkedList<Integer> linkedList) {
+        if (node != null) {
+            //左节点
+            reverse(node.left,linkedList);
+            //自己
+            linkedList.offer(node.val);
+            //右节点
+            reverse(node.right,linkedList);
+        }
+    }
 
 
 }
