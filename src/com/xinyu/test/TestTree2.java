@@ -138,9 +138,14 @@ public class TestTree2 {
             return true;
         }
         LinkedList<TreeNode> stack = new LinkedList<>();
-        stack.offer(root);
-        stack.offer(root);
-
+        //第一个孩子单独处理下
+        if (root.left == null && root.right == null) {
+            return true;
+        }else if (root.left == null || root.right == null){
+            return false;
+        }
+        stack.offer(root.left);
+        stack.offer(root.right);
         while (!stack.isEmpty()){
             TreeNode left = stack.poll();
             TreeNode right = stack.poll();
@@ -149,18 +154,15 @@ public class TestTree2 {
             }else if (left == null || right ==null){
                 return false;
             }
-
             if (left.val != right.val) {
                 return false;
             }
-
             stack.offer(left.left);
             stack.offer(right.right);
             stack.offer(left.right);
             stack.offer(right.left);
         }
         return true;
-
     }
 
 
