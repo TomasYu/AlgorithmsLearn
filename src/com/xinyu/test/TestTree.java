@@ -246,32 +246,60 @@ public class TestTree {
      ]
      */
     public static List<List<Integer>> levelOrder(TreeNode root) {
-        List<List<Integer>> result = new LinkedList();
+        List<List<Integer>> result = new LinkedList<>();
         List <TreeNode>list = new LinkedList<>();
         if (root != null) {
             list.add(root);
         }
-        reverseLO(list,result);
+        while (!list.isEmpty()) {
+            List<Integer> line = new LinkedList<>();
+            List <TreeNode>lineTree = new LinkedList<>();
+            for (TreeNode treeNode : list) {
+                line.add(treeNode.val);
+                if (treeNode.left != null) {
+                    lineTree.add(treeNode.left);
+                }
+                if (treeNode.right != null) {
+                    lineTree.add(treeNode.right);
+                }
+            }
+            result.add(line);
+            list = lineTree;
+        }
         return result;
     }
 
     private static void reverseLO(List<TreeNode> list, List<List<Integer>> result) {
-        if (list.isEmpty()) {
-            return;
+
+    }
+
+
+    public static List<List<Integer>> levelOrder2(TreeNode root) {
+
+        List<List<Integer>> result = new LinkedList<>();
+        if (root == null) {
+            return result;
         }
-        List<Integer> line = new LinkedList<>();
-        List <TreeNode>lineTree = new LinkedList<>();
-        for (TreeNode treeNode : list) {
-            line.add(treeNode.val);
-            if (treeNode.left != null) {
-                lineTree.add(treeNode.left);
-            }
-            if (treeNode.right != null) {
-                lineTree.add(treeNode.right);
-            }
+        reverseLevel(root,result,0);
+        return result;
+    }
+
+    public static void reverseLevel(TreeNode node, List<List<Integer>> result, int leve){
+        if (result.size() == leve) {
+            result.add(new LinkedList<>());
         }
-        result.add(line);
-        reverseLO(lineTree,result);
+
+        //加本层的
+        result.get(leve).add(node.val);
+
+        //左孩子
+        if (node.left != null) {
+            reverseLevel(node.left,result,leve+1);
+        }
+        //右孩子
+        if (node.right != null) {
+            reverseLevel(node.right,result,leve+1);
+        }
     }
 
 }
