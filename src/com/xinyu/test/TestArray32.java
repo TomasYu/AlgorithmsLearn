@@ -1,8 +1,12 @@
 package com.xinyu.test;
 
+import java.util.HashSet;
+import java.util.Set;
+
 public class TestArray32 {
     public static void main(String[] args) {
-
+        boolean happy = isHappy(7);
+        System.out.println(happy);
     }
 
     /**
@@ -27,9 +31,29 @@ public class TestArray32 {
      */
 
 
-    public boolean isHappy(int n) {
+    public static boolean isHappy(int n) {
+        if (n == 1) {
+            return true;
+        }
+        Set<Integer> numSet = new HashSet<>();
+        numSet.add(n);
+        int next;
+        while ((next = getNext(n)) > 0 && !numSet.contains(next)){
+            numSet.add(next);
+            n = next;
+        }
+        return next == 1;
+    }
 
-        return false;
+    public static int getNext(int n){
+        int i;
+        int sum = 0;
 
+        while (n != 0){
+            i = n % 10;
+            sum += i*i;
+            n = n/10;
+        }
+        return sum;
     }
 }
