@@ -8,7 +8,9 @@ public class TestArray34 {
     public static void main(String[] args) {
         TestArray34 testArray34 = new TestArray34();
         int abcabcbb = testArray34.lengthOfLongestSubstring("abcabcbb");
+        int abcabcbb2 = testArray34.lengthOfLongestSubstring2("abcabcbb");
         System.out.println(abcabcbb);
+        System.out.println(abcabcbb2);
     }
 
     /**
@@ -54,6 +56,32 @@ public class TestArray34 {
             }
             max = Math.max(max,cur);
         }
+        return max;
+    }
+
+
+    public int lengthOfLongestSubstring2(String s) {
+        char[] chars = s.toCharArray();
+        int max = 0;
+        Set<Character> characters = new HashSet<>();
+        int i = 0, j =0;
+        for (; i < chars.length && j < chars.length;j++){
+            if (characters.contains(chars[j])) {
+                max = Math.max(max,j-i);
+                while (i < j){
+                    if (chars[j] == chars[i]) {
+                        i++;
+                        break;
+                    }else {
+                        characters.remove(chars[i]);
+                    }
+                    i++;
+                }
+            }else {
+                characters.add(chars[j]);
+            }
+        }
+        max = Math.max(max,j-i);
         return max;
     }
 }
