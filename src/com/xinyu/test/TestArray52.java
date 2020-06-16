@@ -1,5 +1,7 @@
 package com.xinyu.test;
 
+import java.util.HashSet;
+
 public class TestArray52 {
     public static void main(String[] args) {
 
@@ -19,9 +21,24 @@ public class TestArray52 {
      */
 
     public int longestConsecutive(int[] nums) {
+        HashSet<Integer> hashSet = new HashSet<>();
+        for (int num : nums) {
+            hashSet.add(num);
+        }
+        int max = 0 ,cur = 0;
 
+        for (Integer integer : hashSet) {
+            //只管小的 不管大的
+            if (!hashSet.contains(integer-1)) {
+                cur = 1;
+                while (hashSet.contains(integer+1)){
+                    cur ++;
+                    integer ++;
+                }
+                max = Math.max(max,cur);
+            }
+        }
 
-        return -1;
-
+        return max;
     }
 }
