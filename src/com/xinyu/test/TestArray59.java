@@ -1,5 +1,9 @@
 package com.xinyu.test;
 
+import java.lang.reflect.Array;
+import java.util.Arrays;
+import java.util.Comparator;
+
 public class TestArray59 {
     /**
      * 俄罗斯套娃信封问题
@@ -36,9 +40,28 @@ public class TestArray59 {
         //fmax 使用数组缓存
 
 
+        //对二维数组进行排序
+        //首先对w（宽度） 进行升序排序
+        //这样我们就可以根据h（高度） 就行求最长的升序序列数  就是最后的结果值
+        //但是有一个情况是 同等的宽度 是不能嵌套装到信封里 所以我们要降序 这样计算最长的升序数列的时候
+        //同样的宽度的信封  都会被过滤掉
 
+        Arrays.sort(envelopes, new Comparator<int[]>() {
+            @Override
+            public int compare(int[] o1, int[] o2) {
+                if (o1[0] == o2[0]) {
+                    return o2[1] - o1[1];
+                }else {
+                    return o1[0] - o2[0];
+                }
+            }
+        });
 
-        return -1;
+        int [] arr = new int[envelopes.length];
+        for (int i = 0; i < envelopes.length; i++) {
+            arr[i] = envelopes[i][1];
+        }
+        return lengthOfLIS(arr);
     }
 
 
@@ -46,7 +69,17 @@ public class TestArray59 {
 
         //lis
         TestArray59 testArray59 = new TestArray59();
-        System.out.println(testArray59.longestIncreceSubsquence(new int[]{1}));
+        System.out.println(testArray59.longestIncreceSubsquence(new int[]{3,4}));
+        System.out.println(testArray59.longestIncreceSubsquence2(new int[]{4,4,7,3}));
+        //binarySearch 方法 如果找到 返回正数  如果数字正好在第0个位置 那么就返回0        //
+        // 否则返回负数
+        //如果返回负数，负数的值为 -（1+理论上存在的index）
+        //比如下面的例子  3应该出现的位置 在第三个 所以返回-(1 + 2)
+        int[] ints = {1,2,4};
+        System.out.println(Arrays.binarySearch(ints, 0, ints.length, 3));
+
+        //这个直接返回0
+        System.out.println(Arrays.binarySearch(ints, 0, ints.length, 1));
 
 
     }
@@ -94,5 +127,52 @@ public class TestArray59 {
         }
         return size;
     }
+
+
+    public int longestIncreceSubsquence2(int[] nums){
+        int piles = 0, n = nums.length;
+        int[] top = new int[n];
+        for (int i = 0; i < n; i++) {
+            // 要处理的扑克牌
+            int poker = nums[i];
+            int left = 0, right = piles;
+            // 二分查找插入位置
+            while (left < right) {
+                int mid = (left + right) / 2;
+                if (top[mid] == poker){
+                    left = mid;
+                    break;
+                }
+                if (top[mid] >= poker)
+                    right = mid;
+                else
+                    left = mid + 1;
+            }
+            if (left == piles) piles++;
+            // 把这张牌放到牌堆顶
+            top[left] = poker;
+        }
+        // 牌堆数就是 LIS 长度
+        return piles;
+    }
+
+
+    public int lengthOfLIS(int[] nums) {
+        int[] dp = new int[nums.length];
+        int len = 0;
+        for (int num : nums) {
+            int i = Arrays.binarySearch(dp, 0, len, num);
+            if (i < 0) {
+                i = -(i + 1);
+            }
+            dp[i] = num;
+            if (i == len) {
+                len++;
+            }
+        }
+        return len;
+    }
+
+
 
 }
