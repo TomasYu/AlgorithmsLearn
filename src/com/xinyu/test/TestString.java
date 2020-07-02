@@ -83,15 +83,9 @@ public class TestString {
                 //如果当前的长度是整个数组的长度 那么就是结束的时候了
                 if (curIndex + substring.length() == string.length()) {
                     //添加结果
-                    StringBuilder stringBuilder = new StringBuilder();
-                    for (int i1 = 0; i1 < linkedList.size(); i1++) {
-                        stringBuilder.append(linkedList.get(i1));
-                        if (i1 != linkedList.size()-1) {
-                            stringBuilder.append(".");
-                        }
-                    }
-                    String e = stringBuilder.toString();
-                    result.add(e);
+                    String join = String.join(".", linkedList);
+                    result.add(join);
+
                 }
             }else {
                 //如果不是最后一个点  那么添加下一个点
