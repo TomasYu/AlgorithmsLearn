@@ -21,7 +21,7 @@ public class TestString {
 
     public static void main(String[] args) {
         TestString testString = new TestString();
-        System.out.println(testString.restoreIpAddresses("25525511135"));
+        System.out.println(testString.restoreIpAddresses("010010"));
     }
 
 
@@ -57,18 +57,30 @@ public class TestString {
         //对于每一个点  各种情况  如果说其中有一个后续直接不满足 回溯
         //dort * 3 + 3
         //
-        for (int i = 1; i <= 3; i++) {
+        //如果当前的index 超过了字符串的长度  返回
+        if (curIndex >= string.length()) {
+            return;
+        }
+
+        //如果当前的字符串是0 那么后面就不能增加字符串了，因为不能出现01.01.01.01 这种
+        int max = string.charAt(curIndex) == '0' ? 1 : 3;
+        for (int i = 1; i <= max; i++) {
+            //保证不要超过整个字符串大小
             if (curIndex + i > string.length()) {
                 continue;
             }
+            //截取字符串
             String substring = string.substring(curIndex, curIndex + i);
+            //如果是合理的字符串 （0<x <255）
             if (!isInvalidate(substring)) {
                 continue;
             }
+            //增加
             linkedList.add(substring);
 
-            //如果是第三个点
+            //如果是第三个点 那么就是结束的时候了
             if (dort == 3) {
+                //如果当前的长度是整个数组的长度 那么就是结束的时候了
                 if (curIndex + substring.length() == string.length()) {
                     //添加结果
                     StringBuilder stringBuilder = new StringBuilder();
@@ -82,8 +94,7 @@ public class TestString {
                     result.add(e);
                 }
             }else {
-                //添加下一个
-//                linkedList.add(substring);
+                //如果不是最后一个点  那么添加下一个点
                 dfs(string,dort + 1,curIndex + substring.length());
             }
             //回溯
