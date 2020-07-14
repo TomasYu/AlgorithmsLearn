@@ -49,12 +49,12 @@ public class TestString4 {
 
 
         //split 方法
-        //1.如果字符串最前面有正数个匹配的正则  则返回的字符串数组 第一个为空
         /**
          *
-         1.如果字符串最前面有正数个匹配的字符串  则返回的字符串数组 第一个为空
-         System.out.println(Arrays.toString("  hello world!  ".split(" ")));
-         [, , hello, world!]
+         1.如果字符串最前面有匹配的字符串  则返回的字符串数组 第一个为空
+
+         System.out.println(Arrays.toString("-1".split("-")));
+         [, 1]
 
          2.如果limit 为 0 ,后续分割的字符串长度小于0，那么后续的字符串就不会继续返回
          System.out.println(Arrays.toString("  hello world!  ".split(" ")));
@@ -67,17 +67,21 @@ public class TestString4 {
          []
          这个因为是所有的元素都是空，而且limit 是 0  所以返回的就是空的 具体可以看下源码
 
+         System.out.println(Arrays.toString("-1---".split("-")));
+         [, 1]
 
-         3.如果没有匹配到正则，则返回整个字符串  不关心limit 函数
+         3.如果没有匹配到字符串，则返回整个字符串  不关心limit 参数
          System.out.println(Arrays.toString("-1---1-1-".split("c",2)));
          [-1---1-1-]
-         4.如果设置了limit,那么返回的最长长度就是limit
+
+         4.如果设置了limit,那么返回的最长长度就是limit  最后一个为没有分割的后续字符串
 
          System.out.println(Arrays.toString("-1---1-1-".split("-",1)));
-         System.out.println(Arrays.toString("-1---1-1-".split("-",2)));
-
          [-1---1-1-]
+
+         System.out.println(Arrays.toString("-1---1-1-".split("-",2)));
          [, 1---1-1-]
+
 
          5.如果limit 不为 0 ,后续分割的字符串长度小于0，后续的字符串也会继续返回
          System.out.println(Arrays.toString("-1--".split("-",4)));
@@ -87,10 +91,15 @@ public class TestString4 {
          System.out.println(Arrays.toString("-1--".split("-",5)));
          [, 1, , ]
 
-         7.如果分割的所有都是空串 那么返回的结果数组是空的
+         7.如果分割得到的所有字符串都是空串 那么返回的结果数组是空的
          System.out.println(Arrays.toString("aaaa".split("a")));
          []
 
+         8.如果limit 为1 那么直接返回整个字符串,不管是不是找到了子串，具体原因看源码
+         System.out.println(Arrays.toString("-1---1-1-".split("1",1)));
+         [-1---1-1-]
+         System.out.println(Arrays.toString("-1---1-1-".split("a",1)));
+         [-1---1-1-]
 
 
          */
@@ -98,6 +107,7 @@ public class TestString4 {
         System.out.println(Arrays.toString("a good     example".split(" ")));
         System.out.println(Arrays.toString("--".split("-")));
         System.out.println(Arrays.toString("-1---".split("-")));
+        System.out.println(Arrays.toString("-1".split("-")));
         System.out.println(Arrays.toString("-1---1-".split("-")));
         System.out.println(Arrays.toString("---1---1-".split("-")));
         System.out.println(Arrays.toString("-1---1-".split("a")));
@@ -124,6 +134,10 @@ public class TestString4 {
         System.out.println(Arrays.toString("aaaa".split("a",4)));
         System.out.println(Arrays.toString("aaaa".split("a",5)));
         System.out.println(Arrays.toString("aaaa".split("a",6)));
+
+        System.out.println(Arrays.toString("-1---1-1-".split("1",1)));
+        System.out.println(Arrays.toString("-1---1-1-".split("a",1)));
+
 
 
         char a = '-';
