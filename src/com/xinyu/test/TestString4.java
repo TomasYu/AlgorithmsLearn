@@ -137,6 +137,8 @@ public class TestString4 {
 
         System.out.println(Arrays.toString("-1---1-1-".split("1",1)));
         System.out.println(Arrays.toString("-1---1-1-".split("a",1)));
+        System.out.println(Arrays.toString("aa3".split("a")));
+        System.out.println(Arrays.toString("a3".split("a")));
 
 
 
