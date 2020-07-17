@@ -148,7 +148,9 @@ public class TestString4 {
 
     static class Solution {
         public String reverseWords(String s) {
-            String[] split = s.split(" ");
+            String trim = s.trim();
+            //split 支持正则表达式  牛逼
+            String[] split = trim.split("\\s+");
             //todo 怎么翻转数组？
             List<String> strings = Arrays.asList(split);
             Collections.reverse(strings);
