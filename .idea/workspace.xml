@@ -10,11 +10,9 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ddcc14d9-ed9d-4787-abea-7813d2a6c7a2" name="Default" comment="增加学习">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/xinyu/test/TestArray52.java" afterDir="false" />
+    <list default="true" id="ddcc14d9-ed9d-4787-abea-7813d2a6c7a2" name="Default" comment="增加学习算法">
+      <change afterPath="$PROJECT_DIR$/src/com/xinyu/test/TestArray60.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/xinyu/test/TestArray51.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/xinyu/test/TestArray51.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -63,7 +61,7 @@
       <recent name="com.xinyu.test" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.TestArray50">
+  <component name="RunManager" selected="Application.TestArray60">
     <configuration default="true" type="AndroidTestRunConfigurationType" factoryName="Android Tests">
       <module name="" />
       <option name="TESTING_TYPE" value="0" />
@@ -99,8 +97,8 @@
       <module />
       <method />
     </configuration>
-    <configuration name="TestArray41" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.xinyu.test.TestArray41" />
+    <configuration name="TestArray60" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.xinyu.test.TestArray60" />
       <module name="AlgorithmsLearn" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <extension name="coverage">
@@ -113,8 +111,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TestArray43" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.xinyu.test.TestArray43" />
+    <configuration name="TestString" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.xinyu.test.TestString" />
       <module name="AlgorithmsLearn" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <extension name="coverage">
@@ -127,8 +125,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TestArray48" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.xinyu.test.TestArray48" />
+    <configuration name="TestString2" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.xinyu.test.TestString2" />
       <module name="AlgorithmsLearn" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <extension name="coverage">
@@ -141,8 +139,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TestArray49" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.xinyu.test.TestArray49" />
+    <configuration name="TestString4" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.xinyu.test.TestString4" />
       <module name="AlgorithmsLearn" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <extension name="coverage">
@@ -155,8 +153,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TestArray50" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.xinyu.test.TestArray50" />
+    <configuration name="TestString5" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.xinyu.test.TestString5" />
       <module name="AlgorithmsLearn" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <extension name="coverage">
@@ -236,11 +234,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.TestArray50" />
-        <item itemvalue="Application.TestArray49" />
-        <item itemvalue="Application.TestArray48" />
-        <item itemvalue="Application.TestArray43" />
-        <item itemvalue="Application.TestArray41" />
+        <item itemvalue="Application.TestArray60" />
+        <item itemvalue="Application.TestString5" />
+        <item itemvalue="Application.TestString4" />
+        <item itemvalue="Application.TestString2" />
+        <item itemvalue="Application.TestString" />
       </list>
     </recent_temporary>
   </component>
@@ -439,17 +437,127 @@
       <option name="project" value="LOCAL" />
       <updated>1592232578403</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="增加完成dp数组">
+      <created>1592791749286</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1592791749286</updated>
+    </task>
+    <task id="LOCAL-00028" summary="增加学习">
+      <created>1592984389034</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1592984389034</updated>
+    </task>
+    <task id="LOCAL-00029" summary="增加算法学习">
+      <created>1593164015805</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1593164015805</updated>
+    </task>
+    <task id="LOCAL-00030" summary="增加学习">
+      <created>1593166006478</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1593166006478</updated>
+    </task>
+    <task id="LOCAL-00031" summary="增加学习算法">
+      <created>1593169386902</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1593169386902</updated>
+    </task>
+    <task id="LOCAL-00032" summary="增加算法学习，动态规划">
+      <created>1593326249138</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1593326249138</updated>
+    </task>
+    <task id="LOCAL-00033" summary="自己写了一个最长递增子序列的算法，待优化">
+      <created>1593411126785</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1593411126785</updated>
+    </task>
+    <task id="LOCAL-00034" summary="增加学习算法">
+      <created>1593416661059</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1593416661059</updated>
+    </task>
+    <task id="LOCAL-00035" summary="提交代码">
+      <created>1593693513558</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1593693513558</updated>
+    </task>
+    <task id="LOCAL-00036" summary="完善代码">
+      <created>1593695270737</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1593695270737</updated>
+    </task>
+    <task id="LOCAL-00037" summary="增加学习算法">
+      <created>1593696905289</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1593696905289</updated>
+    </task>
+    <task id="LOCAL-00038" summary="增加学习算法">
+      <created>1594088640938</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1594088640938</updated>
+    </task>
+    <task id="LOCAL-00039" summary="split 函数  坑蛮多的">
+      <created>1594720994347</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1594720994347</updated>
+    </task>
+    <task id="LOCAL-00040" summary="增加split 学习">
+      <created>1594728161175</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1594728161175</updated>
+    </task>
+    <task id="LOCAL-00041" summary="增加学习算法">
+      <created>1594730346949</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1594730346949</updated>
+    </task>
+    <task id="LOCAL-00042" summary="增加学习算法">
+      <created>1594777268481</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1594777268481</updated>
+    </task>
+    <task id="LOCAL-00043" summary="增加学习算法">
+      <created>1594984292712</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1594984292712</updated>
+    </task>
+    <option name="localTasksCounter" value="44" />
     <servers />
-  </component>
-  <component name="TodoView">
-    <todo-panel id="selected-file">
-      <is-autoscroll-to-source value="true" />
-    </todo-panel>
-    <todo-panel id="all">
-      <are-packages-shown value="true" />
-      <is-autoscroll-to-source value="true" />
-    </todo-panel>
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -528,13 +636,20 @@
     <MESSAGE value="字符异位" />
     <MESSAGE value="新增算法" />
     <MESSAGE value="增加新的算法" />
-    <MESSAGE value="增加学习算法" />
-    <MESSAGE value="增加学习" />
     <MESSAGE value="增加动态规划学习" />
     <MESSAGE value="增加算法" />
-    <MESSAGE value="增加算法学习" />
     <MESSAGE value="二分法需要去练习" />
-    <option name="LAST_COMMIT_MESSAGE" value="二分法需要去练习" />
+    <MESSAGE value="增加完成dp数组" />
+    <MESSAGE value="增加算法学习" />
+    <MESSAGE value="增加学习" />
+    <MESSAGE value="增加算法学习，动态规划" />
+    <MESSAGE value="自己写了一个最长递增子序列的算法，待优化" />
+    <MESSAGE value="提交代码" />
+    <MESSAGE value="完善代码" />
+    <MESSAGE value="split 函数  坑蛮多的" />
+    <MESSAGE value="增加split 学习" />
+    <MESSAGE value="增加学习算法" />
+    <option name="LAST_COMMIT_MESSAGE" value="增加学习算法" />
   </component>
   <component name="WindowStateProjectService">
     <state x="533" y="111" key="#Auto_Import" timestamp="1590717072005">
@@ -549,86 +664,86 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="574" y="117" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1590630012872" />
-    <state x="494" y="272" width="488" height="440" key="#xdebugger.evaluate" timestamp="1590669454483">
+    <state x="726" y="302" width="488" height="440" key="#xdebugger.evaluate" timestamp="1594720630555">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="494" y="272" width="488" height="440" key="#xdebugger.evaluate/0.0.1536.824@0.0.1536.824" timestamp="1590669454483" />
-    <state x="367" y="0" key="CommitChangelistDialog2" timestamp="1592232576644">
+    <state x="726" y="302" width="488" height="440" key="#xdebugger.evaluate/0.0.1536.824@0.0.1536.824" timestamp="1594720630555" />
+    <state x="367" y="0" key="CommitChangelistDialog2" timestamp="1594984274500">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="367" y="0" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1592232576644" />
-    <state width="561" height="466" key="DebuggerActiveHint" timestamp="1592044426383">
+    <state x="367" y="0" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1594984274500" />
+    <state width="608" height="466" key="DebuggerActiveHint" timestamp="1595581075308">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="561" height="466" key="DebuggerActiveHint/0.0.1536.824@0.0.1536.824" timestamp="1592044426383" />
-    <state x="93" y="93" width="1350" height="638" key="DiffContextDialog" timestamp="1592279645432">
+    <state width="608" height="466" key="DebuggerActiveHint/0.0.1536.824@0.0.1536.824" timestamp="1595581075308" />
+    <state x="93" y="93" width="1350" height="638" key="DiffContextDialog" timestamp="1593694184961">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="93" y="93" width="1350" height="638" key="DiffContextDialog/0.0.1536.824@0.0.1536.824" timestamp="1592279645432" />
+    <state x="93" y="93" width="1350" height="638" key="DiffContextDialog/0.0.1536.824@0.0.1536.824" timestamp="1593694184961" />
     <state x="549" y="166" key="FileChooserDialogImpl" timestamp="1587824144926">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="549" y="166" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1587824144926" />
-    <state width="1493" height="334" key="GridCell.Tab.0.bottom" timestamp="1592045615484">
+    <state width="1493" height="264" key="GridCell.Tab.0.bottom" timestamp="1595603318680">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="334" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1592045615484" />
-    <state width="1493" height="334" key="GridCell.Tab.0.center" timestamp="1592045615484">
+    <state width="1493" height="264" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1595603318680" />
+    <state width="1493" height="264" key="GridCell.Tab.0.center" timestamp="1595603318680">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="334" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1592045615484" />
-    <state width="1493" height="334" key="GridCell.Tab.0.left" timestamp="1592045615484">
+    <state width="1493" height="264" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1595603318680" />
+    <state width="1493" height="264" key="GridCell.Tab.0.left" timestamp="1595603318680">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="334" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1592045615484" />
-    <state width="1493" height="334" key="GridCell.Tab.0.right" timestamp="1592045615484">
+    <state width="1493" height="264" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1595603318680" />
+    <state width="1493" height="264" key="GridCell.Tab.0.right" timestamp="1595603318680">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="334" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1592045615484" />
-    <state width="1493" height="334" key="GridCell.Tab.1.bottom" timestamp="1592045615484">
+    <state width="1493" height="264" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1595603318680" />
+    <state width="1493" height="264" key="GridCell.Tab.1.bottom" timestamp="1595603318681">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="334" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1592045615484" />
-    <state width="1493" height="334" key="GridCell.Tab.1.center" timestamp="1592045615484">
+    <state width="1493" height="264" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1595603318681" />
+    <state width="1493" height="264" key="GridCell.Tab.1.center" timestamp="1595603318680">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="334" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1592045615484" />
-    <state width="1493" height="334" key="GridCell.Tab.1.left" timestamp="1592045615484">
+    <state width="1493" height="264" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1595603318680" />
+    <state width="1493" height="264" key="GridCell.Tab.1.left" timestamp="1595603318680">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="334" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1592045615484" />
-    <state width="1493" height="334" key="GridCell.Tab.1.right" timestamp="1592045615484">
+    <state width="1493" height="264" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1595603318680" />
+    <state width="1493" height="264" key="GridCell.Tab.1.right" timestamp="1595603318680">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="334" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1592045615484" />
+    <state width="1493" height="264" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1595603318680" />
     <state x="270" y="56" key="SettingsEditor" timestamp="1587825463863">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="270" y="56" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1587825463863" />
-    <state x="490" y="154" width="561" height="524" key="StructurePopup" timestamp="1590647158639">
+    <state x="490" y="154" width="561" height="524" key="StructurePopup" timestamp="1594729203068">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="490" y="154" width="561" height="524" key="StructurePopup/0.0.1536.824@0.0.1536.824" timestamp="1590647158639" />
-    <state x="564" y="325" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1590650406524">
+    <state x="490" y="154" width="561" height="524" key="StructurePopup/0.0.1536.824@0.0.1536.824" timestamp="1594729203068" />
+    <state x="564" y="325" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1595581857631">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="564" y="325" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1536.824@0.0.1536.824" timestamp="1590650406524" />
+    <state x="564" y="325" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1536.824@0.0.1536.824" timestamp="1595581857631" />
     <state x="499" y="172" key="extract.method.dialog" timestamp="1587639522852">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="499" y="172" key="extract.method.dialog/0.0.1536.824@0.0.1536.824" timestamp="1587639522852" />
-    <state x="467" y="13" width="602" height="798" key="find.popup" timestamp="1589036781122">
+    <state x="467" y="13" width="602" height="798" key="find.popup" timestamp="1593399515719">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="467" y="13" width="602" height="798" key="find.popup/0.0.1536.824@0.0.1536.824" timestamp="1589036781122" />
-    <state x="425" y="187" key="run.anything.popup" timestamp="1592308829491">
+    <state x="467" y="13" width="602" height="798" key="find.popup/0.0.1536.824@0.0.1536.824" timestamp="1593399515719" />
+    <state x="425" y="187" key="run.anything.popup" timestamp="1594722964059">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="425" y="187" key="run.anything.popup/0.0.1536.824@0.0.1536.824" timestamp="1592308829491" />
-    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1592036799675">
+    <state x="425" y="187" key="run.anything.popup/0.0.1536.824@0.0.1536.824" timestamp="1594722964059" />
+    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1595578048547">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1592036799675" />
+    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1595578048547" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -807,6 +922,86 @@
           <url>file://$PROJECT_DIR$/src/com/xinyu/test/TestArray50.java</url>
           <line>59</line>
           <option name="timeStamp" value="78" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/com/xinyu/test/TestArray53.java</url>
+          <line>34</line>
+          <option name="timeStamp" value="79" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/com/xinyu/test/TestArray54.java</url>
+          <line>71</line>
+          <option name="timeStamp" value="83" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/com/xinyu/test/TestArray54.java</url>
+          <line>56</line>
+          <option name="timeStamp" value="84" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/com/xinyu/test/TestArray56.java</url>
+          <line>32</line>
+          <option name="timeStamp" value="85" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/com/xinyu/test/TestArray58.java</url>
+          <line>86</line>
+          <option name="timeStamp" value="86" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/com/xinyu/test/TestArray58.java</url>
+          <line>73</line>
+          <option name="timeStamp" value="87" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/com/xinyu/test/TestArray59.java</url>
+          <line>150</line>
+          <option name="timeStamp" value="88" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/com/xinyu/test/TestArray59.java</url>
+          <line>133</line>
+          <option name="timeStamp" value="89" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/com/xinyu/test/TestArray59.java</url>
+          <line>92</line>
+          <option name="timeStamp" value="90" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/com/xinyu/test/TestString.java</url>
+          <line>83</line>
+          <option name="timeStamp" value="102" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/com/xinyu/test/TestString.java</url>
+          <line>72</line>
+          <option name="timeStamp" value="104" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/com/xinyu/test/TestString.java</url>
+          <line>60</line>
+          <option name="timeStamp" value="105" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/com/xinyu/test/TestString2.java</url>
+          <line>81</line>
+          <option name="timeStamp" value="106" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/com/xinyu/test/TestString4.java</url>
+          <line>152</line>
+          <option name="timeStamp" value="107" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/com/xinyu/test/TestString5.java</url>
+          <line>63</line>
+          <option name="timeStamp" value="108" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/com/xinyu/test/TestArray60.java</url>
+          <line>57</line>
+          <option name="timeStamp" value="109" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
