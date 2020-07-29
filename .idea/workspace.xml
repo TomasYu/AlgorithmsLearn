@@ -11,7 +11,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ddcc14d9-ed9d-4787-abea-7813d2a6c7a2" name="Default" comment="增加学习算法">
-      <change afterPath="$PROJECT_DIR$/src/com/xinyu/test/TestArray60.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -50,18 +49,21 @@
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="extract.method.default.visibility" value="private" />
-    <property name="last_opened_file_path" value="$USER_HOME$/.ssh/id_rsa" />
-    <property name="project.structure.last.edited" value="Modules" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/libs" />
+    <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.0" />
-    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
   </component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="com.xinyu.test" />
     </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\github\AlgorithmsLearn\libs" />
+    </key>
   </component>
-  <component name="RunManager" selected="Application.TestArray60">
+  <component name="RunManager" selected="Application.SignMain">
     <configuration default="true" type="AndroidTestRunConfigurationType" factoryName="Android Tests">
       <module name="" />
       <option name="TESTING_TYPE" value="0" />
@@ -97,8 +99,8 @@
       <module />
       <method />
     </configuration>
-    <configuration name="TestArray60" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.xinyu.test.TestArray60" />
+    <configuration name="SignMain" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.xinyu.test.SignMain" />
       <module name="AlgorithmsLearn" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <extension name="coverage">
@@ -111,8 +113,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TestString" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.xinyu.test.TestString" />
+    <configuration name="TestArray60" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.xinyu.test.TestArray60" />
       <module name="AlgorithmsLearn" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <extension name="coverage">
@@ -234,11 +236,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.SignMain" />
         <item itemvalue="Application.TestArray60" />
         <item itemvalue="Application.TestString5" />
         <item itemvalue="Application.TestString4" />
         <item itemvalue="Application.TestString2" />
-        <item itemvalue="Application.TestString" />
       </list>
     </recent_temporary>
   </component>
@@ -656,6 +658,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="533" y="111" key="#Auto_Import/0.0.1536.824@0.0.1536.824" timestamp="1590717072005" />
+    <state x="249" y="0" key="#Project_Structure" timestamp="1596002743940">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="249" y="0" key="#Project_Structure/0.0.1536.824@0.0.1536.824" timestamp="1596002743940" />
     <state x="524" y="212" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1587643976382">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -680,26 +686,26 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="93" y="93" width="1350" height="638" key="DiffContextDialog/0.0.1536.824@0.0.1536.824" timestamp="1593694184961" />
-    <state x="549" y="166" key="FileChooserDialogImpl" timestamp="1587824144926">
+    <state x="549" y="166" key="FileChooserDialogImpl" timestamp="1596002734696">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="549" y="166" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1587824144926" />
-    <state width="1493" height="264" key="GridCell.Tab.0.bottom" timestamp="1595603318680">
+    <state x="549" y="166" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1596002734696" />
+    <state width="1493" height="403" key="GridCell.Tab.0.bottom" timestamp="1596004896688">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="264" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1595603318680" />
-    <state width="1493" height="264" key="GridCell.Tab.0.center" timestamp="1595603318680">
+    <state width="1493" height="403" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1596004896688" />
+    <state width="1493" height="403" key="GridCell.Tab.0.center" timestamp="1596004896688">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="264" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1595603318680" />
-    <state width="1493" height="264" key="GridCell.Tab.0.left" timestamp="1595603318680">
+    <state width="1493" height="403" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1596004896688" />
+    <state width="1493" height="403" key="GridCell.Tab.0.left" timestamp="1596004896688">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="264" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1595603318680" />
-    <state width="1493" height="264" key="GridCell.Tab.0.right" timestamp="1595603318680">
+    <state width="1493" height="403" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1596004896688" />
+    <state width="1493" height="403" key="GridCell.Tab.0.right" timestamp="1596004896688">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="264" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1595603318680" />
+    <state width="1493" height="403" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1596004896688" />
     <state width="1493" height="264" key="GridCell.Tab.1.bottom" timestamp="1595603318681">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -1014,80 +1020,5 @@
     <SUITE FILE_PATH="coverage/AlgorithmsLearn$TestArray39.ic" NAME="TestArray39 Coverage Results" MODIFIED="1590650640051" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>com.xinyu.test.*</FILTER>
     </SUITE>
-  </component>
-  <component name="masterDetails">
-    <states>
-      <state key="ArtifactsStructureConfigurable.UI">
-        <settings>
-          <artifact-editor />
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="FacetStructureConfigurable.UI">
-        <settings>
-          <last-edited>No facets are configured</last-edited>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="GlobalLibrariesConfigurable.UI">
-        <settings>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="JdkListConfigurable.UI">
-        <settings>
-          <last-edited>1.8</last-edited>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="ModuleStructureConfigurable.UI">
-        <settings>
-          <last-edited>AlgorithmsLearn</last-edited>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-                <option value="0.6" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="ProjectLibrariesConfigurable.UI">
-        <settings>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-    </states>
   </component>
 </project>
