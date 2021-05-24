@@ -4,15 +4,17 @@ import java.util.concurrent.SynchronousQueue;
 import java.util.concurrent.TimeUnit;
 
 public class SynchronousQueueTest {
+
     public static void main(String[] args) throws InterruptedException {
-        SynchronousQueue<Integer> synchronousQueue = new SynchronousQueue<>(true);
+
+        SynchronousQueue<Integer> synchronousQueue = new SynchronousQueue<>(false);
 
         new Thread("TEST"){
             @Override
             public void run() {
                 super.run();
                 try {
-                    Thread.sleep(TimeUnit.SECONDS.toMillis(3));
+                    Thread.sleep(TimeUnit.SECONDS.toMillis(30));
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
