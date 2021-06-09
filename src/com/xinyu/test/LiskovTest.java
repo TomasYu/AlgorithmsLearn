@@ -1,6 +1,9 @@
 package com.xinyu.test;
 
+import java.nio.ByteBuffer;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public class LiskovTest {
@@ -10,6 +13,17 @@ public class LiskovTest {
         System.out.println(main);
         Object son2 = son.get2(new HashMap());
         System.out.println(son2);
+
+
+        String test = new String("aaaaa");
+        System.out.println(test.intern());
+
+        List<ByteBuffer> list = new ArrayList<>();
+
+        while (true){
+            ByteBuffer allocate = ByteBuffer.allocate(1024 * 1024 * 10);
+            list.add(allocate);
+        }
     }
 
 }
