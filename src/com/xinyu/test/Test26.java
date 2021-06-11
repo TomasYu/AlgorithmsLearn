@@ -7,6 +7,7 @@ public class Test26 {
         int []arr = new int[]{2,-1,4,18,1,3,6,-99};
         quickSort(arr,0,arr.length-1);
         System.out.println(Arrays.toString(arr));
+        System.out.println(isPowOf2(6));
 
     }
 
@@ -59,6 +60,11 @@ public class Test26 {
             quickSort(arr,0,position);
             quickSort(arr,position,end);
         }
+    }
+
+
+    public static boolean isPowOf2(int num){
+        return num > 0 && ((num & (num -1)) ==0);
     }
 
 
