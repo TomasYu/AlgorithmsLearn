@@ -4,7 +4,7 @@ public class Test29 {
 
     public static void main(String[] args) {
         int arr[] = new int[]{7,7,8,8,9,9};
-        System.out.println(findSec2(arr));
+        System.out.println(findSec(arr));
 
 
     }
