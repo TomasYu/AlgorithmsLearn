@@ -12,6 +12,8 @@ public class TestHashMap {
         for (int i = 0; i < 100; i++) {
             hashMap.put(new MapKey(),"111");
         }
+        NoModifer noModifer = new NoModifer();
+        noModifer.age = 10;
     }
 
 
