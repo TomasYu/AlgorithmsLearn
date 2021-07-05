@@ -11,9 +11,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ddcc14d9-ed9d-4787-abea-7813d2a6c7a2" name="Default" comment="增加豆果api">
-      <change afterPath="$PROJECT_DIR$/src/com/xinyu/test/TestInt.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/xinyu/test/java/Test/TestHashMap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/xinyu/test/java/Test/TestHashMap.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/xinyu/test/LinkedListTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/xinyu/test/LinkedListTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -592,7 +590,7 @@
             <State>
               <option name="CUSTOM_BOOLEAN_PROPERTIES">
                 <map>
-                  <entry key="Show.Git.Branches" value="false" />
+                  <entry key="Show.Git.Branches" value="true" />
                 </map>
               </option>
               <option name="FILTERS">
@@ -600,7 +598,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="HEAD" />
+                        <option value="master" />
                       </list>
                     </value>
                   </entry>
@@ -940,8 +938,18 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/com/xinyu/test/TestInt.java</url>
-          <line>50</line>
+          <line>48</line>
           <option name="timeStamp" value="117" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/com/xinyu/test/TestInt.java</url>
+          <line>7</line>
+          <option name="timeStamp" value="118" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/com/xinyu/test/TestInt.java</url>
+          <line>55</line>
+          <option name="timeStamp" value="119" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

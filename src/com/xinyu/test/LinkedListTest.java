@@ -9,6 +9,43 @@ public class LinkedListTest {
 
 
     public static void main(String[] args) {
+//        useTest();
+
+        useAsQueue();
+        useAsStack();
+
+    }
+
+
+    /**
+     * 先进先出
+     */
+    public static void useAsQueue(){
+
+        LinkedList<Integer> linkedList = new LinkedList<>();
+        linkedList.offer(1);
+        linkedList.offer(2);
+        linkedList.offer(3);
+        while (!linkedList.isEmpty()) {
+            System.out.println(linkedList.poll());
+        }
+
+    }
+
+    /**
+     * 先进后出
+     */
+    public static void useAsStack(){
+        LinkedList<Integer> linkedList = new LinkedList<>();
+        linkedList.push(1);
+        linkedList.push(2);
+        linkedList.push(3);
+        while (!linkedList.isEmpty()){
+            System.out.println(linkedList.pop());
+        }
+    }
+
+    private static void useTest() {
         LinkedList<Integer> linkedList = new LinkedList<>();
         linkedList.add(1);
         linkedList.add(2);
@@ -43,14 +80,7 @@ public class LinkedListTest {
         while ((poll2 = linkedList.pollLast()) != null){
             System.out.println(poll2);
         }
-
-
-
-
-
-
     }
-
 
 
     //linkedList poll  是弹出栈顶元素吗？ pollFirst  是栈顶？  polllast 是栈顶
