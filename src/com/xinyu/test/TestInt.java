@@ -80,14 +80,16 @@ public class TestInt {
         }
         StringBuffer result = new StringBuffer();
         while (columnNumber != 0){
+            columnNumber--;
             result.append(getChar(columnNumber % 26));
+            columnNumber = columnNumber / 26;
 
         }
         return result.reverse().toString();
     }
 
     private static char getChar(int i) {
-        return (char) (i + 'A' - 1);
+        return (char) (i + 'A');
     }
 
 
