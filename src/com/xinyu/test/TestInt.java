@@ -1,12 +1,12 @@
 package com.xinyu.test;
 
-import com.xinyu.test.java.Test.NoModifer;
-
 public class TestInt {
+
     public static void main(String[] args) {
-
-
-//        NoModifer noModifer = new NoModifer();
+//        System.out.println(convertToTitle(701));
+//        System.out.println(convertToTitle(26));
+        System.out.println(convertToTitle(2147483647));
+//        System.out.println(convertToTitle(701));
     }
 
 
@@ -41,18 +41,56 @@ public class TestInt {
      *
      * 输入：columnNumber = 2147483647
      * 输出："FXSHRXW"
-     *  
-     *
-     * 提示：
-     *
-     * 1 <= columnNumber <= 231 - 1
      *
      * 来源：力扣（LeetCode）
      * 链接：https://leetcode-cn.com/problems/excel-sheet-column-title
      * 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
      */
 
-    public String convertToTitle(int columnNumber) {
-        return "";
+    public static String convertToTitle(int columnNumber) {
+        if (columnNumber == 0){
+            return "";
+        }
+        StringBuffer result = new StringBuffer();
+        int curIndex = 2;
+        while (columnNumber > 0){
+            if (columnNumber % 26 != 0){
+                result.append(getChar(columnNumber % 26));
+                columnNumber -= columnNumber %26;
+            }else {
+                if (columnNumber / 26 <= 26) {
+                    result.append(getChar(columnNumber / 26));
+                    columnNumber = (int) (columnNumber - columnNumber/26 * Math.pow(26,curIndex));
+                    curIndex ++;
+                }else {
+                    result.append(getChar(26));
+                    columnNumber = (int) (columnNumber - 26 * Math.pow(26,curIndex));
+                    curIndex ++;
+                }
+            }
+
+        }
+        return result.reverse().toString();
     }
+
+
+    public static String convertToTitle2(int columnNumber) {
+        if (columnNumber == 0){
+            return "";
+        }
+        StringBuffer result = new StringBuffer();
+        while (columnNumber != 0){
+            columnNumber--;
+            result.append(getChar(columnNumber % 26));
+            columnNumber = columnNumber / 26;
+
+        }
+        return result.reverse().toString();
+    }
+
+    private static char getChar(int i) {
+        return (char) (i + 'A');
+    }
+
+
 }
