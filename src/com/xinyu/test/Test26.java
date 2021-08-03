@@ -8,6 +8,7 @@ public class Test26 {
         quickSort(arr,0,arr.length-1);
         System.out.println(Arrays.toString(arr));
         System.out.println(isPowOf2(6));
+        System.out.println('A');
 
     }
 
@@ -65,6 +66,39 @@ public class Test26 {
 
     public static boolean isPowOf2(int num){
         return num > 0 && ((num & (num -1)) ==0);
+    }
+
+
+
+
+    public int[] sortArray(int[] nums) {
+        int start = 0, end = nums.length;
+        sortArray(nums,0,end);
+        return nums;
+    }
+
+    public void sortArray(int[] nums,int start,int end){
+        int mid = start + (end -start ) / 2;
+        if (start == end) {
+            return;
+        }
+
+
+        sortArray(nums,start,mid);
+        sortArray(nums,mid,end);
+
+        //排序
+
+
+        //合并
+
+
+
+
+
+
+
+
     }
 
 
