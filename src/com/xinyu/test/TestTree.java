@@ -1,5 +1,6 @@
 package com.xinyu.test;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
@@ -300,6 +301,22 @@ public class TestTree {
         if (node.right != null) {
             reverseLevel(node.right,result,leve+1);
         }
+    }
+
+
+    /**
+     * 给定一个二叉树的 根节点 root，想象自己站在它的右侧，按照从顶部到底部的顺序，返回从右侧所能看到的节点值。
+     *
+     * @param root
+     * @return
+     */
+    public List<Integer> rightSideView(TreeNode root) {
+        List<Integer> result = new ArrayList<>();
+        List<List<Integer>> level = levelOrder2(root);
+        for (List<Integer> integers : level) {
+            result.add(integers.get(integers.size()-1));
+        }
+        return result;
     }
 
 }
