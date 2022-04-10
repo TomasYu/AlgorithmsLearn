@@ -22,12 +22,22 @@ public class TestNode6 {
 
     /**
      *
-     *
      */
 
     public int getDecimalValue(ListNode head) {
+        int result = 0;
+        while (head != null) {
+            result = result*2 + head.val;
+            head = head.next;
+        }
+        return result;
 
-        return -1;
+    }
 
+
+    public static void main(String[] args) {
+        TestNode6 testNode6  = new TestNode6();
+        ListNode listNode = new ListNode(1,new ListNode(0,new ListNode(1)));
+        System.out.println(testNode6.getDecimalValue(listNode));
     }
 }
