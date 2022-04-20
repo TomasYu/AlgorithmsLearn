@@ -112,3 +112,17 @@ fun convertBiNode2(root: TreeNode?) {
     convertBiNode2(right)
 }
 
+
+var preNode:TreeNode? = null
+fun convertBiNode3(root: TreeNode?): TreeNode? {
+    if (root == null) {
+        return null
+    }
+    convertBiNode3(root.right)
+    root.right = preNode
+    preNode = root
+    convertBiNode3(root.left)
+    root.left = null
+
+    return preNode
+}
