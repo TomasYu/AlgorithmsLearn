@@ -1,5 +1,6 @@
 package com.xinyu.test
 
+import java.util.*
 import kotlin.math.min
 
 /**
@@ -98,6 +99,42 @@ fun mergeKLists2(lists: Array<ListNode?>): ListNode? {
 }
 
 //分治
+fun mergeKLists3(lists: Array<ListNode?>): ListNode? {
+    return mergeKMid(lists,0,lists.size-1)
+
+}
+
+fun mergeKMid(lists: Array<ListNode?>,left:Int,right:Int): ListNode? {
+    if (left == right){
+        return lists[left]
+    }
+    if(left < right){
+        return null
+    }
+    var mid = (right + left) / 2
+    return mergeTwoLists3(mergeKMid(lists,left,mid), mergeKMid(lists,mid+1,right))
+}
+
 
 
 //：使用优先队列合并
+fun mergeKLists4(lists: Array<ListNode?>): ListNode? {
+    var priorityQueue = PriorityQueue<ListNode> { o1, o2 -> if (o1.`val` >= o2.`val`) 1 else -1 }
+    for (list:ListNode? in lists) {
+        if (list != null) {
+            priorityQueue.add(list)
+        }
+    }
+    var dump = ListNode(-1)
+    var cur = dump
+    while (!priorityQueue.isEmpty()){
+        val poll = priorityQueue.poll()
+        if (poll.next != null) {
+            priorityQueue.add(poll.next)
+        }
+        cur.next = poll
+        cur = cur.next
+    }
+    return dump.next
+}
+
