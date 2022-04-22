@@ -1,5 +1,9 @@
 package com.xinyu.test
 
+import java.util.*
+import java.util.stream.Collectors
+import kotlin.collections.HashMap
+
 /**
  * https://leetcode-cn.com/problems/design-twitter/
  *
@@ -44,24 +48,62 @@ postTweet、getNewsFeed、follow 和 unfollow 方法最多调用 3 * 104 次
 来源：力扣（LeetCode）
 链接：https://leetcode-cn.com/problems/design-twitter
 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
+
+
+HashMap  user   tuite sj (PriorityQueue)
+HashMap user    flow(List)
+ tweetData
+hashMap  id -- time
+
+ Stream
+
  */
 
 class Twitter() {
+    var userTw = HashMap<Int,LinkedList<Int>>()
+    var userFl = HashMap<Int,LinkedList<Int>>()
+    var twDate = HashMap<Int,Long>()
 
-    fun postTweet(userId: Int, tweetId: Int) {
+    fun Twitter(){
 
     }
 
-    fun getNewsFeed(userId: Int): List<Int>? {
-        return null
+    fun postTweet(userId: Int, tweetId: Int) {
+        var list = userTw[userId]
+        if (list == null) {
+            list = LinkedList()
+            userTw[userId] = list
+        }
+        list.add(tweetId)
+        twDate[tweetId] = System.nanoTime()
+    }
+
+    fun getNewsFeed(userId: Int): List<Int> {
+        var result = LinkedList<Int>()
+        userTw[userId]?.let { result.addAll(it) }
+        val flow = userFl[userId]
+        flow?.forEach {
+            userTw[it]?.let { it1 -> result.addAll(it1) }
+        }
+
+        return result.stream().sorted { i, j -> if (twDate[i]!! > twDate[j]!!) -1 else 1 }.limit(10).collect(Collectors.toList())
+
     }
 
     fun follow(followerId: Int, followeeId: Int) {
-
+        var list = userFl[followerId]
+        if (list == null) {
+            list = LinkedList()
+            userFl[followerId] = list
+        }
+        if (!list.contains(followeeId)) {
+            list.add(followeeId)
+        }
     }
 
     fun unfollow(followerId: Int, followeeId: Int) {
-
+        var list = userFl[followerId]
+        list?.remove(followeeId)
     }
 
 }
