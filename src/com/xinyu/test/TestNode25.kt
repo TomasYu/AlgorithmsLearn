@@ -37,4 +37,32 @@ package com.xinyu.test
  */
 fun nextLargerNodes(head: ListNode?): IntArray {
 
+    //hasMap 每一个数都和hash里面为空的去比较
+    //输入：
+    //[1,7,5,1,9,2,5,1]
+    //输出：
+    //[0,9,0,0,0,5,0,0]
+    //预期结果：
+    //[7,9,9,9,0,5,0,0]  有重复数字
+    var map = HashMap<Int,Int>()
+    var cur = head
+    while (cur != null){
+        map.entries.forEach {
+            if (it.value == -1) {
+                if (cur!!.`val` > it.key){
+                    map[it.key] = cur!!.`val`
+                }
+            }
+        }
+        map[cur.`val`] = -1
+        cur = cur.next
+    }
+
+    var result = mutableListOf<Int>()
+    cur = head
+    while (cur != null){
+        result.add(if (map[cur.`val`]!! == -1) 0 else map[cur.`val`]!!)
+        cur = cur.next
+    }
+    return result.toIntArray()
 }
