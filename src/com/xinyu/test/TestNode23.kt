@@ -25,5 +25,26 @@ package com.xinyu.test
  */
 
 fun addTwoNumbers(l1: ListNode?, l2: ListNode?): ListNode? {
-
+    var result = ListNode(-1)
+    var cur = result
+    var need = false
+    var i: Int
+    var p1 = l1
+    var p2 = l2
+    while (p1 != null || p2 != null || need){
+        i = 0
+        i += p1?.`val`?:0
+        i += p2?.`val`?:0
+        i += if (need) 1 else 0
+        need = false
+        if (i >= 10){
+            need = true
+            i -= 10
+        }
+        cur.next = ListNode(i)
+        cur = cur.next
+        p1 = p1?.next
+        p2 = p2?.next
+    }
+    return result.next
 }
