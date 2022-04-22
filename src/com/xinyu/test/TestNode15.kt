@@ -23,7 +23,7 @@ fun reversePrint(head: ListNode?): IntArray {
 
 }
 
-fun reverse(head: ListNode?,list:MutableList<Int>){
+private fun reverse(head: ListNode?,list:MutableList<Int>){
     if (head == null) {
         return
     }
