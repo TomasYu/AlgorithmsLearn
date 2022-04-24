@@ -1,5 +1,7 @@
 package com.xinyu.test
 
+import java.util.*
+
 /**
  * https://leetcode-cn.com/problems/next-greater-node-in-linked-list/
  * 给定一个长度为 n 的链表 head
@@ -35,34 +37,57 @@ package com.xinyu.test
 链接：https://leetcode-cn.com/problems/next-greater-node-in-linked-list
 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
  */
-fun nextLargerNodes(head: ListNode?): IntArray {
+//fun nextLargerNodes(head: ListNode?): IntArray {
+//
+//    //hasMap 每一个数都和hash里面为空的去比较
+//    //输入：
+//    //[1,7,5,1,9,2,5,1]
+//    //输出：
+//    //[0,9,0,0,0,5,0,0]
+//    //预期结果：
+//    //[7,9,9,9,0,5,0,0]  有重复数字
+//    var map = HashMap<Int,Int>()
+//    var cur = head
+//    while (cur != null){
+//        map.entries.forEach {
+//            if (it.value == -1) {
+//                if (cur!!.`val` > it.key){
+//                    map[it.key] = cur!!.`val`
+//                }
+//            }
+//        }
+//        map[cur.`val`] = -1
+//        cur = cur.next
+//    }
+//
+//    var result = mutableListOf<Int>()
+//    cur = head
+//    while (cur != null){
+//        result.add(if (map[cur.`val`]!! == -1) 0 else map[cur.`val`]!!)
+//        cur = cur.next
+//    }
+//    return result.toIntArray()
+//}
 
-    //hasMap 每一个数都和hash里面为空的去比较
-    //输入：
-    //[1,7,5,1,9,2,5,1]
-    //输出：
-    //[0,9,0,0,0,5,0,0]
-    //预期结果：
-    //[7,9,9,9,0,5,0,0]  有重复数字
-    var map = HashMap<Int,Int>()
-    var cur = head
-    while (cur != null){
-        map.entries.forEach {
-            if (it.value == -1) {
-                if (cur!!.`val` > it.key){
-                    map[it.key] = cur!!.`val`
-                }
+//https://leetcode-cn.com/problems/next-greater-node-in-linked-list/solution/5chong-jie-jue-fang-shi-tu-wen-xiang-jie-by-sdwwld/
+class TestNode25{
+    fun nextLargerNodes(head: ListNode?): IntArray {
+        //使用单调栈
+        val result = mutableListOf<Int>()
+        var stack = LinkedList<Int>()
+        var cur = head
+        var i = 0
+        while (cur != null){
+            while (!stack.isEmpty() && cur.`val` > result[stack.peek()]) {
+                result[stack.pop()] = cur.`val`
             }
+            stack.push(i++)
+            result.add(cur.`val`)
+            cur = cur.next
         }
-        map[cur.`val`] = -1
-        cur = cur.next
+        while (!stack.isEmpty()) {
+            result[stack.pop()] = 0
+        }
+        return result.toIntArray()
     }
-
-    var result = mutableListOf<Int>()
-    cur = head
-    while (cur != null){
-        result.add(if (map[cur.`val`]!! == -1) 0 else map[cur.`val`]!!)
-        cur = cur.next
-    }
-    return result.toIntArray()
 }
