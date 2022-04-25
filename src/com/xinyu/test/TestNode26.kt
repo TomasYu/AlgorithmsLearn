@@ -39,7 +39,50 @@ class TestNode26 {
 
 
     //消消乐一样啊
+    //    https://leetcode-cn.com/problems/remove-zero-sum-consecutive-nodes-from-linked-list/
+    //https://leetcode-cn.com/problems/remove-zero-sum-consecutive-nodes-from-linked-list/solution/qian-zhui-he-dan-lian-biao-de-qian-zhui-kwr05/
     fun removeZeroSumSublists(head: ListNode?): ListNode? {
-
+        var map = mutableMapOf<Int, ListNode>()
+        var cur = head
+        var resultNode = ListNode(0)
+        map[0] = resultNode
+        var lastNode: ListNode? = resultNode
+        var curValue = 0
+        while (cur != null) {
+            curValue += cur.`val`
+            if (map[curValue] != null) {
+                var listNode = map[curValue]?.next
+                while (listNode != null && listNode != cur) {
+                    val iterator = map.iterator()
+                    while (iterator.hasNext()) {
+                        if (iterator.next().value == listNode) {
+                            iterator.remove()
+                        }
+                    }
+//                    map.forEach { (k, v) ->
+//                        if (v == listNode) {
+//                            map.remove(k)
+//                        }
+//                    }
+                    listNode = listNode.next
+                }
+                lastNode = map[curValue]
+                lastNode?.next = null
+            } else {
+                map[curValue] = cur
+                lastNode?.next = cur
+                lastNode = lastNode?.next
+            }
+            cur = cur.next
+        }
+        return resultNode.next
     }
+
+}
+
+fun main() {
+    println(TestNode26().removeZeroSumSublists(ListNode(1, ListNode(2, ListNode(3, ListNode(-3, ListNode(3)))))))
+//    println(TestNode26().removeZeroSumSublists(ListNode(1, ListNode(2, ListNode(-3, ListNode(3, ListNode(1)))))))
+//    println(TestNode26().removeZeroSumSublists(ListNode(1, ListNode(2, ListNode(3, ListNode(-3, ListNode(-2)))))))
+//    println(TestNode26().removeZeroSumSublists(ListNode(1, ListNode(-1))))
 }
