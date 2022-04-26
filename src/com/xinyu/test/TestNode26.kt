@@ -42,40 +42,27 @@ class TestNode26 {
     //    https://leetcode-cn.com/problems/remove-zero-sum-consecutive-nodes-from-linked-list/
     //https://leetcode-cn.com/problems/remove-zero-sum-consecutive-nodes-from-linked-list/solution/qian-zhui-he-dan-lian-biao-de-qian-zhui-kwr05/
     fun removeZeroSumSublists(head: ListNode?): ListNode? {
-        var map = mutableMapOf<Int, ListNode>()
+        val map = mutableMapOf<Int, ListNode>()
+        map[0] = ListNode(0,head)
         var cur = head
-        var resultNode = ListNode(0)
-        map[0] = resultNode
-        var lastNode: ListNode? = resultNode
         var curValue = 0
         while (cur != null) {
             curValue += cur.`val`
             if (map[curValue] != null) {
                 var listNode = map[curValue]?.next
+                var toRemove = curValue
                 while (listNode != null && listNode != cur) {
-                    val iterator = map.iterator()
-                    while (iterator.hasNext()) {
-                        if (iterator.next().value == listNode) {
-                            iterator.remove()
-                        }
-                    }
-//                    map.forEach { (k, v) ->
-//                        if (v == listNode) {
-//                            map.remove(k)
-//                        }
-//                    }
+                    toRemove += listNode.`val`
+                    map.remove(toRemove)
                     listNode = listNode.next
                 }
-                lastNode = map[curValue]
-                lastNode?.next = null
+                map[curValue]?.next = cur.next
             } else {
                 map[curValue] = cur
-                lastNode?.next = cur
-                lastNode = lastNode?.next
             }
             cur = cur.next
         }
-        return resultNode.next
+        return map[0]?.next
     }
 
 }
