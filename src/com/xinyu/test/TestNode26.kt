@@ -65,6 +65,28 @@ class TestNode26 {
         return map[0]?.next
     }
 
+    fun removeZeroSumSublists2(head: ListNode?): ListNode? {
+        val map = mutableMapOf<Int, ListNode>()
+        var dump = ListNode(0,head)
+        var cur : ListNode? = dump
+        var curValue = 0
+        while (cur != null) {
+            curValue += cur.`val`
+            map[curValue] = cur
+            cur = cur.next
+        }
+        cur = dump
+        curValue = 0
+        while (cur != null){
+            curValue += cur.`val`
+            if (map[curValue] != cur){
+                cur.next = map[curValue]?.next
+            }
+            cur = cur.next
+        }
+        return dump.next
+    }
+
 }
 
 fun main() {
