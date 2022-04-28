@@ -19,11 +19,19 @@ fun main(args: Array<String>) {
     println(s2)
 
     test()
-
+    val aa = func(1)
+    aa(9)
+    println(aa(9))
+    println(aa(9))
 
 
 }
 
+/**
+ * https://geek-docs.com/kotlin/kotlin-tutorial/kotlin-higher-order-function.html
+ */
+//https://geek-docs.com/kotlin/kotlin-tutorial/kotlin-higher-order-function.html
+fun func(num: Int): (Int) -> Int = {num2 -> num2 + num}
 /**
  * 交换两个变量
  */
@@ -33,4 +41,13 @@ fun test(){
     a = b.also { b = a }
     println("a=$a b=$b")
 
+}
+
+
+class Classa{
+    var a = 10
+
+    inner class Classb{
+        var b = a + 10
+    }
 }
