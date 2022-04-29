@@ -41,4 +41,22 @@ class TestNode32 {
         }
         return dumpHead.next
     }
+
+
+}
+class TestNode321{
+
+    fun swapPairs(head: ListNode?): ListNode? {
+       return reverseNode(head,head?.next)
+    }
+
+    private fun reverseNode(node1: ListNode?, node2: ListNode?): ListNode?{
+        if (node1 == null || node2 == null) {
+            return node1 ?: node2
+        }
+        val listNode = reverseNode(node1?.next?.next, node2?.next?.next)
+        node1.next.next = node1
+        node1.next = listNode
+        return node2
+    }
 }
