@@ -60,3 +60,19 @@ class TestNode321{
         return node2
     }
 }
+
+
+class TestNode322{
+
+    fun swapPairs(head: ListNode?): ListNode? {
+        if (head?.next == null){
+            return head
+        }
+        var newHead = head.next
+        val swapPairs = swapPairs(newHead.next)
+        head.next.next = head
+        head.next = swapPairs
+        return newHead
+    }
+
+}
