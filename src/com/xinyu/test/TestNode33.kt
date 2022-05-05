@@ -34,32 +34,21 @@ class TestNode33 {
      */
 
     fun sortList(head: ListNode?): ListNode? {
-        if (head == null){
+        if (head?.next == null){
             return head
         }
         var slow = head
-        var fast = head
+        var fast = head.next
         while (fast?.next != null){
-            if (fast.next.next != null){
-                slow = slow?.next
-            }
+            slow = slow?.next
             fast = fast.next.next
         }
 
         var temp = slow?.next
         slow?.next = null
 
-        var node1 = head
-        if (head.next != null){
-            node1 = sortList(head)
-        }
-
-
-        var node2 = temp
-        if (temp?.next != null){
-            node2 = sortList(temp)
-        }
-
+        var node1 = sortList(head)
+        var node2 = sortList(temp)
 
         var dump = ListNode(-1)
         var cur = dump
