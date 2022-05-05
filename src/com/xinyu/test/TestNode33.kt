@@ -1,5 +1,6 @@
 package com.xinyu.test
 
+
 class TestNode33 {
     /**
      * 给你链表的头结点 head ，请将其按 升序 排列并返回 排序后的链表 。
@@ -33,6 +34,51 @@ class TestNode33 {
      */
 
     fun sortList(head: ListNode?): ListNode? {
+        if (head == null){
+            return head
+        }
+        var slow = head
+        var fast = head
+        while (fast?.next != null){
+            if (fast.next.next != null){
+                slow = slow?.next
+            }
+            fast = fast.next.next
+        }
 
+        var temp = slow?.next
+        slow?.next = null
+
+        var node1 = head
+        if (head.next != null){
+            node1 = sortList(head)
+        }
+
+
+        var node2 = temp
+        if (temp?.next != null){
+            node2 = sortList(temp)
+        }
+
+
+        var dump = ListNode(-1)
+        var cur = dump
+        while (node1 != null && node2 != null){
+            if (node1.`val` < node2.`val`){
+                cur.next =  node1
+                node1 = node1.next
+            }else{
+                cur.next = node2
+                node2 = node2.next
+            }
+            cur = cur.next
+        }
+        cur.next = node1 ?: node2
+        return dump.next
     }
+}
+
+fun main() {
+    val sortList = TestNode33().sortList(ListNode(4, ListNode(2, ListNode(1, ListNode(3)))))
+    sortList
 }
