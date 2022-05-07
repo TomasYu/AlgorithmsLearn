@@ -72,7 +72,29 @@ class TestNode35 {
 
 }
 
+class TestNode351{
+    fun reorderList(head: ListNode?) {
+        reverse(head,head)
+    }
+
+    fun reverse(head: ListNode?, tail: ListNode?) : ListNode?{
+        if (tail == null) {
+            return head
+        }
+        var reverse = reverse(head,tail.next) ?: return null
+
+        if(reverse.next == tail || reverse == tail){
+            tail.next = null
+            return null
+        }
+        tail.next = reverse.next
+        reverse.next = tail
+        reverse = tail.next
+        return reverse
+    }
+}
+
 fun main() {
-    val sortList = TestNode35().reorderList(ListNode(1, ListNode(2, ListNode(3, ListNode(4, ListNode(5))))))
+    val sortList = TestNode351().reorderList(ListNode(1, ListNode(2, ListNode(3, ListNode(4/*, ListNode(5)*/)))))
     sortList
 }
