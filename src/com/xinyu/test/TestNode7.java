@@ -13,6 +13,9 @@ public class TestNode7 {
         listNode2.next = listNode3;
 
         listNode33.next = listNode4;
+        int j = 10;
+        j = j++;
+        System.out.printf(j+"");
     }
 
     /**
