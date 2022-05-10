@@ -44,158 +44,158 @@ class TestNode37 {
     著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
      */
 
-    //第一个版本  很烂  但是通过了
-    class AllOne() {
-        var map = HashMap<String, Node>()
-        var head = Node()
-        var tail = Node()
+//第一个版本  很烂  但是通过了
+class AllOne() {
+    var map = HashMap<String, Node>()
+    var head = Node()
+    var tail = Node()
 
-        init {
-            head.next = tail
-            tail.pre = head
-        }
+    init {
+        head.next = tail
+        tail.pre = head
+    }
 
-        class Node {
-            var set = HashSet<String>()
-            var count = 0
-            var next: Node? = null
-            var pre: Node? = null
-        }
+    class Node {
+        var set = HashSet<String>()
+        var count = 0
+        var next: Node? = null
+        var pre: Node? = null
+    }
 
-        fun inc(key: String) {
-            // 存在
-            if (map.containsKey(key)) {
-                val node = map[key]
-                if (node!!.next?.count != node.count + 1) {
-                    if (node.set.size == 1) {
-                        node.count ++
-                    } else { //new node
-                        val node1 = Node()
-                        node1.count = node.count + 1
-                        node1.set.add(key)
-                        map[key] = node1
-                        node.set.remove(key)
-
-                        node1.next = node.next
-                        node1.pre = node
-                        node1.pre!!.next = node1
-                        node1.next!!.pre = node1
-                    }
-
-                } else {
-                    //user old
-                    node.next!!.set.add(key)
-                    map[key] = node.next!!
-                    if (node.set.size == 1) {
-                        node.pre!!.next = node.next
-                        node.next!!.pre = node.pre
-                    } else {
-                        node.set.remove(key)
-                    }
-                }
-
-
-            } else {
-                //不存在  寻找相同数量的node
-                var cur = head.next
-                if (cur?.count != 1) {
-                    var node = Node()
-                    node.set.add(key)
-                    node.count = 1
-                    node.next = head.next
-                    node.pre = head
-                    node.pre!!.next = node
-                    node.next!!.pre = node
-                    map[key] = node
-                } else {
-                    //存在1个元素
-                    cur.set.add(key)
-                    map[key] = cur
-                }
-            }
-
-        }
-
-        fun dec(key: String) {
-            //
+    fun inc(key: String) {
+        // 存在
+        if (map.containsKey(key)) {
             val node = map[key]
-            //只有这个自己  移除
-            if (node!!.count == 1 && node.set.count() == 1) {
-                node.pre?.next = node.next
-                node.next?.pre = node.pre
-                map.remove(key)
-            } else {
-                if (node.pre!!.count != node.count - 1) {
+            if (node!!.next?.count != node.count + 1) {
+                if (node.set.size == 1) {
+                    node.count ++
+                } else { //new node
                     val node1 = Node()
-                    node1.next = node
-                    node1.pre = node.pre
-                    node1.pre!!.next = node1
-                    node1.next!!.pre = node1
-                    node1.count = node.count - 1
+                    node1.count = node.count + 1
                     node1.set.add(key)
                     map[key] = node1
-                    if (node.set.size == 1){
-                        //remove
-                        node.pre!!.next = node.next
-                        node.next!!.pre = node.pre
-                    }else{
-                        node.set.remove(key)
-                    }
+                    node.set.remove(key)
+
+                    node1.next = node.next
+                    node1.pre = node
+                    node1.pre!!.next = node1
+                    node1.next!!.pre = node1
+                }
+
+            } else {
+                //user old
+                node.next!!.set.add(key)
+                map[key] = node.next!!
+                if (node.set.size == 1) {
+                    node.pre!!.next = node.next
+                    node.next!!.pre = node.pre
                 } else {
-                    if (node.pre != head){
-                        node.pre!!.set.add(key)
-                        map[key] = node.pre!!
-                        if (node.set.count() == 1){
-                            node.pre!!.next = node.next
-                            node.next!!.pre = node.pre
-                        }else{
-                            node.set.remove(key)
-                        }
-                    }else{
-                        node.set.remove(key)
-                        if (node.set.size == 0){
-                            map.remove(key)
-                            node.next!!.pre = node.pre
-                            node.pre!!.next = node.next
-                        }
-                    }
+                    node.set.remove(key)
                 }
             }
-        }
 
-        fun getMaxKey(): String {
-            val pre = tail.pre
-            if (pre != head) {
-                return pre!!.set.iterator().next()
-            }
-            return ""
-        }
 
-        fun getMinKey(): String {
-            val next = head.next
-            if (next != tail) {
-                val iterator = next!!.set.iterator()
-                var result = ""
-                while (iterator.hasNext()){
-                    result = iterator.next()
-                }
-                return result
-            }
-            return ""
-        }
-
-        // for test
-        fun print(){
+        } else {
+            //不存在  寻找相同数量的node
             var cur = head.next
-            println("start")
-            while (cur != tail){
-                println("count : ${cur!!.count} ${cur.set})")
-                cur = cur.next
+            if (cur?.count != 1) {
+                var node = Node()
+                node.set.add(key)
+                node.count = 1
+                node.next = head.next
+                node.pre = head
+                node.pre!!.next = node
+                node.next!!.pre = node
+                map[key] = node
+            } else {
+                //存在1个元素
+                cur.set.add(key)
+                map[key] = cur
             }
-            println("end")
         }
 
     }
+
+    fun dec(key: String) {
+        //
+        val node = map[key]
+        //只有这个自己  移除
+        if (node!!.count == 1 && node.set.count() == 1) {
+            node.pre?.next = node.next
+            node.next?.pre = node.pre
+            map.remove(key)
+        } else {
+            if (node.pre!!.count != node.count - 1) {
+                val node1 = Node()
+                node1.next = node
+                node1.pre = node.pre
+                node1.pre!!.next = node1
+                node1.next!!.pre = node1
+                node1.count = node.count - 1
+                node1.set.add(key)
+                map[key] = node1
+                if (node.set.size == 1){
+                    //remove
+                    node.pre!!.next = node.next
+                    node.next!!.pre = node.pre
+                }else{
+                    node.set.remove(key)
+                }
+            } else {
+                if (node.pre != head){
+                    node.pre!!.set.add(key)
+                    map[key] = node.pre!!
+                    if (node.set.count() == 1){
+                        node.pre!!.next = node.next
+                        node.next!!.pre = node.pre
+                    }else{
+                        node.set.remove(key)
+                    }
+                }else{
+                    node.set.remove(key)
+                    if (node.set.size == 0){
+                        map.remove(key)
+                        node.next!!.pre = node.pre
+                        node.pre!!.next = node.next
+                    }
+                }
+            }
+        }
+    }
+
+    fun getMaxKey(): String {
+        val pre = tail.pre
+        if (pre != head) {
+            return pre!!.set.iterator().next()
+        }
+        return ""
+    }
+
+    fun getMinKey(): String {
+        val next = head.next
+        if (next != tail) {
+            val iterator = next!!.set.iterator()
+            var result = ""
+            while (iterator.hasNext()){
+                result = iterator.next()
+            }
+            return result
+        }
+        return ""
+    }
+
+    // for test
+    fun print(){
+        var cur = head.next
+        println("start")
+        while (cur != tail){
+            println("count : ${cur!!.count} ${cur.set})")
+            cur = cur.next
+        }
+        println("end")
+    }
+
+}
 }
 
 
