@@ -76,6 +76,10 @@ public class TestNode7 {
                 return true;
             }
         }
+        //???
+        int []f[]  = new int[1][];
+        f[0][0] =1;
+        System.out.println(f[0][0]);
         return false;
     }
 }
