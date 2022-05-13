@@ -47,6 +47,32 @@ class TestNode42 {
         var singleHCur = singleH
         var doubleH = head.next
         var doubleHCur = doubleH
+        //没有了那就结束
+        while (doubleHCur?.next != null){
+            singleHCur?.next = doubleHCur.next
+            singleHCur = singleHCur?.next
+            doubleHCur.next = singleHCur?.next
+            doubleHCur = doubleHCur.next
+        }
+        //单的最后一个  指向双的头部
+        singleHCur?.next = doubleH
+        return singleH
+    }
+
+
+}
+
+class TestNode421{
+    fun oddEvenList(head: ListNode?): ListNode? {
+        //判断是不是大于两个
+        if (head?.next == null) {
+            return head
+        }
+        //循环。。。一个放单 一个放双
+        var singleH = head
+        var singleHCur = singleH
+        var doubleH = head.next
+        var doubleHCur = doubleH
         var cur = doubleH.next
         singleHCur.next = null
         doubleHCur.next = null
