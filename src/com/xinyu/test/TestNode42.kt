@@ -1,5 +1,7 @@
 package com.xinyu.test
 
+import kotlin.math.sin
+
 class TestNode42 {
     /**
      * https://leetcode.cn/problems/odd-even-linked-list/
@@ -36,7 +38,43 @@ class TestNode42 {
     -106 <= Node.val <= 106
      */
     fun oddEvenList(head: ListNode?): ListNode? {
-        return null
+        //判断是不是大于两个
+        if (head?.next == null) {
+            return head
+        }
+        //循环。。。一个放单 一个放双
+        var singleH = head
+        var singleHCur = singleH
+        var doubleH = head.next
+        var doubleHCur = doubleH
+        var cur = doubleH.next
+        singleHCur.next = null
+        doubleHCur.next = null
+        var curAddNode = singleHCur
+        //没有了那就结束
+        while (cur != null){
+            curAddNode!!.next = cur
+            cur = cur.next
+            curAddNode.next.next = null
+            //放完单 把对象指向双
+            if (curAddNode == singleHCur){
+                curAddNode = doubleHCur
+                singleHCur = singleHCur.next
+
+            }else{
+                curAddNode = singleHCur
+                doubleHCur = doubleHCur.next
+            }
+        }
+
+        //单的最后一个  指向双的头部
+        singleHCur!!.next = doubleH
+
+        return singleH
 
     }
+}
+
+fun main() {
+    TestNode42().oddEvenList(ListNode(1, ListNode(2, ListNode(3, ListNode(4, ListNode(5))))))
 }
