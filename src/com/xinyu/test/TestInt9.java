@@ -79,6 +79,6 @@ public class TestInt9 {
 
     public static void main(String[] args) {
         TestInt9 testInt9 = new TestInt9();
-        System.out.println(testInt9.countPrimes2(499979));
+        System.out.println(testInt9.countPrimes2(71056));
     }
 }

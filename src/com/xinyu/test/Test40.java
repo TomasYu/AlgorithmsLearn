@@ -1,8 +1,6 @@
 package com.xinyu.test;
 
-import java.util.Comparator;
-import java.util.HashMap;
-import java.util.TreeMap;
+import java.util.*;
 
 public class Test40 {
 
@@ -13,6 +11,12 @@ public class Test40 {
         treeMap.put(200,4);
         System.out.println(true);
         firstUniqChar("leetcode");
+
+
+        List<Integer> list = new ArrayList<>();
+//        list.add(0);
+        list.add(0,1);
+        System.out.println(Arrays.toString(list.toArray()));
 
 
     }
