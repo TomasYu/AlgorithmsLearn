@@ -34,14 +34,14 @@ class TestArray117 {
     fun generate(numRows: Int): List<List<Int>> {
         val result = ArrayList<List<Int>>()
 
-        for (i in 1..numRows) {
-            val list = ArrayList<Int>(i)
+        for (i in 0 until numRows) {
+            val list = ArrayList<Int>()
             for (j in 0 until i) {
-                if (j == 0 || j == i - 1) {
+                if (j == 0 || j == i) {
                     list.add(1)
                 } else {
-                    val element = result.get(i - 1 -1)
-                    list.add(element.get(j - 1) + element.get(j))
+                    val element = result[i - 1]
+                    list.add(element[j - 1] + element[j])
                 }
             }
             result.add(list)
