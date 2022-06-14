@@ -36,7 +36,7 @@ class TestArray117 {
 
         for (i in 0 until numRows) {
             val list = ArrayList<Int>()
-            for (j in 0 until i) {
+            for (j in 0 .. i) {
                 if (j == 0 || j == i) {
                     list.add(1)
                 } else {
@@ -48,7 +48,6 @@ class TestArray117 {
         }
         return result
     }
-
 
 }
 
