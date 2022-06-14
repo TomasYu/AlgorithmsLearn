@@ -1,5 +1,8 @@
 package com.xinyu.test
 
+import java.util.*
+import kotlin.collections.ArrayList
+
 class TestArray117 {
     /**
      * https://leetcode.cn/problems/pascals-triangle/
@@ -52,5 +55,6 @@ class TestArray117 {
 }
 
 fun main() {
-    TestArray117().generate(5)
+    val generate = TestArray117().generate(10)
+    generate.forEach { list -> println(list.toString()) }
 }
