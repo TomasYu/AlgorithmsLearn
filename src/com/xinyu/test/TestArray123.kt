@@ -1,5 +1,7 @@
 package com.xinyu.test
 
+import java.util.*
+
 class TestArray123 {
     /**
      * 1337. 矩阵中战斗力最弱的 K 行
@@ -57,6 +59,25 @@ class TestArray123 {
     1 <= k <= m
     matrix[i][j] 不是 0 就是 1
      */
+    fun kWeakestRows(mat: Array<IntArray>, k: Int): IntArray {
+        var pair = Array(mat.size) { Array(2) { 0 } }
+        mat.forEachIndexed { index, ints ->
+            run {
+                pair[index][0] = index
+                mat[index].forEach {
+                    pair[index][1] += it
+                }
+            }
+        }
 
+        Arrays.sort(pair,0,pair.size) { o1, o2 -> if (o1[1] > o2[1]) 1 else if (o1[1] == o2[1]) 0 else -1 }
+
+        val result = IntArray(k) { 0 }
+
+        for (i in 0 until k){
+            result[i] = pair[i][0]
+        }
+        return result
+    }
 
 }
