@@ -44,6 +44,7 @@ class TestInt15 {
     0 <= n <= 100
      */
 
+    var a :String?= null
     fun getMaximumGenerated(n: Int): Int {
         when (n) {
             0 -> {
@@ -85,8 +86,12 @@ class TestInt15 {
         }
         return max
     }
+    fun  set(){
+        a = null
+    }
 }
 
 fun main() {
+    TestInt15().a.isNullOrEmpty()
     println(TestInt15().getMaximumGenerated(7))
 }
