@@ -52,7 +52,7 @@ class TestString16 {
         var j = 0
         val m = s.length
         val n = t.length
-        while (i < m && j < n){
+        while (i < m && j < n) {
             if (s[i] == t[i]) {
                 i++
             }
@@ -60,4 +60,33 @@ class TestString16 {
         }
         return i == m
     }
+
+    fun isSubsequence2(s: String, t: String): Boolean {
+        val m = s.length
+        val n = t.length
+        val dp = Array(m + 1) { Array(n + 1) { 0 } }
+
+        for (i in 1..m) {
+            for (j in 1..n) {
+                if (s[i - 1] == t[j - 1]) {
+                    dp[i][j] = dp[i-1][j-1] + 1
+                } else {
+                    dp[i][j] = dp[i][j-1]
+                }
+            }
+        }
+        //打印二维数组
+        dp.forEach {
+            it.forEach {
+                print(it)
+            }
+            println()
+
+        }
+        return dp[m][n] == m
+    }
+}
+
+fun main() {
+    TestString16().isSubsequence2("aaaaaa", "bbaaaa")
 }
