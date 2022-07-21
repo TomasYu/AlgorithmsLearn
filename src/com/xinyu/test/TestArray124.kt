@@ -70,6 +70,29 @@ class TestArray124 {
         return result
     }
 
+
+    fun shiftGrid2(grid: Array<IntArray>, k: Int): List<List<Int>> {
+        val heightT = grid.size
+        var widthT = if (grid.isNotEmpty()) grid[0].size else 0
+
+        var result = ArrayList<ArrayList<Int>>()
+        grid.forEach {
+            val element = ArrayList<Int>()
+            result.add(element)
+            it.forEach { _ ->
+                element.add(0)
+            }
+        }
+
+        grid.forEachIndexed { height, ints ->
+            ints.forEachIndexed { width, i ->
+                var newIndex = (height * widthT + width + k) % (heightT * widthT)
+                result[newIndex / widthT][newIndex % widthT] = i
+            }
+        }
+        return result
+    }
+
 }
 
 fun main() {
