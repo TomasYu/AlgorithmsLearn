@@ -1,5 +1,7 @@
 package com.xinyu.test
 
+import kotlin.math.cos
+
 class TestArray125 {
     /**
      * https://leetcode.cn/problems/min-cost-climbing-stairs/
@@ -51,6 +53,19 @@ class TestArray125 {
 
         }
         return dp[cost.size]
+    }
+
+
+    fun minCostClimbingStairs2(cost: IntArray): Int {
+        var pre = 0
+        var pre_pre = 0
+        val n = cost.size
+        for (i in 2..n) {
+            val new = (pre + cost[i - 1]).coerceAtMost(pre_pre + cost[i - 2])
+            pre_pre = pre
+            pre = new
+        }
+        return pre
     }
 }
 
