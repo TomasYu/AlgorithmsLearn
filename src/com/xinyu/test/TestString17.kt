@@ -74,7 +74,7 @@ class TestString17 {
 
         val chars = " $s".toCharArray()
         val size = chars.size
-        val dp = Array(size + 1) { 0 }
+        val dp = Array(size) { 0 }
         dp[0] = 1
         for (i in 1 until size) {
             //j 表示当前位   k表示前一位
