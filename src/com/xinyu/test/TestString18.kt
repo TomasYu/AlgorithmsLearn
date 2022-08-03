@@ -52,15 +52,24 @@ class TestString18 {
         val dp = Array(m + 1) { Array(n + 1) { false } }
         dp[0][0] = true
 
-        dp[0].forEachIndexed { index, b -> if (index > 0) {dp[0][index] = dp[0][index -1 ] && s2[index -1] == s3[index -1] }}
-        dp.forEachIndexed { index, booleans -> if (index > 0) {dp[index][0] = dp[index -1][0] && s1[index -1] == s3[index -1]  }}
+        dp[0].forEachIndexed { index, _ ->
+            if (index > 0) {
+                dp[0][index] = dp[0][index - 1] && s2[index - 1] == s3[index - 1]
+            }
+        }
+        dp.forEachIndexed { index, _ ->
+            if (index > 0) {
+                dp[index][0] = dp[index - 1][0] && s1[index - 1] == s3[index - 1]
+            }
+        }
         for (i in 1..m) {
             for (j in 1..n) {
                 dp[i][j] = dp[i - 1][j] && s1[i - 1] == s3[i + j - 1]
-                dp[i][j] = dp[i][j] || (dp[i][j-1] && s2[j-1] == s3[i + j -1])
+                dp[i][j] = dp[i][j] || (dp[i][j - 1] && s2[j - 1] == s3[i + j - 1])
             }
         }
-        dp.forEach { it.forEach { print("$it ") }
+        dp.forEach {
+            it.forEach { print("$it ") }
             println()
         }
         return dp[m][n]
