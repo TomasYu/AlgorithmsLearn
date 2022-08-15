@@ -35,25 +35,49 @@ class TestArray131 {
 
     fun jump(nums: IntArray): Int {
         val dp = Array(nums.size) { 0 }
-        if (nums.size == 1){
+        if (nums.size == 1) {
             return 0
         }
         dp[0] = 1
 
         nums.forEachIndexed { index, i ->
-            for (j in index..(index + i).coerceAtMost(nums.size -1)){
-                if (dp[j] != 0){
+            for (j in index..(index + i).coerceAtMost(nums.size - 1)) {
+                if (dp[j] != 0) {
                     dp[j] = (dp[index] + 1).coerceAtMost(dp[j])
-                }else{
-                    dp[j] = if(index == 0) dp[index] else dp[index] + 1
+                } else {
+                    dp[j] = if (index == 0) dp[index] else dp[index] + 1
                 }
             }
         }
 
         return dp[nums.size - 1]
     }
+
+
+    fun jump2(nums: IntArray): Int {
+        var maxRight = 0
+        var end = 0
+        var result = 0
+        val size = nums.size
+
+        for (i in 0 until size - 1) {
+            maxRight = (nums[i] + i).coerceAtLeast(maxRight)
+            //如果当前已经能够跳到最后 那么直接从当前+1结束即可
+            if (maxRight >= size - 1) {
+                result++
+                break
+            }
+            //
+            if (end == i) {
+                result++
+                end = maxRight
+            }
+        }
+        return result
+    }
 }
 
 fun main() {
-    println(TestArray131().jump(intArrayOf(2, 3, 1, 1, 4)))
+//    println(TestArray131().jump2(intArrayOf(2, 3, 1, 1, 4)))
+    println(TestArray131().jump2(intArrayOf(3 ,2 ,1)))
 }
