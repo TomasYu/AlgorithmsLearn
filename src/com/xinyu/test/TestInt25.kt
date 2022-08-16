@@ -46,4 +46,53 @@ class TestInt25 {
 
     https://leetcode.cn/problems/find-kth-bit-in-nth-binary-string/
      */
+    fun findKthBit(n: Int, k: Int): Char {
+        //dp
+        val dp = Array(n) { "" }
+        dp[0] = "0"
+
+        for (i in 2..n) {
+            val length = dp[i - 2].length
+
+            val charArray = CharArray(length) { '0' }
+            val toCharArray = dp[i - 2].toCharArray()
+            toCharArray.forEachIndexed { index, c ->
+                charArray[length - 1 - index] = if (c == '0') '1' else '0'
+            }
+            dp[i - 1] = "${dp[i - 2]}1${String(charArray)}"
+        }
+        return dp[n - 1][k]
+    }
+
+    fun findKthBit2(n: Int, k: Int): Char {
+        //dp
+        if (n == 1) {
+            return '0'
+        }
+        val length = 1.shl(n) - 1
+        val mid = length / 2 + 1
+        return if (k == 0) {
+            '0'
+        } else if (k == mid) {
+            '1'
+        } else if (k < mid) {
+            findKthBit2(n - 1, k)
+        } else {
+            if (findKthBit2(n - 1, length - k + 1) == '0') {
+                '1'
+            } else {
+                '0'
+            }
+        }
+    }
+}
+
+fun main() {
+    var start = System.currentTimeMillis()
+    val message = TestInt25().findKthBit(20, 55)
+    println(System.currentTimeMillis() - start)
+    start = System.currentTimeMillis()
+    TestInt25().findKthBit2(20,1)
+    println(System.currentTimeMillis() - start)
+    println(message)
 }
