@@ -1,5 +1,7 @@
 package com.xinyu.test
 
+import java.util.*
+
 class TestArray133 {
     /**
      * 724. 寻找数组的中心下标
@@ -45,6 +47,32 @@ class TestArray133 {
      */
 
     fun pivotIndex(nums: IntArray): Int {
+        var left = 0
+        var right = Arrays.stream(nums).sum()
+        for (i in nums.indices) {
+            right -= nums[i]
+            if (left == right) {
+                return i
+            } else {
+                left += nums[i]
+            }
+        }
         return -1
     }
+
+    fun pivotIndex2(nums: IntArray): Int {
+        var curSum = 0
+        var total = Arrays.stream(nums).sum()
+        for (i in nums.indices) {
+            if (curSum * 2 + nums[i] == total) {
+                return i
+            }
+            curSum += nums[i]
+        }
+        return -1
+    }
+}
+
+fun main() {
+    println(TestArray133().pivotIndex2(intArrayOf(1, 7, 3, 6, 5, 6)))
 }
