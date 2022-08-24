@@ -40,31 +40,31 @@ class TestArray134 {
      */
 
     fun findRotation(mat: Array<IntArray>, target: Array<IntArray>): Boolean {
-        val n = mat.size
-        var a = n - 1
+        val length = mat.size
+        var maxIndex = length - 1
         var b360 = true
         var b90 = true
         var b180 = true
         var b270 = true
-        for (i in 0 until n) {
-            for (j in 0 until n) {
+        for (i in 0 until length) {
+            for (j in 0 until length) {
                 //360 0
                 if (mat[i][j] != target[i][j]) {
                     b360 = false
                 }
 
                 //90
-                if (mat[i][j] != target[j][a - i]) {
+                if (mat[i][j] != target[j][maxIndex - i]) {
                     b90 = false
                 }
 
                 //180
-                if (mat[i][j] != target[a - i][a - j]) {
+                if (mat[i][j] != target[maxIndex - i][maxIndex - j]) {
                     b180 = false
                 }
 
                 //270
-                if (mat[i][j] != target[a - j][i]) {
+                if (mat[i][j] != target[maxIndex - j][i]) {
                     b270 = false
 
                 }
