@@ -69,6 +69,21 @@ class TestString19 {
 
         return result
     }
+
+
+    fun secondsToRemoveOccurrences2(s: String): Int {
+        val charArray = s.toCharArray()
+        var pre0 = 0
+        var preC = 0
+        charArray.forEach {
+            if (it == '0'){
+                pre0++
+            }else if (pre0 >0){
+                preC = (preC + 1).coerceAtLeast(pre0)
+            }
+        }
+        return preC
+    }
 }
 
 fun main() {
