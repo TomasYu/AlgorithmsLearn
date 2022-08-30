@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="BranchesTreeState">
     <expand>
       <path>
@@ -10,8 +13,14 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ddcc14d9-ed9d-4787-abea-7813d2a6c7a2" name="Default" comment="增加豆果api">
-      <change beforePath="$PROJECT_DIR$/src/com/xinyu/test/LinkedListTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/xinyu/test/LinkedListTest.java" afterDir="false" />
+    <list default="true" id="ddcc14d9-ed9d-4787-abea-7813d2a6c7a2" name="Default" comment="https://leetcode.cn/problems/binary-gap/">
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/KotlinJavaRuntime.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/xinyu/test/TestNode47.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/kotlinc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/kotlinc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlgorithmsLearn.iml" beforeDir="false" afterPath="$PROJECT_DIR$/AlgorithmsLearn.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/xinyu/test/ListNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/xinyu/test/ListNode.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,7 +41,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Kotlin File" />
         <option value="Class" />
+        <option value="Kotlin Class" />
       </list>
     </option>
   </component>
@@ -61,6 +72,18 @@
       <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
     </file-type-list>
   </component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="selectedUrlAndAccountId">
+      <UrlAndAccount>
+        <option name="accountId" value="8ea41ddd-a9cd-4649-bc4e-daaceef0e73e" />
+        <option name="url" value="git@github.com:TomasYu/AlgorithmsLearn.git" />
+      </UrlAndAccount>
+    </option>
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="jar://$USER_HOME$/.jdks/corretto-1.8.0_302/src.zip!/java/util/HashMap.java" root0="SKIP_INSPECTION" />
+    <setting file="jar://$USER_HOME$/.jdks/corretto-1.8.0_302/src.zip!/java/util/Queue.java" root0="SKIP_INSPECTION" />
+  </component>
   <component name="ProjectId" id="1atRBzGZSzKylLA4mfK7uMvL2VO" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
@@ -68,26 +91,31 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="Downloaded.Files.Path.Enabled" value="false" />
+    <property name="Repository.Attach.Annotations" value="false" />
+    <property name="Repository.Attach.JavaDocs" value="false" />
+    <property name="Repository.Attach.Sources" value="false" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="ToolWindowRun.ShowToolbar" value="false" />
     <property name="extract.method.default.visibility" value="private" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="project.structure.last.edited" value="Libraries" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/com/xinyu/test" />
+    <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
+    <property name="settings.editor.selected.configurable" value="MavenSettings" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="com.xinyu.test" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/com/xinyu/test" />
       <recent name="E:\github\AlgorithmsLearn\libs" />
       <recent name="E:\github\AlgorithmsLearn" />
     </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.xinyu.test" />
+    </key>
   </component>
-  <component name="RunManager" selected="Application.TestInt">
+  <component name="RunManager" selected="Kotlin.TestNode47Kt">
     <configuration default="true" type="AndroidTestRunConfigurationType" factoryName="Android Tests">
       <module name="" />
       <option name="TESTING_TYPE" value="0" />
@@ -123,76 +151,6 @@
       <module />
       <method />
     </configuration>
-    <configuration name="BubbleSort" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.xinyu.test.java.sort.BubbleSort" />
-      <module name="AlgorithmsLearn" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.xinyu.test.java.sort.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="ExcelTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.xinyu.test.ExcelTest" />
-      <module name="AlgorithmsLearn" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.xinyu.test.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="SignMain" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.xinyu.test.SignMain" />
-      <module name="AlgorithmsLearn" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.xinyu.test.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="TestInt" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.xinyu.test.TestInt" />
-      <module name="AlgorithmsLearn" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.xinyu.test.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="ThreadTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.xinyu.test.java.thread.ThreadTest" />
-      <module name="AlgorithmsLearn" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.xinyu.test.java.thread.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration default="true" type="Application" factoryName="Application">
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <method v="2">
@@ -202,6 +160,41 @@
     <configuration default="true" type="JUnit" factoryName="JUnit">
       <option name="TEST_OBJECT" value="class" />
       <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TestArray135Kt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.xinyu.test.TestArray135Kt" />
+      <module name="AlgorithmsLearn" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TestInt26Kt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.xinyu.test.TestInt26Kt" />
+      <module name="AlgorithmsLearn" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TestInt27Kt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.xinyu.test.TestInt27Kt" />
+      <module name="AlgorithmsLearn" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TestNode47Kt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.xinyu.test.TestNode47Kt" />
+      <module name="AlgorithmsLearn" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TestString19Kt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.xinyu.test.TestString19Kt" />
+      <module name="AlgorithmsLearn" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -232,11 +225,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.TestInt" />
-        <item itemvalue="Application.BubbleSort" />
-        <item itemvalue="Application.ThreadTest" />
-        <item itemvalue="Application.ExcelTest" />
-        <item itemvalue="Application.SignMain" />
+        <item itemvalue="Kotlin.TestNode47Kt" />
+        <item itemvalue="Kotlin.TestInt27Kt" />
+        <item itemvalue="Kotlin.TestArray135Kt" />
+        <item itemvalue="Kotlin.TestInt26Kt" />
+        <item itemvalue="Kotlin.TestString19Kt" />
       </list>
     </recent_temporary>
   </component>
@@ -254,315 +247,350 @@
       <option name="presentableId" value="Default" />
       <updated>1546572795954</updated>
     </task>
-    <task id="LOCAL-00001" summary="增加：第二天的练习">
-      <created>1546839650717</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
+    <task id="LOCAL-00139" summary="https://leetcode.cn/problems/zui-xiao-de-kge-shu-lcof/">
+      <created>1655695250606</created>
+      <option name="number" value="00139" />
+      <option name="presentableId" value="LOCAL-00139" />
       <option name="project" value="LOCAL" />
-      <updated>1546839650717</updated>
+      <updated>1655695250606</updated>
     </task>
-    <task id="LOCAL-00002" summary="增加：第三天的练习">
-      <created>1547003447258</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
+    <task id="LOCAL-00140" summary="https://leetcode.cn/problems/largest-number-after-digit-swaps-by-parity/">
+      <created>1655738340226</created>
+      <option name="number" value="00140" />
+      <option name="presentableId" value="LOCAL-00140" />
       <option name="project" value="LOCAL" />
-      <updated>1547003447258</updated>
+      <updated>1655738340227</updated>
     </task>
-    <task id="LOCAL-00003" summary="增加：工作路径的修改">
-      <created>1547466364929</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
+    <task id="LOCAL-00141" summary="https://leetcode.cn/problems/find-subsequence-of-length-k-with-the-largest-sum">
+      <created>1655957133437</created>
+      <option name="number" value="00141" />
+      <option name="presentableId" value="LOCAL-00141" />
       <option name="project" value="LOCAL" />
-      <updated>1547466364929</updated>
+      <updated>1655957133438</updated>
     </task>
-    <task id="LOCAL-00004" summary="增加新的算法">
-      <created>1587647028337</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
+    <task id="LOCAL-00142" summary="https://leetcode.cn/problems/the-k-weakest-rows-in-a-matrix/">
+      <created>1655988295399</created>
+      <option name="number" value="00142" />
+      <option name="presentableId" value="LOCAL-00142" />
       <option name="project" value="LOCAL" />
-      <updated>1587647028337</updated>
+      <updated>1655988295399</updated>
     </task>
-    <task id="LOCAL-00005" summary="增加新的算法">
-      <created>1587823706287</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
+    <task id="LOCAL-00143" summary="test">
+      <created>1656057113128</created>
+      <option name="number" value="00143" />
+      <option name="presentableId" value="LOCAL-00143" />
       <option name="project" value="LOCAL" />
-      <updated>1587823706287</updated>
+      <updated>1656057113128</updated>
     </task>
-    <task id="LOCAL-00006" summary="增加测试代码">
-      <created>1588001244866</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
+    <task id="LOCAL-00144" summary="https://leetcode.cn/problems/climbing-stairs/">
+      <created>1656943561425</created>
+      <option name="number" value="00144" />
+      <option name="presentableId" value="LOCAL-00144" />
       <option name="project" value="LOCAL" />
-      <updated>1588001244867</updated>
+      <updated>1656943561426</updated>
     </task>
-    <task id="LOCAL-00007" summary="增加新的算法,快乐数">
-      <created>1590029134640</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
+    <task id="LOCAL-00145" summary="https://leetcode.cn/problems/counting-bits/">
+      <created>1657031644857</created>
+      <option name="number" value="00145" />
+      <option name="presentableId" value="LOCAL-00145" />
       <option name="project" value="LOCAL" />
-      <updated>1590029134640</updated>
+      <updated>1657031644857</updated>
     </task>
-    <task id="LOCAL-00008" summary="宝石与石头">
-      <created>1590030680033</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
+    <task id="LOCAL-00146" summary="    https://leetcode.cn/problems/Ju9Xwi/">
+      <created>1657205499481</created>
+      <option name="number" value="00146" />
+      <option name="presentableId" value="LOCAL-00146" />
       <option name="project" value="LOCAL" />
-      <updated>1590030680033</updated>
+      <updated>1657205499481</updated>
     </task>
-    <task id="LOCAL-00009" summary="增加新的算法">
-      <created>1590125220976</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
+    <task id="LOCAL-00147" summary="https://leetcode.cn/problems/the-masseuse-lcci/">
+      <created>1657290360345</created>
+      <option name="number" value="00147" />
+      <option name="presentableId" value="LOCAL-00147" />
       <option name="project" value="LOCAL" />
-      <updated>1590125220976</updated>
+      <updated>1657290360346</updated>
     </task>
-    <task id="LOCAL-00010" summary="增加新的算法">
-      <created>1590130728485</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
+    <task id="LOCAL-00148" summary="https://leetcode.cn/problems/three-steps-problem-lcci/">
+      <created>1657535326249</created>
+      <option name="number" value="00148" />
+      <option name="presentableId" value="LOCAL-00148" />
       <option name="project" value="LOCAL" />
-      <updated>1590130728485</updated>
+      <updated>1657535326250</updated>
     </task>
-    <task id="LOCAL-00011" summary="四数相加">
-      <created>1590411086256</created>
-      <option name="number" value="00011" />
-      <option name="presentableId" value="LOCAL-00011" />
+    <task id="LOCAL-00149" summary="https://leetcode.cn/problems/three-steps-problem-lcci/&#10;&#10;2">
+      <created>1657547408162</created>
+      <option name="number" value="00149" />
+      <option name="presentableId" value="LOCAL-00149" />
       <option name="project" value="LOCAL" />
-      <updated>1590411086256</updated>
+      <updated>1657547408163</updated>
     </task>
-    <task id="LOCAL-00012" summary="字符异位">
-      <created>1590461617829</created>
-      <option name="number" value="00012" />
-      <option name="presentableId" value="LOCAL-00012" />
+    <task id="LOCAL-00150" summary="https://leetcode.cn/problems/get-maximum-in-generated-array/">
+      <created>1657720374075</created>
+      <option name="number" value="00150" />
+      <option name="presentableId" value="LOCAL-00150" />
       <option name="project" value="LOCAL" />
-      <updated>1590461617829</updated>
+      <updated>1657720374075</updated>
     </task>
-    <task id="LOCAL-00013" summary="新增算法">
-      <created>1590550018521</created>
-      <option name="number" value="00013" />
-      <option name="presentableId" value="LOCAL-00013" />
+    <task id="LOCAL-00151" summary="isNullOrEmpty   666">
+      <created>1657866642039</created>
+      <option name="number" value="00151" />
+      <option name="presentableId" value="LOCAL-00151" />
       <option name="project" value="LOCAL" />
-      <updated>1590550018521</updated>
+      <updated>1657866642040</updated>
     </task>
-    <task id="LOCAL-00014" summary="增加新的算法">
-      <created>1590634893663</created>
-      <option name="number" value="00014" />
-      <option name="presentableId" value="LOCAL-00014" />
+    <task id="LOCAL-00152" summary="https://leetcode.cn/problems/reverse-bits-lcci">
+      <created>1658151684076</created>
+      <option name="number" value="00152" />
+      <option name="presentableId" value="LOCAL-00152" />
       <option name="project" value="LOCAL" />
-      <updated>1590634893663</updated>
+      <updated>1658151684077</updated>
     </task>
-    <task id="LOCAL-00015" summary="增加学习">
-      <created>1590638518393</created>
-      <option name="number" value="00015" />
-      <option name="presentableId" value="LOCAL-00015" />
+    <task id="LOCAL-00153" summary="    https://leetcode.cn/problems/is-subsequence/solution/pan-duan-zi-xu-lie-dong-tai-gui-hua-by-b-enns/">
+      <created>1658236508506</created>
+      <option name="number" value="00153" />
+      <option name="presentableId" value="LOCAL-00153" />
       <option name="project" value="LOCAL" />
-      <updated>1590638518393</updated>
+      <updated>1658236508507</updated>
     </task>
-    <task id="LOCAL-00016" summary="增加学习">
-      <created>1590651180470</created>
-      <option name="number" value="00016" />
-      <option name="presentableId" value="LOCAL-00016" />
+    <task id="LOCAL-00154" summary="https://leetcode.cn/problems/is-subsequence/  v2">
+      <created>1658241512677</created>
+      <option name="number" value="00154" />
+      <option name="presentableId" value="LOCAL-00154" />
       <option name="project" value="LOCAL" />
-      <updated>1590651180470</updated>
+      <updated>1658241512677</updated>
     </task>
-    <task id="LOCAL-00017" summary="增加学习算法">
-      <created>1590715854732</created>
-      <option name="number" value="00017" />
-      <option name="presentableId" value="LOCAL-00017" />
+    <task id="LOCAL-00155" summary="https://leetcode.cn/problems/shift-2d-grid">
+      <created>1658414935628</created>
+      <option name="number" value="00155" />
+      <option name="presentableId" value="LOCAL-00155" />
       <option name="project" value="LOCAL" />
-      <updated>1590715854732</updated>
+      <updated>1658414935628</updated>
     </task>
-    <task id="LOCAL-00018" summary="增加算法学习">
-      <created>1590725533196</created>
-      <option name="number" value="00018" />
-      <option name="presentableId" value="LOCAL-00018" />
+    <task id="LOCAL-00156" summary="https://leetcode.cn/problems/shift-2d-grid v2">
+      <created>1658416304679</created>
+      <option name="number" value="00156" />
+      <option name="presentableId" value="LOCAL-00156" />
       <option name="project" value="LOCAL" />
-      <updated>1590725533196</updated>
+      <updated>1658416304679</updated>
     </task>
-    <task id="LOCAL-00019" summary="增加学习">
-      <created>1590749446252</created>
-      <option name="number" value="00019" />
-      <option name="presentableId" value="LOCAL-00019" />
+    <task id="LOCAL-00157" summary="https://leetcode.cn/problems/min-cost-climbing-stairs/">
+      <created>1658489972729</created>
+      <option name="number" value="00157" />
+      <option name="presentableId" value="LOCAL-00157" />
       <option name="project" value="LOCAL" />
-      <updated>1590749446252</updated>
+      <updated>1658489972729</updated>
     </task>
-    <task id="LOCAL-00020" summary="增加算法学习">
-      <created>1590977331904</created>
-      <option name="number" value="00020" />
-      <option name="presentableId" value="LOCAL-00020" />
+    <task id="LOCAL-00158" summary="https://leetcode.cn/problems/min-cost-climbing-stairs/  v2">
+      <created>1658732619435</created>
+      <option name="number" value="00158" />
+      <option name="presentableId" value="LOCAL-00158" />
       <option name="project" value="LOCAL" />
-      <updated>1590977331904</updated>
+      <updated>1658732619435</updated>
     </task>
-    <task id="LOCAL-00021" summary="增加学习">
-      <created>1591021879046</created>
-      <option name="number" value="00021" />
-      <option name="presentableId" value="LOCAL-00021" />
+    <task id="LOCAL-00159" summary="https://leetcode.cn/problems/contiguous-sequence-lcci">
+      <created>1658826353040</created>
+      <option name="number" value="00159" />
+      <option name="presentableId" value="LOCAL-00159" />
       <option name="project" value="LOCAL" />
-      <updated>1591021879046</updated>
+      <updated>1658826353040</updated>
     </task>
-    <task id="LOCAL-00022" summary="增加算法学习">
-      <created>1591192429020</created>
-      <option name="number" value="00022" />
-      <option name="presentableId" value="LOCAL-00022" />
+    <task id="LOCAL-00160" summary="https://leetcode.cn/problems/fei-bo-na-qi-shu-lie-lcof">
+      <created>1658840551182</created>
+      <option name="number" value="00160" />
+      <option name="presentableId" value="LOCAL-00160" />
       <option name="project" value="LOCAL" />
-      <updated>1591192429020</updated>
+      <updated>1658840551182</updated>
     </task>
-    <task id="LOCAL-00023" summary="增加动态规划学习">
-      <created>1591342755855</created>
-      <option name="number" value="00023" />
-      <option name="presentableId" value="LOCAL-00023" />
+    <task id="LOCAL-00161" summary="https://leetcode.cn/problems/unique-paths/">
+      <created>1658931224695</created>
+      <option name="number" value="00161" />
+      <option name="presentableId" value="LOCAL-00161" />
       <option name="project" value="LOCAL" />
-      <updated>1591342755855</updated>
+      <updated>1658931224695</updated>
     </task>
-    <task id="LOCAL-00024" summary="增加算法">
-      <created>1591795317321</created>
-      <option name="number" value="00024" />
-      <option name="presentableId" value="LOCAL-00024" />
+    <task id="LOCAL-00162" summary="https://leetcode.cn/problems/JEj789">
+      <created>1659090375741</created>
+      <option name="number" value="00162" />
+      <option name="presentableId" value="LOCAL-00162" />
       <option name="project" value="LOCAL" />
-      <updated>1591795317321</updated>
+      <updated>1659090375741</updated>
     </task>
-    <task id="LOCAL-00025" summary="增加算法学习">
-      <created>1592046314003</created>
-      <option name="number" value="00025" />
-      <option name="presentableId" value="LOCAL-00025" />
+    <task id="LOCAL-00163" summary="https://leetcode.cn/problems/decode-ways/">
+      <created>1659322542813</created>
+      <option name="number" value="00163" />
+      <option name="presentableId" value="LOCAL-00163" />
       <option name="project" value="LOCAL" />
-      <updated>1592046314003</updated>
+      <updated>1659322542814</updated>
     </task>
-    <task id="LOCAL-00026" summary="二分法需要去练习">
-      <created>1592232578403</created>
-      <option name="number" value="00026" />
-      <option name="presentableId" value="LOCAL-00026" />
+    <task id="LOCAL-00164" summary="https://leetcode.cn/problems/interleaving-string/">
+      <created>1659448885948</created>
+      <option name="number" value="00164" />
+      <option name="presentableId" value="LOCAL-00164" />
       <option name="project" value="LOCAL" />
-      <updated>1592232578403</updated>
+      <updated>1659448885948</updated>
     </task>
-    <task id="LOCAL-00027" summary="增加完成dp数组">
-      <created>1592791749286</created>
-      <option name="number" value="00027" />
-      <option name="presentableId" value="LOCAL-00027" />
+    <task id="LOCAL-00165" summary="format">
+      <created>1659493601201</created>
+      <option name="number" value="00165" />
+      <option name="presentableId" value="LOCAL-00165" />
       <option name="project" value="LOCAL" />
-      <updated>1592791749286</updated>
+      <updated>1659493601201</updated>
     </task>
-    <task id="LOCAL-00028" summary="增加学习">
-      <created>1592984389034</created>
-      <option name="number" value="00028" />
-      <option name="presentableId" value="LOCAL-00028" />
+    <task id="LOCAL-00166" summary="code opt">
+      <created>1659494420409</created>
+      <option name="number" value="00166" />
+      <option name="presentableId" value="LOCAL-00166" />
       <option name="project" value="LOCAL" />
-      <updated>1592984389034</updated>
+      <updated>1659494420409</updated>
     </task>
-    <task id="LOCAL-00029" summary="增加算法学习">
-      <created>1593164015805</created>
-      <option name="number" value="00029" />
-      <option name="presentableId" value="LOCAL-00029" />
+    <task id="LOCAL-00167" summary="csdn 反馈问题处理">
+      <created>1659532105652</created>
+      <option name="number" value="00167" />
+      <option name="presentableId" value="LOCAL-00167" />
       <option name="project" value="LOCAL" />
-      <updated>1593164015805</updated>
+      <updated>1659532105653</updated>
     </task>
-    <task id="LOCAL-00030" summary="增加学习">
-      <created>1593166006478</created>
-      <option name="number" value="00030" />
-      <option name="presentableId" value="LOCAL-00030" />
+    <task id="LOCAL-00168" summary="https://leetcode.cn/problems/ones-and-zeroes/">
+      <created>1659617906003</created>
+      <option name="number" value="00168" />
+      <option name="presentableId" value="LOCAL-00168" />
       <option name="project" value="LOCAL" />
-      <updated>1593166006478</updated>
+      <updated>1659617906004</updated>
     </task>
-    <task id="LOCAL-00031" summary="增加学习算法">
-      <created>1593169386902</created>
-      <option name="number" value="00031" />
-      <option name="presentableId" value="LOCAL-00031" />
+    <task id="LOCAL-00169" summary="https://leetcode.cn/problems/beautiful-arrangement/">
+      <created>1659704248459</created>
+      <option name="number" value="00169" />
+      <option name="presentableId" value="LOCAL-00169" />
       <option name="project" value="LOCAL" />
-      <updated>1593169386902</updated>
+      <updated>1659704248459</updated>
     </task>
-    <task id="LOCAL-00032" summary="增加算法学习，动态规划">
-      <created>1593326249138</created>
-      <option name="number" value="00032" />
-      <option name="presentableId" value="LOCAL-00032" />
+    <task id="LOCAL-00170" summary="https://leetcode.cn/problems/beautiful-arrangement/ v2">
+      <created>1659708641591</created>
+      <option name="number" value="00170" />
+      <option name="presentableId" value="LOCAL-00170" />
       <option name="project" value="LOCAL" />
-      <updated>1593326249138</updated>
+      <updated>1659708641591</updated>
     </task>
-    <task id="LOCAL-00033" summary="自己写了一个最长递增子序列的算法，待优化">
-      <created>1593411126785</created>
-      <option name="number" value="00033" />
-      <option name="presentableId" value="LOCAL-00033" />
+    <task id="LOCAL-00171" summary="https://leetcode.cn/problems/integer-replacement">
+      <created>1660053123377</created>
+      <option name="number" value="00171" />
+      <option name="presentableId" value="LOCAL-00171" />
       <option name="project" value="LOCAL" />
-      <updated>1593411126785</updated>
+      <updated>1660053123377</updated>
     </task>
-    <task id="LOCAL-00034" summary="增加学习算法">
-      <created>1593416661059</created>
-      <option name="number" value="00034" />
-      <option name="presentableId" value="LOCAL-00034" />
+    <task id="LOCAL-00172" summary="https://leetcode.cn/problems/integer-replacement&#10;v2">
+      <created>1660055598200</created>
+      <option name="number" value="00172" />
+      <option name="presentableId" value="LOCAL-00172" />
       <option name="project" value="LOCAL" />
-      <updated>1593416661059</updated>
+      <updated>1660055598200</updated>
     </task>
-    <task id="LOCAL-00035" summary="提交代码">
-      <created>1593693513558</created>
-      <option name="number" value="00035" />
-      <option name="presentableId" value="LOCAL-00035" />
+    <task id="LOCAL-00173" summary="https://leetcode.cn/problems/jump-game/">
+      <created>1660139287795</created>
+      <option name="number" value="00173" />
+      <option name="presentableId" value="LOCAL-00173" />
       <option name="project" value="LOCAL" />
-      <updated>1593693513558</updated>
+      <updated>1660139287795</updated>
     </task>
-    <task id="LOCAL-00036" summary="完善代码">
-      <created>1593695270737</created>
-      <option name="number" value="00036" />
-      <option name="presentableId" value="LOCAL-00036" />
+    <task id="LOCAL-00174" summary="https://leetcode.cn/problems/jump-game-ii/">
+      <created>1660312046283</created>
+      <option name="number" value="00174" />
+      <option name="presentableId" value="LOCAL-00174" />
       <option name="project" value="LOCAL" />
-      <updated>1593695270737</updated>
+      <updated>1660312046284</updated>
     </task>
-    <task id="LOCAL-00037" summary="增加学习算法">
-      <created>1593696905289</created>
-      <option name="number" value="00037" />
-      <option name="presentableId" value="LOCAL-00037" />
+    <task id="LOCAL-00175" summary="https://leetcode.cn/problems/jump-game-ii/">
+      <created>1660572956394</created>
+      <option name="number" value="00175" />
+      <option name="presentableId" value="LOCAL-00175" />
       <option name="project" value="LOCAL" />
-      <updated>1593696905289</updated>
+      <updated>1660572956395</updated>
     </task>
-    <task id="LOCAL-00038" summary="增加学习算法">
-      <created>1594088640938</created>
-      <option name="number" value="00038" />
-      <option name="presentableId" value="LOCAL-00038" />
+    <task id="LOCAL-00176" summary="https://leetcode.cn/problems/find-kth-bit-in-nth-binary-string/">
+      <created>1660572997397</created>
+      <option name="number" value="00176" />
+      <option name="presentableId" value="LOCAL-00176" />
       <option name="project" value="LOCAL" />
-      <updated>1594088640938</updated>
+      <updated>1660572997397</updated>
     </task>
-    <task id="LOCAL-00039" summary="split 函数  坑蛮多的">
-      <created>1594720994347</created>
-      <option name="number" value="00039" />
-      <option name="presentableId" value="LOCAL-00039" />
+    <task id="LOCAL-00177" summary="https://leetcode.cn/problems/find-kth-bit-in-nth-binary-string/">
+      <created>1660662118017</created>
+      <option name="number" value="00177" />
+      <option name="presentableId" value="LOCAL-00177" />
       <option name="project" value="LOCAL" />
-      <updated>1594720994347</updated>
+      <updated>1660662118017</updated>
     </task>
-    <task id="LOCAL-00040" summary="增加split 学习">
-      <created>1594728161175</created>
-      <option name="number" value="00040" />
-      <option name="presentableId" value="LOCAL-00040" />
+    <task id="LOCAL-00178" summary="    https://leetcode.cn/problems/running-sum-of-1d-array/">
+      <created>1660744872067</created>
+      <option name="number" value="00178" />
+      <option name="presentableId" value="LOCAL-00178" />
       <option name="project" value="LOCAL" />
-      <updated>1594728161175</updated>
+      <updated>1660744872067</updated>
     </task>
-    <task id="LOCAL-00041" summary="增加学习算法">
-      <created>1594730346949</created>
-      <option name="number" value="00041" />
-      <option name="presentableId" value="LOCAL-00041" />
+    <task id="LOCAL-00179" summary="    https://leetcode.cn/problems/find-pivot-index/">
+      <created>1660744936778</created>
+      <option name="number" value="00179" />
+      <option name="presentableId" value="LOCAL-00179" />
       <option name="project" value="LOCAL" />
-      <updated>1594730346949</updated>
+      <updated>1660744936778</updated>
     </task>
-    <task id="LOCAL-00042" summary="增加学习算法">
-      <created>1594777268481</created>
-      <option name="number" value="00042" />
-      <option name="presentableId" value="LOCAL-00042" />
+    <task id="LOCAL-00180" summary="    https://leetcode.cn/problems/find-pivot-index/">
+      <created>1661141675270</created>
+      <option name="number" value="00180" />
+      <option name="presentableId" value="LOCAL-00180" />
       <option name="project" value="LOCAL" />
-      <updated>1594777268481</updated>
+      <updated>1661141675271</updated>
     </task>
-    <task id="LOCAL-00043" summary="增加学习算法">
-      <created>1594984292712</created>
-      <option name="number" value="00043" />
-      <option name="presentableId" value="LOCAL-00043" />
+    <task id="LOCAL-00181" summary="https://leetcode.cn/problems/smallest-subtree-with-all-the-deepest-nodes">
+      <created>1661268751715</created>
+      <option name="number" value="00181" />
+      <option name="presentableId" value="LOCAL-00181" />
       <option name="project" value="LOCAL" />
-      <updated>1594984292712</updated>
+      <updated>1661268751716</updated>
     </task>
-    <task id="LOCAL-00044" summary="增加豆果api">
-      <created>1596005399271</created>
-      <option name="number" value="00044" />
-      <option name="presentableId" value="LOCAL-00044" />
+    <task id="LOCAL-00182" summary="https://leetcode.cn/problems/determine-whether-matrix-can-be-obtained-by-rotation">
+      <created>1661351467311</created>
+      <option name="number" value="00182" />
+      <option name="presentableId" value="LOCAL-00182" />
       <option name="project" value="LOCAL" />
-      <updated>1596005399271</updated>
+      <updated>1661351467311</updated>
     </task>
-    <option name="localTasksCounter" value="45" />
+    <task id="LOCAL-00183" summary="https://leetcode.cn/problems/time-needed-to-rearrange-a-binary-string">
+      <created>1661428691693</created>
+      <option name="number" value="00183" />
+      <option name="presentableId" value="LOCAL-00183" />
+      <option name="project" value="LOCAL" />
+      <updated>1661428691693</updated>
+    </task>
+    <task id="LOCAL-00184" summary="https://leetcode.cn/problems/time-needed-to-rearrange-a-binary-string 2">
+      <created>1661497228022</created>
+      <option name="number" value="00184" />
+      <option name="presentableId" value="LOCAL-00184" />
+      <option name="project" value="LOCAL" />
+      <updated>1661497228022</updated>
+    </task>
+    <task id="LOCAL-00185" summary="https://leetcode.cn/problems/ugly-number/">
+      <created>1661520207770</created>
+      <option name="number" value="00185" />
+      <option name="presentableId" value="LOCAL-00185" />
+      <option name="project" value="LOCAL" />
+      <updated>1661520207771</updated>
+    </task>
+    <task id="LOCAL-00186" summary="https://leetcode.cn/problems/number-of-good-pairs/">
+      <created>1661675313187</created>
+      <option name="number" value="00186" />
+      <option name="presentableId" value="LOCAL-00186" />
+      <option name="project" value="LOCAL" />
+      <updated>1661675313187</updated>
+    </task>
+    <task id="LOCAL-00187" summary="https://leetcode.cn/problems/binary-gap/">
+      <created>1661689873244</created>
+      <option name="number" value="00187" />
+      <option name="presentableId" value="LOCAL-00187" />
+      <option name="project" value="LOCAL" />
+      <updated>1661689873244</updated>
+    </task>
+    <option name="localTasksCounter" value="188" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -571,6 +599,11 @@
         <entry key="1">
           <value>
             <State>
+              <option name="CUSTOM_BOOLEAN_PROPERTIES">
+                <map>
+                  <entry key="Show.Git.Branches" value="false" />
+                </map>
+              </option>
               <option name="FILTERS">
                 <map>
                   <entry key="branch">
@@ -590,7 +623,7 @@
             <State>
               <option name="CUSTOM_BOOLEAN_PROPERTIES">
                 <map>
-                  <entry key="Show.Git.Branches" value="true" />
+                  <entry key="Show.Git.Branches" value="false" />
                 </map>
               </option>
               <option name="FILTERS">
@@ -598,7 +631,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="master" />
+                        <option value="HEAD" />
                       </list>
                     </value>
                   </entry>
@@ -632,327 +665,703 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="增加：第二天的练习" />
-    <MESSAGE value="增加：第三天的练习" />
-    <MESSAGE value="增加：工作路径的修改" />
-    <MESSAGE value="增加测试代码" />
-    <MESSAGE value="增加新的算法,快乐数" />
-    <MESSAGE value="宝石与石头" />
-    <MESSAGE value="四数相加" />
-    <MESSAGE value="字符异位" />
-    <MESSAGE value="新增算法" />
-    <MESSAGE value="增加新的算法" />
-    <MESSAGE value="增加动态规划学习" />
-    <MESSAGE value="增加算法" />
-    <MESSAGE value="二分法需要去练习" />
-    <MESSAGE value="增加完成dp数组" />
-    <MESSAGE value="增加算法学习" />
-    <MESSAGE value="增加学习" />
-    <MESSAGE value="增加算法学习，动态规划" />
-    <MESSAGE value="自己写了一个最长递增子序列的算法，待优化" />
-    <MESSAGE value="提交代码" />
-    <MESSAGE value="完善代码" />
-    <MESSAGE value="split 函数  坑蛮多的" />
-    <MESSAGE value="增加split 学习" />
-    <MESSAGE value="增加学习算法" />
-    <MESSAGE value="增加豆果api" />
-    <option name="LAST_COMMIT_MESSAGE" value="增加豆果api" />
+    <MESSAGE value="https://leetcode.cn/problems/fei-bo-na-qi-shu-lie-lcof" />
+    <MESSAGE value="https://leetcode.cn/problems/unique-paths/" />
+    <MESSAGE value="https://leetcode.cn/problems/JEj789" />
+    <MESSAGE value="https://leetcode.cn/problems/decode-ways/" />
+    <MESSAGE value="https://leetcode.cn/problems/interleaving-string/" />
+    <MESSAGE value="format" />
+    <MESSAGE value="code opt" />
+    <MESSAGE value="csdn 反馈问题处理" />
+    <MESSAGE value="https://leetcode.cn/problems/ones-and-zeroes/" />
+    <MESSAGE value="https://leetcode.cn/problems/beautiful-arrangement/" />
+    <MESSAGE value="https://leetcode.cn/problems/beautiful-arrangement/ v2" />
+    <MESSAGE value="https://leetcode.cn/problems/integer-replacement" />
+    <MESSAGE value="https://leetcode.cn/problems/integer-replacement&#10;v2" />
+    <MESSAGE value="https://leetcode.cn/problems/jump-game/" />
+    <MESSAGE value="https://leetcode.cn/problems/jump-game-ii/" />
+    <MESSAGE value="https://leetcode.cn/problems/find-kth-bit-in-nth-binary-string/" />
+    <MESSAGE value="    https://leetcode.cn/problems/running-sum-of-1d-array/" />
+    <MESSAGE value="    https://leetcode.cn/problems/find-pivot-index/" />
+    <MESSAGE value="https://leetcode.cn/problems/smallest-subtree-with-all-the-deepest-nodes" />
+    <MESSAGE value="https://leetcode.cn/problems/determine-whether-matrix-can-be-obtained-by-rotation" />
+    <MESSAGE value="https://leetcode.cn/problems/time-needed-to-rearrange-a-binary-string" />
+    <MESSAGE value="https://leetcode.cn/problems/time-needed-to-rearrange-a-binary-string 2" />
+    <MESSAGE value="https://leetcode.cn/problems/ugly-number/" />
+    <MESSAGE value="https://leetcode.cn/problems/number-of-good-pairs/" />
+    <MESSAGE value="https://leetcode.cn/problems/binary-gap/" />
+    <option name="LAST_COMMIT_MESSAGE" value="https://leetcode.cn/problems/binary-gap/" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/com/xinyu/test/TestArray.java</url>
+          <url>file://$PROJECT_DIR$/src/main/java/com/xinyu/test/TestArray.java</url>
           <line>57</line>
           <option name="timeStamp" value="5" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/com/xinyu/test/TestArray.java</url>
+          <url>file://$PROJECT_DIR$/src/main/java/com/xinyu/test/TestArray.java</url>
           <line>73</line>
           <option name="timeStamp" value="6" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/com/xinyu/test/TestArray.java</url>
+          <url>file://$PROJECT_DIR$/src/main/java/com/xinyu/test/TestArray.java</url>
           <line>233</line>
           <option name="timeStamp" value="10" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/com/xinyu/test/TestArray.java</url>
+          <url>file://$PROJECT_DIR$/src/main/java/com/xinyu/test/TestArray.java</url>
           <line>391</line>
           <option name="timeStamp" value="11" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/com/xinyu/test/TestArray.java</url>
+          <url>file://$PROJECT_DIR$/src/main/java/com/xinyu/test/TestArray.java</url>
           <line>394</line>
           <option name="timeStamp" value="12" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/com/xinyu/test/TestArray.java</url>
+          <url>file://$PROJECT_DIR$/src/main/java/com/xinyu/test/TestArray.java</url>
           <line>293</line>
           <option name="timeStamp" value="14" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/com/xinyu/test/TestArray.java</url>
+          <url>file://$PROJECT_DIR$/src/main/java/com/xinyu/test/TestArray.java</url>
           <line>512</line>
           <option name="timeStamp" value="22" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/com/xinyu/test/TestArray.java</url>
+          <url>file://$PROJECT_DIR$/src/main/java/com/xinyu/test/TestArray.java</url>
           <line>487</line>
           <option name="timeStamp" value="23" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/com/xinyu/test/TestArray.java</url>
+          <url>file://$PROJECT_DIR$/src/main/java/com/xinyu/test/TestArray.java</url>
           <line>486</line>
           <option name="timeStamp" value="24" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/com/xinyu/test/TestArray.java</url>
+          <url>file://$PROJECT_DIR$/src/main/java/com/xinyu/test/TestArray.java</url>
           <line>514</line>
           <option name="timeStamp" value="25" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/com/xinyu/test/TestArray.java</url>
+          <url>file://$PROJECT_DIR$/src/main/java/com/xinyu/test/TestArray.java</url>
           <line>16</line>
           <option name="timeStamp" value="27" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/com/xinyu/test/TestArray.java</url>
+          <url>file://$PROJECT_DIR$/src/main/java/com/xinyu/test/TestArray.java</url>
           <line>503</line>
           <option name="timeStamp" value="29" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/com/xinyu/test/TestArray.java</url>
+          <url>file://$PROJECT_DIR$/src/main/java/com/xinyu/test/TestArray.java</url>
           <line>599</line>
           <option name="timeStamp" value="30" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/com/xinyu/test/TestArray.java</url>
+          <url>file://$PROJECT_DIR$/src/main/java/com/xinyu/test/TestArray.java</url>
           <line>584</line>
           <option name="timeStamp" value="31" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/com/xinyu/test/TestArray.java</url>
+          <url>file://$PROJECT_DIR$/src/main/java/com/xinyu/test/TestArray.java</url>
           <line>637</line>
           <option name="timeStamp" value="32" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/com/xinyu/test/TestArray32.java</url>
+          <url>file://$PROJECT_DIR$/src/main/java/com/xinyu/test/TestArray32.java</url>
           <line>44</line>
           <option name="timeStamp" value="33" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/com/xinyu/test/TestArray32.java</url>
+          <url>file://$PROJECT_DIR$/src/main/java/com/xinyu/test/TestArray32.java</url>
           <line>40</line>
           <option name="timeStamp" value="34" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/com/xinyu/test/TestArray32.java</url>
+          <url>file://$PROJECT_DIR$/src/main/java/com/xinyu/test/TestArray32.java</url>
           <line>51</line>
           <option name="timeStamp" value="35" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/com/xinyu/test/TestArray34.java</url>
+          <url>file://$PROJECT_DIR$/src/main/java/com/xinyu/test/TestArray34.java</url>
           <line>69</line>
           <option name="timeStamp" value="40" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/com/xinyu/test/TestArray34.java</url>
+          <url>file://$PROJECT_DIR$/src/main/java/com/xinyu/test/TestArray34.java</url>
           <line>63</line>
           <option name="timeStamp" value="41" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/com/xinyu/test/TestArray36.java</url>
+          <url>file://$PROJECT_DIR$/src/main/java/com/xinyu/test/TestArray36.java</url>
           <line>30</line>
           <option name="timeStamp" value="42" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/com/xinyu/test/TestArray37.java</url>
+          <url>file://$PROJECT_DIR$/src/main/java/com/xinyu/test/TestArray37.java</url>
           <line>16</line>
           <option name="timeStamp" value="43" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/com/xinyu/test/TestArray38.java</url>
+          <url>file://$PROJECT_DIR$/src/main/java/com/xinyu/test/TestArray38.java</url>
           <line>67</line>
           <option name="timeStamp" value="54" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/com/xinyu/test/TestPriorityQueue.java</url>
+          <url>file://$PROJECT_DIR$/src/main/java/com/xinyu/test/TestPriorityQueue.java</url>
           <line>15</line>
           <option name="timeStamp" value="55" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/com/xinyu/test/TestArray39.java</url>
+          <url>file://$PROJECT_DIR$/src/main/java/com/xinyu/test/TestArray39.java</url>
           <line>23</line>
           <option name="timeStamp" value="58" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/com/xinyu/test/Test40.java</url>
-          <line>13</line>
+          <url>file://$PROJECT_DIR$/src/main/java/com/xinyu/test/Test40.java</url>
+          <line>11</line>
           <option name="timeStamp" value="59" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/com/xinyu/test/TestArray41.java</url>
+          <url>file://$PROJECT_DIR$/src/main/java/com/xinyu/test/TestArray41.java</url>
           <line>44</line>
           <option name="timeStamp" value="60" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/com/xinyu/test/TestArray43.java</url>
+          <url>file://$PROJECT_DIR$/src/main/java/com/xinyu/test/TestArray43.java</url>
           <line>37</line>
           <option name="timeStamp" value="61" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/com/xinyu/test/TestArray48.java</url>
+          <url>file://$PROJECT_DIR$/src/main/java/com/xinyu/test/TestArray48.java</url>
           <line>109</line>
           <option name="timeStamp" value="64" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/com/xinyu/test/TestArray48.java</url>
+          <url>file://$PROJECT_DIR$/src/main/java/com/xinyu/test/TestArray48.java</url>
           <line>100</line>
           <option name="timeStamp" value="65" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/com/xinyu/test/TestArray49.java</url>
+          <url>file://$PROJECT_DIR$/src/main/java/com/xinyu/test/TestArray49.java</url>
           <line>58</line>
           <option name="timeStamp" value="69" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/com/xinyu/test/TestArray49.java</url>
+          <url>file://$PROJECT_DIR$/src/main/java/com/xinyu/test/TestArray49.java</url>
           <line>45</line>
           <option name="timeStamp" value="70" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/com/xinyu/test/TestArray49.java</url>
+          <url>file://$PROJECT_DIR$/src/main/java/com/xinyu/test/TestArray49.java</url>
           <line>63</line>
           <option name="timeStamp" value="71" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/com/xinyu/test/TestArray50.java</url>
+          <url>file://$PROJECT_DIR$/src/main/java/com/xinyu/test/TestArray50.java</url>
           <line>64</line>
           <option name="timeStamp" value="77" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/com/xinyu/test/TestArray50.java</url>
+          <url>file://$PROJECT_DIR$/src/main/java/com/xinyu/test/TestArray50.java</url>
           <line>59</line>
           <option name="timeStamp" value="78" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/com/xinyu/test/TestArray53.java</url>
+          <url>file://$PROJECT_DIR$/src/main/java/com/xinyu/test/TestArray53.java</url>
           <line>34</line>
           <option name="timeStamp" value="79" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/com/xinyu/test/TestArray54.java</url>
+          <url>file://$PROJECT_DIR$/src/main/java/com/xinyu/test/TestArray54.java</url>
           <line>71</line>
           <option name="timeStamp" value="83" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/com/xinyu/test/TestArray54.java</url>
+          <url>file://$PROJECT_DIR$/src/main/java/com/xinyu/test/TestArray54.java</url>
           <line>56</line>
           <option name="timeStamp" value="84" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/com/xinyu/test/TestArray56.java</url>
+          <url>file://$PROJECT_DIR$/src/main/java/com/xinyu/test/TestArray56.java</url>
           <line>32</line>
           <option name="timeStamp" value="85" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/com/xinyu/test/TestArray58.java</url>
+          <url>file://$PROJECT_DIR$/src/main/java/com/xinyu/test/TestArray58.java</url>
           <line>86</line>
           <option name="timeStamp" value="86" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/com/xinyu/test/TestArray58.java</url>
+          <url>file://$PROJECT_DIR$/src/main/java/com/xinyu/test/TestArray58.java</url>
           <line>73</line>
           <option name="timeStamp" value="87" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/com/xinyu/test/TestArray59.java</url>
+          <url>file://$PROJECT_DIR$/src/main/java/com/xinyu/test/TestArray59.java</url>
           <line>150</line>
           <option name="timeStamp" value="88" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/com/xinyu/test/TestArray59.java</url>
+          <url>file://$PROJECT_DIR$/src/main/java/com/xinyu/test/TestArray59.java</url>
           <line>133</line>
           <option name="timeStamp" value="89" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/com/xinyu/test/TestArray59.java</url>
+          <url>file://$PROJECT_DIR$/src/main/java/com/xinyu/test/TestArray59.java</url>
           <line>92</line>
           <option name="timeStamp" value="90" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/com/xinyu/test/TestString.java</url>
+          <url>file://$PROJECT_DIR$/src/main/java/com/xinyu/test/TestString.java</url>
           <line>83</line>
           <option name="timeStamp" value="102" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/com/xinyu/test/TestString.java</url>
+          <url>file://$PROJECT_DIR$/src/main/java/com/xinyu/test/TestString.java</url>
           <line>72</line>
           <option name="timeStamp" value="104" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/com/xinyu/test/TestString.java</url>
+          <url>file://$PROJECT_DIR$/src/main/java/com/xinyu/test/TestString.java</url>
           <line>60</line>
           <option name="timeStamp" value="105" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/com/xinyu/test/TestString2.java</url>
+          <url>file://$PROJECT_DIR$/src/main/java/com/xinyu/test/TestString2.java</url>
           <line>81</line>
           <option name="timeStamp" value="106" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/com/xinyu/test/TestString4.java</url>
+          <url>file://$PROJECT_DIR$/src/main/java/com/xinyu/test/TestString4.java</url>
           <line>152</line>
           <option name="timeStamp" value="107" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/com/xinyu/test/TestString5.java</url>
+          <url>file://$PROJECT_DIR$/src/main/java/com/xinyu/test/TestString5.java</url>
           <line>63</line>
           <option name="timeStamp" value="108" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/com/xinyu/test/TestArray60.java</url>
+          <url>file://$PROJECT_DIR$/src/main/java/com/xinyu/test/TestArray60.java</url>
           <line>57</line>
           <option name="timeStamp" value="109" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/com/xinyu/test/ExcelTest.java</url>
+          <url>file://$PROJECT_DIR$/src/main/java/com/xinyu/test/ExcelTest.java</url>
           <line>10</line>
           <option name="timeStamp" value="110" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/com/xinyu/test/java/thread/ThreadTest.java</url>
+          <url>file://$PROJECT_DIR$/src/main/java/com/xinyu/test/java/thread/ThreadTest.java</url>
           <line>22</line>
           <option name="timeStamp" value="111" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/com/xinyu/test/java/thread/ThreadTest.java</url>
+          <url>file://$PROJECT_DIR$/src/main/java/com/xinyu/test/java/thread/ThreadTest.java</url>
           <line>17</line>
           <option name="timeStamp" value="112" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/com/xinyu/test/java/sort/BubbleSort.java</url>
+          <url>file://$PROJECT_DIR$/src/main/java/com/xinyu/test/java/sort/BubbleSort.java</url>
           <line>19</line>
           <option name="timeStamp" value="116" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/com/xinyu/test/TestInt.java</url>
+          <url>file://$PROJECT_DIR$/src/main/java/com/xinyu/test/TestInt.java</url>
           <line>48</line>
           <option name="timeStamp" value="117" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/com/xinyu/test/TestInt.java</url>
+          <url>file://$PROJECT_DIR$/src/main/java/com/xinyu/test/TestInt.java</url>
           <line>7</line>
           <option name="timeStamp" value="118" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/com/xinyu/test/TestInt.java</url>
+          <url>file://$PROJECT_DIR$/src/main/java/com/xinyu/test/TestInt.java</url>
           <line>55</line>
           <option name="timeStamp" value="119" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/xinyu/test/TestArray71.java</url>
+          <line>62</line>
+          <option name="timeStamp" value="121" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/xinyu/test/TestString12.java</url>
+          <line>52</line>
+          <option name="timeStamp" value="124" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/xinyu/test/TestArray113.java</url>
+          <line>40</line>
+          <option name="timeStamp" value="126" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/xinyu/test/TestString13.java</url>
+          <line>55</line>
+          <option name="timeStamp" value="130" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/xinyu/test/TestString14.java</url>
+          <line>48</line>
+          <option name="timeStamp" value="134" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/xinyu/test/TestString14.java</url>
+          <line>55</line>
+          <option name="timeStamp" value="136" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/xinyu/test/TestInt7.java</url>
+          <line>53</line>
+          <option name="timeStamp" value="137" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <condition expression="i == 203897" language="JAVA" />
+          <url>file://$PROJECT_DIR$/src/main/java/com/xinyu/test/TestInt9.java</url>
+          <line>63</line>
+          <option name="timeStamp" value="142" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/xinyu/test/TestTreeNode2.java</url>
+          <line>60</line>
+          <option name="timeStamp" value="143" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/xinyu/test/TestNode11.kt</url>
+          <line>21</line>
+          <option name="timeStamp" value="144" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/xinyu/test/TestNode12.kt</url>
+          <line>18</line>
+          <option name="timeStamp" value="145" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/xinyu/test/TestNode16.kt</url>
+          <line>62</line>
+          <option name="timeStamp" value="146" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/xinyu/test/TestNode16.kt</url>
+          <line>104</line>
+          <option name="timeStamp" value="149" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/xinyu/test/TestNode16.kt</url>
+          <line>103</line>
+          <option name="timeStamp" value="150" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/xinyu/test/TestNode16.kt</url>
+          <line>90</line>
+          <option name="timeStamp" value="152" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/xinyu/test/TestNode16.kt</url>
+          <line>91</line>
+          <option name="timeStamp" value="153" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/xinyu/test/TestNode16.kt</url>
+          <line>101</line>
+          <option name="timeStamp" value="154" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/xinyu/test/TestNode18.kt</url>
+          <line>61</line>
+          <option name="timeStamp" value="156" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/xinyu/test/TestNode18.kt</url>
+          <line>65</line>
+          <option name="timeStamp" value="157" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/xinyu/test/TestNode20.kt</url>
+          <line>58</line>
+          <option name="timeStamp" value="159" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/xinyu/test/TestNode20.kt</url>
+          <line>45</line>
+          <option name="timeStamp" value="160" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/xinyu/test/TestNode26.kt</url>
+          <line>64</line>
+          <option name="timeStamp" value="161" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/xinyu/test/TestNode30.kt</url>
+          <line>56</line>
+          <option name="timeStamp" value="162" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/xinyu/test/TestNode30.kt</url>
+          <line>40</line>
+          <option name="timeStamp" value="163" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/xinyu/test/TestNode33.kt</url>
+          <line>71</line>
+          <option name="timeStamp" value="169" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/xinyu/test/TestNode33.kt</url>
+          <line>52</line>
+          <option name="timeStamp" value="174" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/xinyu/test/TestNode35.kt</url>
+          <line>35</line>
+          <option name="timeStamp" value="175" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/xinyu/test/TestNode35.kt</url>
+          <line>51</line>
+          <option name="timeStamp" value="176" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/xinyu/test/TestNode35.kt</url>
+          <line>57</line>
+          <option name="timeStamp" value="177" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/xinyu/test/TestNode35.kt</url>
+          <line>76</line>
+          <option name="timeStamp" value="179" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/xinyu/test/TestNode35.kt</url>
+          <line>83</line>
+          <option name="timeStamp" value="181" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/xinyu/test/TestNode35.kt</url>
+          <line>92</line>
+          <option name="timeStamp" value="185" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/xinyu/test/TestNode37.kt</url>
+          <line>251</line>
+          <option name="timeStamp" value="202" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/xinyu/test/TestNode37.kt</url>
+          <line>271</line>
+          <option name="timeStamp" value="203" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/xinyu/test/TestNode37.kt</url>
+          <line>270</line>
+          <option name="timeStamp" value="204" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/xinyu/test/TestNode37.kt</url>
+          <line>269</line>
+          <option name="timeStamp" value="205" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/xinyu/test/TestNode40.kt</url>
+          <line>237</line>
+          <option name="timeStamp" value="210" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/xinyu/test/TestNode40.kt</url>
+          <line>187</line>
+          <option name="timeStamp" value="211" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/xinyu/test/TestArray117.kt</url>
+          <line>39</line>
+          <option name="timeStamp" value="212" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/xinyu/test/TestArray122.kt</url>
+          <line>50</line>
+          <option name="timeStamp" value="213" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/xinyu/test/TestArray122.kt</url>
+          <line>52</line>
+          <option name="timeStamp" value="214" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/xinyu/test/TestInt13.kt</url>
+          <line>35</line>
+          <properties>
+            <option name="lambda-ordinal" value="-1" />
+          </properties>
+          <option name="timeStamp" value="215" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/xinyu/test/TestInt15.kt</url>
+          <line>62</line>
+          <option name="timeStamp" value="218" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/xinyu/test/TestInt15.kt</url>
+          <line>94</line>
+          <option name="timeStamp" value="219" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/xinyu/test/TestInt16.kt</url>
+          <line>27</line>
+          <option name="timeStamp" value="220" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="kotlin-line">
+          <condition expression="i == 31" language="kotlin" />
+          <url>file://$PROJECT_DIR$/src/main/java/com/xinyu/test/TestInt16.kt</url>
+          <line>32</line>
+          <option name="timeStamp" value="221" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/xinyu/test/TestArray124.kt</url>
+          <line>42</line>
+          <option name="timeStamp" value="224" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/xinyu/test/TestArray126.kt</url>
+          <line>21</line>
+          <option name="timeStamp" value="226" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/xinyu/test/TestString17.kt</url>
+          <line>50</line>
+          <option name="timeStamp" value="227" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/xinyu/test/TestString17.kt</url>
+          <line>75</line>
+          <option name="timeStamp" value="228" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/xinyu/test/TestString18.kt</url>
+          <line>68</line>
+          <option name="timeStamp" value="229" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/xinyu/test/TestString18.kt</url>
+          <line>54</line>
+          <option name="timeStamp" value="234" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/xinyu/test/TestArray129.kt</url>
+          <line>73</line>
+          <option name="timeStamp" value="235" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/xinyu/test/TestArray129.kt</url>
+          <line>67</line>
+          <option name="timeStamp" value="236" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/xinyu/test/TestArray129.kt</url>
+          <line>55</line>
+          <option name="timeStamp" value="238" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/xinyu/test/TestInt22.kt</url>
+          <line>46</line>
+          <option name="timeStamp" value="242" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/xinyu/test/TestInt23.kt</url>
+          <line>47</line>
+          <option name="timeStamp" value="246" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/xinyu/test/TestArray130.kt</url>
+          <line>60</line>
+          <option name="timeStamp" value="250" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/xinyu/test/TestArray130.kt</url>
+          <line>62</line>
+          <option name="timeStamp" value="251" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/xinyu/test/TestArray131.kt</url>
+          <line>48</line>
+          <option name="timeStamp" value="254" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/xinyu/test/TestArray131.kt</url>
+          <line>40</line>
+          <option name="timeStamp" value="256" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/xinyu/test/TestArray131.kt</url>
+          <line>62</line>
+          <option name="timeStamp" value="257" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/xinyu/test/TestInt25.kt</url>
+          <line>87</line>
+          <option name="timeStamp" value="258" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/xinyu/test/TestArray133.kt</url>
+          <line>56</line>
+          <option name="timeStamp" value="260" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/xinyu/test/TestNode46.kt</url>
+          <line>42</line>
+          <option name="timeStamp" value="261" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/xinyu/test/TestString19.kt</url>
+          <line>48</line>
+          <option name="timeStamp" value="262" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/xinyu/test/TestString19.kt</url>
+          <line>65</line>
+          <option name="timeStamp" value="263" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/xinyu/test/TestInt26.kt</url>
+          <line>56</line>
+          <option name="timeStamp" value="264" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/xinyu/test/TestArray135.kt</url>
+          <line>40</line>
+          <option name="timeStamp" value="265" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/xinyu/test/TestArray135.kt</url>
+          <line>38</line>
+          <option name="timeStamp" value="266" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/xinyu/test/TestArray135.kt</url>
+          <line>54</line>
+          <option name="timeStamp" value="267" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/xinyu/test/TestArray135.kt</url>
+          <line>55</line>
+          <option name="timeStamp" value="268" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/xinyu/test/TestInt27.kt</url>
+          <line>47</line>
+          <option name="timeStamp" value="269" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
+    <watches-manager>
+      <configuration name="JetRunConfigurationType">
+        <watch expression="map" language="kotlin" />
+      </configuration>
+    </watches-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
