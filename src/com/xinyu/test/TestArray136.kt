@@ -44,18 +44,19 @@ class TestArray136 {
      */
     fun asteroidCollision(asteroids: IntArray): IntArray {
         val list = asteroids.asList().toMutableList()
+        //find 表示是否有碰撞的
         var find = true
         while (find) {
             find = false
             for (i in list.indices) {
                 if (list[i] > 0 && i + 1 < list.size && list[i + 1] < 0) {
                     val result = list[i] + list[i + 1]
-                    if (result >0){
-                        list.removeAt(i+1)
-                    }else if (result == 0){
+                    if (result > 0) {
+                        list.removeAt(i + 1)
+                    } else if (result == 0) {
                         list.removeAt(i)
                         list.removeAt(i)
-                    }else{
+                    } else {
                         list.removeAt(i)
                     }
                     find = true
@@ -65,8 +66,57 @@ class TestArray136 {
         }
         return list.toIntArray()
     }
+
+
+    fun asteroidCollision2(asteroids: IntArray): IntArray {
+        var stack = Stack<Int>()
+        asteroids.forEach {
+            var alive = true
+            while (it < 0 && !stack.isEmpty() && stack.peek() >0) {
+                alive = stack.peek() < -it
+                if (stack.peek() == -it){
+                    stack.pop()
+                    break
+                }else if (stack.peek() < -it){
+                    stack.pop()
+                }else{
+                    break
+                }
+            }
+            if (alive) {
+                stack.push(it)
+            }
+        }
+        var result = IntArray(stack.size) { 0 }
+        stack.forEachIndexed { index, i ->
+            result[index] = i
+        }
+        return result
+    }
+
+
+    fun asteroidCollision3(asteroids: IntArray): IntArray {
+        var stack = Stack<Int>()
+        asteroids.forEach {
+            var alive = true
+            while (alive && it < 0 && !stack.isEmpty() && stack.peek() >0) {
+                alive = stack.peek() < -it
+                if (stack.peek() <= -it){
+                    stack.pop()
+                }
+            }
+            if (alive) {
+                stack.push(it)
+            }
+        }
+        var result = IntArray(stack.size) { 0 }
+        stack.forEachIndexed { index, i ->
+            result[index] = i
+        }
+        return result
+    }
 }
 
 fun main() {
-    println(TestArray136().asteroidCollision(intArrayOf(5, 10, -5)).contentToString())
+    println(TestArray136().asteroidCollision2(intArrayOf(5, 10, -5)).contentToString())
 }
