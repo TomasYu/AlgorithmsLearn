@@ -178,8 +178,56 @@ class TestArray139 {
                 LongArray(2) { 0 }
             }
         }
-        dp[0][0][0] = grid[0][0].toLong().also { dp[0][0][1] = it }
+//        with(grid[0][0].toLong()){
+//            dp[0][0][0] = this
+//            dp[0][0][1] = this
+//        }
+//        dp[0][0][0] = grid[0][0].toLong().also { dp[0][0][1] = it }
+//        dp[0][0][0] = grid[0][0].toLong().let {
+//            dp[0][0][1] = it
+//            it
+//        }
+//
+//        dp[0][0][0] = grid[0][0].toLong().apply { dp[0][0][1] = this }
+//        dp[0][0][0] = grid[0][0].toLong().run {
+//            dp[0][0][1] = this
+//            this
+//        }
 
+        for (i in 1 until grid[0].size) {
+            dp[0][i][0] = (dp[0][i - 1][0] * grid[0][i]).also { dp[0][i][1] = it }
+        }
+
+        for (i in 1 until grid.size) {
+            dp[i][0][0] = (dp[i - 1][0][0] * grid[i][0]).also { dp[i][0][1] = it }
+        }
+
+        for (i in 1 until m) {
+            for (j in 1 until n) {
+                val k = grid[i][j]
+                if (k > 0) {
+                    dp[i][j][0] = dp[i - 1][j][0].coerceAtLeast(dp[i][j - 1][0]) * k
+                    dp[i][j][1] = dp[i - 1][j][1].coerceAtMost(dp[i][j - 1][1]) * k
+                } else {
+                    dp[i][j][0] = dp[i - 1][j][1].coerceAtMost(dp[i][j - 1][1]) * k
+                    dp[i][j][1] = dp[i - 1][j][0].coerceAtLeast(dp[i][j - 1][0]) * k
+                }
+            }
+        }
+        return if (dp[m - 1][n - 1][0] >= 0) {
+            (dp[m - 1][n - 1][0] % (1_000_000_000 + 7)).toInt()
+        } else -1
+    }
+
+    fun maxProductPath4(grid: Array<IntArray>): Int {
+        val m = grid.size
+        val n = grid[0].size
+        val dp = Array(m) {
+            Array(n) {
+                LongArray(2) { 0 }
+            }
+        }
+        dp[0][0][0] = grid[0][0].toLong().also { dp[0][0][1] = it }
         for (i in 1 until grid[0].size) {
             dp[0][i][0] = (dp[0][i - 1][0] * grid[0][i]).also { dp[0][i][1] = it }
         }
