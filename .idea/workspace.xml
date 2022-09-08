@@ -13,14 +13,10 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ddcc14d9-ed9d-4787-abea-7813d2a6c7a2" name="Default" comment="https://leetcode.cn/problems/binary-gap/">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/KotlinJavaRuntime.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/xinyu/test/TestNode47.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/kotlinc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/kotlinc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="ddcc14d9-ed9d-4787-abea-7813d2a6c7a2" name="Default" comment="https://leetcode.cn/problems/elimination-game/">
+      <change afterPath="$PROJECT_DIR$/src/com/xinyu/test/TestTreeNode4.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/xinyu/test/TestTreeNode5.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AlgorithmsLearn.iml" beforeDir="false" afterPath="$PROJECT_DIR$/AlgorithmsLearn.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/xinyu/test/ListNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/xinyu/test/ListNode.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,8 +37,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Kotlin File" />
         <option value="Class" />
+        <option value="Kotlin File" />
         <option value="Kotlin Class" />
       </list>
     </option>
@@ -115,7 +111,7 @@
       <recent name="com.xinyu.test" />
     </key>
   </component>
-  <component name="RunManager" selected="Kotlin.TestNode47Kt">
+  <component name="RunManager" selected="Kotlin.TestTreeNode5Kt">
     <configuration default="true" type="AndroidTestRunConfigurationType" factoryName="Android Tests">
       <module name="" />
       <option name="TESTING_TYPE" value="0" />
@@ -164,36 +160,37 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TestArray135Kt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.xinyu.test.TestArray135Kt" />
+    <configuration name="TestArray139Kt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.xinyu.test.TestArray139Kt" />
+      <module name="AlgorithmsLearn" />
+      <shortenClasspath name="NONE" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TestArray140Kt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.xinyu.test.TestArray140Kt" />
       <module name="AlgorithmsLearn" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TestInt26Kt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.xinyu.test.TestInt26Kt" />
+    <configuration name="TestArray141Kt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.xinyu.test.TestArray141Kt" />
       <module name="AlgorithmsLearn" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TestInt27Kt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.xinyu.test.TestInt27Kt" />
+    <configuration name="TestTreeNode4Kt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.xinyu.test.TestTreeNode4Kt" />
       <module name="AlgorithmsLearn" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TestNode47Kt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.xinyu.test.TestNode47Kt" />
-      <module name="AlgorithmsLearn" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="TestString19Kt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.xinyu.test.TestString19Kt" />
+    <configuration name="TestTreeNode5Kt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.xinyu.test.TestTreeNode5Kt" />
       <module name="AlgorithmsLearn" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -223,13 +220,20 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <list>
+      <item itemvalue="Kotlin.TestArray139Kt" />
+      <item itemvalue="Kotlin.TestArray140Kt" />
+      <item itemvalue="Kotlin.TestArray141Kt" />
+      <item itemvalue="Kotlin.TestTreeNode4Kt" />
+      <item itemvalue="Kotlin.TestTreeNode5Kt" />
+    </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Kotlin.TestNode47Kt" />
-        <item itemvalue="Kotlin.TestInt27Kt" />
-        <item itemvalue="Kotlin.TestArray135Kt" />
-        <item itemvalue="Kotlin.TestInt26Kt" />
-        <item itemvalue="Kotlin.TestString19Kt" />
+        <item itemvalue="Kotlin.TestTreeNode5Kt" />
+        <item itemvalue="Kotlin.TestTreeNode4Kt" />
+        <item itemvalue="Kotlin.TestArray141Kt" />
+        <item itemvalue="Kotlin.TestArray140Kt" />
+        <item itemvalue="Kotlin.TestArray139Kt" />
       </list>
     </recent_temporary>
   </component>
@@ -246,90 +250,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1546572795954</updated>
-    </task>
-    <task id="LOCAL-00139" summary="https://leetcode.cn/problems/zui-xiao-de-kge-shu-lcof/">
-      <created>1655695250606</created>
-      <option name="number" value="00139" />
-      <option name="presentableId" value="LOCAL-00139" />
-      <option name="project" value="LOCAL" />
-      <updated>1655695250606</updated>
-    </task>
-    <task id="LOCAL-00140" summary="https://leetcode.cn/problems/largest-number-after-digit-swaps-by-parity/">
-      <created>1655738340226</created>
-      <option name="number" value="00140" />
-      <option name="presentableId" value="LOCAL-00140" />
-      <option name="project" value="LOCAL" />
-      <updated>1655738340227</updated>
-    </task>
-    <task id="LOCAL-00141" summary="https://leetcode.cn/problems/find-subsequence-of-length-k-with-the-largest-sum">
-      <created>1655957133437</created>
-      <option name="number" value="00141" />
-      <option name="presentableId" value="LOCAL-00141" />
-      <option name="project" value="LOCAL" />
-      <updated>1655957133438</updated>
-    </task>
-    <task id="LOCAL-00142" summary="https://leetcode.cn/problems/the-k-weakest-rows-in-a-matrix/">
-      <created>1655988295399</created>
-      <option name="number" value="00142" />
-      <option name="presentableId" value="LOCAL-00142" />
-      <option name="project" value="LOCAL" />
-      <updated>1655988295399</updated>
-    </task>
-    <task id="LOCAL-00143" summary="test">
-      <created>1656057113128</created>
-      <option name="number" value="00143" />
-      <option name="presentableId" value="LOCAL-00143" />
-      <option name="project" value="LOCAL" />
-      <updated>1656057113128</updated>
-    </task>
-    <task id="LOCAL-00144" summary="https://leetcode.cn/problems/climbing-stairs/">
-      <created>1656943561425</created>
-      <option name="number" value="00144" />
-      <option name="presentableId" value="LOCAL-00144" />
-      <option name="project" value="LOCAL" />
-      <updated>1656943561426</updated>
-    </task>
-    <task id="LOCAL-00145" summary="https://leetcode.cn/problems/counting-bits/">
-      <created>1657031644857</created>
-      <option name="number" value="00145" />
-      <option name="presentableId" value="LOCAL-00145" />
-      <option name="project" value="LOCAL" />
-      <updated>1657031644857</updated>
-    </task>
-    <task id="LOCAL-00146" summary="    https://leetcode.cn/problems/Ju9Xwi/">
-      <created>1657205499481</created>
-      <option name="number" value="00146" />
-      <option name="presentableId" value="LOCAL-00146" />
-      <option name="project" value="LOCAL" />
-      <updated>1657205499481</updated>
-    </task>
-    <task id="LOCAL-00147" summary="https://leetcode.cn/problems/the-masseuse-lcci/">
-      <created>1657290360345</created>
-      <option name="number" value="00147" />
-      <option name="presentableId" value="LOCAL-00147" />
-      <option name="project" value="LOCAL" />
-      <updated>1657290360346</updated>
-    </task>
-    <task id="LOCAL-00148" summary="https://leetcode.cn/problems/three-steps-problem-lcci/">
-      <created>1657535326249</created>
-      <option name="number" value="00148" />
-      <option name="presentableId" value="LOCAL-00148" />
-      <option name="project" value="LOCAL" />
-      <updated>1657535326250</updated>
-    </task>
-    <task id="LOCAL-00149" summary="https://leetcode.cn/problems/three-steps-problem-lcci/&#10;&#10;2">
-      <created>1657547408162</created>
-      <option name="number" value="00149" />
-      <option name="presentableId" value="LOCAL-00149" />
-      <option name="project" value="LOCAL" />
-      <updated>1657547408163</updated>
-    </task>
-    <task id="LOCAL-00150" summary="https://leetcode.cn/problems/get-maximum-in-generated-array/">
-      <created>1657720374075</created>
-      <option name="number" value="00150" />
-      <option name="presentableId" value="LOCAL-00150" />
-      <option name="project" value="LOCAL" />
-      <updated>1657720374075</updated>
     </task>
     <task id="LOCAL-00151" summary="isNullOrEmpty   666">
       <created>1657866642039</created>
@@ -590,7 +510,91 @@
       <option name="project" value="LOCAL" />
       <updated>1661689873244</updated>
     </task>
-    <option name="localTasksCounter" value="188" />
+    <task id="LOCAL-00188" summary="https://leetcode.cn/problems/insertion-sort-list/">
+      <created>1661834940776</created>
+      <option name="number" value="00188" />
+      <option name="presentableId" value="LOCAL-00188" />
+      <option name="project" value="LOCAL" />
+      <updated>1661834940778</updated>
+    </task>
+    <task id="LOCAL-00189" summary="https://leetcode.cn/problems/partition-list/">
+      <created>1661871970274</created>
+      <option name="number" value="00189" />
+      <option name="presentableId" value="LOCAL-00189" />
+      <option name="project" value="LOCAL" />
+      <updated>1661871970274</updated>
+    </task>
+    <task id="LOCAL-00190" summary="https://leetcode.cn/problems/add-one-row-to-tree/">
+      <created>1662042820099</created>
+      <option name="number" value="00190" />
+      <option name="presentableId" value="LOCAL-00190" />
+      <option name="project" value="LOCAL" />
+      <updated>1662042820100</updated>
+    </task>
+    <task id="LOCAL-00191" summary="https://leetcode.cn/problems/XagZNi/">
+      <created>1662129672708</created>
+      <option name="number" value="00191" />
+      <option name="presentableId" value="LOCAL-00191" />
+      <option name="project" value="LOCAL" />
+      <updated>1662129672709</updated>
+    </task>
+    <task id="LOCAL-00192" summary="https://leetcode.cn/problems/XagZNi/">
+      <created>1662183244492</created>
+      <option name="number" value="00192" />
+      <option name="presentableId" value="LOCAL-00192" />
+      <option name="project" value="LOCAL" />
+      <updated>1662183244493</updated>
+    </task>
+    <task id="LOCAL-00193" summary="https://leetcode.cn/problems/find-all-lonely-numbers-in-the-array/">
+      <created>1662184849849</created>
+      <option name="number" value="00193" />
+      <option name="presentableId" value="LOCAL-00193" />
+      <option name="project" value="LOCAL" />
+      <updated>1662184849849</updated>
+    </task>
+    <task id="LOCAL-00194" summary="https://leetcode.cn/problems/range-sum-query-2d-immutable/">
+      <created>1662274848986</created>
+      <option name="number" value="00194" />
+      <option name="presentableId" value="LOCAL-00194" />
+      <option name="project" value="LOCAL" />
+      <updated>1662274848986</updated>
+    </task>
+    <task id="LOCAL-00195" summary="https://leetcode.cn/problems/maximum-non-negative-product-in-a-matrix/">
+      <created>1662387804813</created>
+      <option name="number" value="00195" />
+      <option name="presentableId" value="LOCAL-00195" />
+      <option name="project" value="LOCAL" />
+      <updated>1662387804814</updated>
+    </task>
+    <task id="LOCAL-00196" summary="https://leetcode.cn/problems/maximum-non-negative-product-in-a-matrix/">
+      <created>1662390373067</created>
+      <option name="number" value="00196" />
+      <option name="presentableId" value="LOCAL-00196" />
+      <option name="project" value="LOCAL" />
+      <updated>1662390373067</updated>
+    </task>
+    <task id="LOCAL-00197" summary="https://leetcode.cn/problems/maximum-non-negative-product-in-a-matrix/  v4">
+      <created>1662437084502</created>
+      <option name="number" value="00197" />
+      <option name="presentableId" value="LOCAL-00197" />
+      <option name="project" value="LOCAL" />
+      <updated>1662437084502</updated>
+    </task>
+    <task id="LOCAL-00198" summary="https://leetcode.cn/problems/combination-sum/">
+      <created>1662549967034</created>
+      <option name="number" value="00198" />
+      <option name="presentableId" value="LOCAL-00198" />
+      <option name="project" value="LOCAL" />
+      <updated>1662549967034</updated>
+    </task>
+    <task id="LOCAL-00199" summary="https://leetcode.cn/problems/elimination-game/">
+      <created>1662558493858</created>
+      <option name="number" value="00199" />
+      <option name="presentableId" value="LOCAL-00199" />
+      <option name="project" value="LOCAL" />
+      <updated>1662558493858</updated>
+    </task>
+    <option name="localTasksCounter" value="200" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -665,16 +669,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="https://leetcode.cn/problems/fei-bo-na-qi-shu-lie-lcof" />
-    <MESSAGE value="https://leetcode.cn/problems/unique-paths/" />
-    <MESSAGE value="https://leetcode.cn/problems/JEj789" />
-    <MESSAGE value="https://leetcode.cn/problems/decode-ways/" />
-    <MESSAGE value="https://leetcode.cn/problems/interleaving-string/" />
-    <MESSAGE value="format" />
-    <MESSAGE value="code opt" />
-    <MESSAGE value="csdn 反馈问题处理" />
-    <MESSAGE value="https://leetcode.cn/problems/ones-and-zeroes/" />
-    <MESSAGE value="https://leetcode.cn/problems/beautiful-arrangement/" />
     <MESSAGE value="https://leetcode.cn/problems/beautiful-arrangement/ v2" />
     <MESSAGE value="https://leetcode.cn/problems/integer-replacement" />
     <MESSAGE value="https://leetcode.cn/problems/integer-replacement&#10;v2" />
@@ -690,7 +684,17 @@
     <MESSAGE value="https://leetcode.cn/problems/ugly-number/" />
     <MESSAGE value="https://leetcode.cn/problems/number-of-good-pairs/" />
     <MESSAGE value="https://leetcode.cn/problems/binary-gap/" />
-    <option name="LAST_COMMIT_MESSAGE" value="https://leetcode.cn/problems/binary-gap/" />
+    <MESSAGE value="https://leetcode.cn/problems/insertion-sort-list/" />
+    <MESSAGE value="https://leetcode.cn/problems/partition-list/" />
+    <MESSAGE value="https://leetcode.cn/problems/add-one-row-to-tree/" />
+    <MESSAGE value="https://leetcode.cn/problems/XagZNi/" />
+    <MESSAGE value="https://leetcode.cn/problems/find-all-lonely-numbers-in-the-array/" />
+    <MESSAGE value="https://leetcode.cn/problems/range-sum-query-2d-immutable/" />
+    <MESSAGE value="https://leetcode.cn/problems/maximum-non-negative-product-in-a-matrix/" />
+    <MESSAGE value="https://leetcode.cn/problems/maximum-non-negative-product-in-a-matrix/  v4" />
+    <MESSAGE value="https://leetcode.cn/problems/combination-sum/" />
+    <MESSAGE value="https://leetcode.cn/problems/elimination-game/" />
+    <option name="LAST_COMMIT_MESSAGE" value="https://leetcode.cn/problems/elimination-game/" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1355,13 +1359,123 @@
           <line>47</line>
           <option name="timeStamp" value="269" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/src/com/xinyu/test/TestNode48.kt</url>
+          <line>54</line>
+          <option name="timeStamp" value="270" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/src/com/xinyu/test/TestNode49.kt</url>
+          <line>52</line>
+          <option name="timeStamp" value="271" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/src/com/xinyu/test/TestArray136.kt</url>
+          <line>50</line>
+          <option name="timeStamp" value="272" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/src/com/xinyu/test/TestArray136.kt</url>
+          <line>90</line>
+          <option name="timeStamp" value="273" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/src/com/xinyu/test/TestArray136.kt</url>
+          <line>74</line>
+          <option name="timeStamp" value="274" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/src/com/xinyu/test/TestArray138.kt</url>
+          <line>52</line>
+          <option name="timeStamp" value="276" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/src/com/xinyu/test/TestArray138.kt</url>
+          <line>98</line>
+          <option name="timeStamp" value="277" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/src/com/xinyu/test/TestArray139.kt</url>
+          <line>57</line>
+          <option name="timeStamp" value="279" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/src/com/xinyu/test/TestArray139.kt</url>
+          <line>118</line>
+          <option name="timeStamp" value="281" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/src/com/xinyu/test/TestArray139.kt</url>
+          <line>91</line>
+          <option name="timeStamp" value="288" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/src/com/xinyu/test/TestArray139.kt</url>
+          <line>166</line>
+          <option name="timeStamp" value="289" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/src/com/xinyu/test/TestArray139.kt</url>
+          <line>134</line>
+          <option name="timeStamp" value="291" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/src/com/xinyu/test/TestArray139.kt</url>
+          <line>144</line>
+          <option name="timeStamp" value="292" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/src/com/xinyu/test/TestArray139.kt</url>
+          <line>154</line>
+          <option name="timeStamp" value="293" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/src/com/xinyu/test/TestArray140.kt</url>
+          <line>53</line>
+          <option name="timeStamp" value="294" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/src/com/xinyu/test/TestArray141.kt</url>
+          <line>47</line>
+          <option name="timeStamp" value="296" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/src/com/xinyu/test/TestArray141.kt</url>
+          <line>44</line>
+          <option name="timeStamp" value="298" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/src/com/xinyu/test/TestArray141.kt</url>
+          <line>78</line>
+          <option name="timeStamp" value="299" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/src/com/xinyu/test/TestTreeNode4.kt</url>
+          <line>32</line>
+          <option name="timeStamp" value="301" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/src/com/xinyu/test/TestTreeNode4.kt</url>
+          <line>42</line>
+          <option name="timeStamp" value="302" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/src/com/xinyu/test/TestTreeNode5.kt</url>
+          <line>44</line>
+          <option name="timeStamp" value="304" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/src/com/xinyu/test/TestTreeNode5.kt</url>
+          <line>32</line>
+          <option name="timeStamp" value="305" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/src/com/xinyu/test/TestTreeNode5.kt</url>
+          <line>41</line>
+          <option name="timeStamp" value="306" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
-    <watches-manager>
-      <configuration name="JetRunConfigurationType">
-        <watch expression="map" language="kotlin" />
-      </configuration>
-    </watches-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
