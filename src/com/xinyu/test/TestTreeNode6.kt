@@ -1,5 +1,7 @@
 package com.xinyu.test
 
+import java.util.*
+
 class TestTreeNode6 {
     /**
      * 111. 二叉树的最小深度
@@ -67,5 +69,25 @@ class TestTreeNode6 {
         }else{
             left.coerceAtMost(right) + 1
         }
+    }
+
+    //bfs
+    fun minDepth3(root: TreeNode?): Int {
+        val queue = LinkedList<TreeNode>()
+        root?.let { queue.offer(it) }
+        var depth = 0
+        while (!queue.isEmpty()){
+            depth ++
+            val size = queue.size
+            for (i in 1..size){
+                val pop = queue.pop()
+                if (pop.left == null && pop.right == null){
+                    return depth
+                }
+                pop.left?.let { queue.offer(it) }
+                pop.right?.let { queue.offer(it) }
+            }
+        }
+        return depth
     }
 }
