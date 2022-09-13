@@ -30,38 +30,20 @@ class TestTreeNode4 {
      */
     fun binaryTreePaths(root: TreeNode?): List<String> {
         val result = mutableListOf<String>()
-        dfs(root, StringBuffer(), result)
+        dfs(root, "", result)
         return result
     }
 
     /**
-     * 1. StringBuffer.delete(path.length - 2, path.length)
-     * 前包后不包
      */
-    internal fun dfs(root: TreeNode?, path: StringBuffer, result: MutableList<String>) {
+    internal fun dfs(root: TreeNode?, path: String, result: MutableList<String>) {
         root?.let {
-            path.append(root.`val`.toString())
             if (root.left == null && root.right == null) {
-                result.add(path.toString())
-                val index = path.lastIndexOf("->")
-                path.delete(index,path.length)
-                return
+                result.add("$path${root.`val`}")
+            }else{
+                dfs(root.left,"$path${root.`val`}->",result)
+                dfs(root.right,"$path${root.`val`}->",result)
             }
-            root.left?.let {
-                path.append("->")
-                dfs(root.left, path, result)
-                val index = path.lastIndexOf("->")
-                path.delete(index,path.length)
-            }
-
-            root.right?.let {
-                path.append("->")
-                dfs(root.right, path, result)
-                val index = path.lastIndexOf("->")
-                path.delete(index,path.length)
-            }
-//            val index = path.lastIndexOf("->")
-//            path.delete(index,path.length)
         }
     }
 }

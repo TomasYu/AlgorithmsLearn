@@ -44,18 +44,12 @@ class TestTreeNode5 {
                 path.add(root.`val`)
                 result.add(path.joinToString("->"))
                 path.removeAt(path.size - 1)
-                return
-            }
-            path.add(root.`val`)
-            root.left?.let {
+            }else{
+                path.add(root.`val`)
                 dfs(root.left, path, result)
-            }
-
-            root.right?.let {
                 dfs(root.right, path, result)
+                path.removeAt(path.size - 1)
             }
-            path.removeAt(path.size - 1)
-
         }
     }
 }
