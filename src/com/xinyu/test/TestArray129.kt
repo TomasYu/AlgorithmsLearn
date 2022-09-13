@@ -39,7 +39,11 @@ class TestArray129 {
         val dp = Array(size + 1) { Array(m + 1) { Array(n + 1) { 0 } } }
 
         //统计0 和 1 的个数
-        val array = Array(size) { Array(2) { 0 } }
+//        val array = Array(size) { Array(2) { 0 } }
+        val function: (Int) -> Array<Int> = {
+            Array(2) { 0 }
+        }
+        val array = Array(size, function)
         strs.forEachIndexed { index, s ->
             val toCharArray = s.toCharArray()
             toCharArray.forEach {
@@ -59,7 +63,8 @@ class TestArray129 {
                     if (i > 0) {
                         dp[i][j][k] = dp[i - 1][j][k]
                         if (j - array[i - 1][0] >= 0 && k - array[i - 1][1] >= 0) {
-                            dp[i][j][k] = dp[i][j][k].coerceAtLeast(dp[i - 1][j - array[i - 1][0]][k - array[i - 1][1]] + 1)
+                            dp[i][j][k] =
+                                dp[i][j][k].coerceAtLeast(dp[i - 1][j - array[i - 1][0]][k - array[i - 1][1]] + 1)
                         }
                     }
                 }
