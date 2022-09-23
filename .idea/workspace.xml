@@ -14,9 +14,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ddcc14d9-ed9d-4787-abea-7813d2a6c7a2" name="Default" comment="https://leetcode.cn/problems/elimination-game/">
-      <change afterPath="$PROJECT_DIR$/src/com/xinyu/test/TestTreeNode4.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/xinyu/test/TestTreeNode5.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/xinyu/test/Pair.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/kotlinc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/kotlinc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/KotlinJavaRuntime.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/KotlinJavaRuntime.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlgorithmsLearn.iml" beforeDir="false" afterPath="$PROJECT_DIR$/AlgorithmsLearn.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/xinyu/test/TestTree2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/xinyu/test/TestTree2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/xinyu/test/TestTree3.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/xinyu/test/TestTree3.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/xinyu/test/TestTree4.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/xinyu/test/TestTree4.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,9 +44,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Kotlin File" />
         <option value="Kotlin Class" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -76,9 +83,8 @@
       </UrlAndAccount>
     </option>
   </component>
-  <component name="HighlightingSettingsPerFile">
-    <setting file="jar://$USER_HOME$/.jdks/corretto-1.8.0_302/src.zip!/java/util/HashMap.java" root0="SKIP_INSPECTION" />
-    <setting file="jar://$USER_HOME$/.jdks/corretto-1.8.0_302/src.zip!/java/util/Queue.java" root0="SKIP_INSPECTION" />
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="1atRBzGZSzKylLA4mfK7uMvL2VO" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -86,21 +92,13 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">
-    <property name="Downloaded.Files.Path.Enabled" value="false" />
-    <property name="Repository.Attach.Annotations" value="false" />
-    <property name="Repository.Attach.JavaDocs" value="false" />
-    <property name="Repository.Attach.Sources" value="false" />
-    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
-    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="ToolWindowRun.ShowToolbar" value="false" />
-    <property name="extract.method.default.visibility" value="private" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/com/xinyu/test" />
-    <property name="project.structure.last.edited" value="Project" />
-    <property name="project.structure.proportion" value="0.15" />
-    <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="MavenSettings" />
-  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2"
+  }
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/com/xinyu/test" />
@@ -111,7 +109,7 @@
       <recent name="com.xinyu.test" />
     </key>
   </component>
-  <component name="RunManager" selected="Kotlin.TestTreeNode5Kt">
+  <component name="RunManager" selected="Application.StringTransactTest">
     <configuration default="true" type="AndroidTestRunConfigurationType" factoryName="Android Tests">
       <module name="" />
       <option name="TESTING_TYPE" value="0" />
@@ -147,6 +145,34 @@
       <module />
       <method />
     </configuration>
+    <configuration name="StringTransactTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.xinyu.test.java.String.StringTransactTest" />
+      <module name="AlgorithmsLearn" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.xinyu.test.java.String.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TestTree3" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.xinyu.test.TestTree3" />
+      <module name="AlgorithmsLearn" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.xinyu.test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration default="true" type="Application" factoryName="Application">
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <method v="2">
@@ -156,21 +182,6 @@
     <configuration default="true" type="JUnit" factoryName="JUnit">
       <option name="TEST_OBJECT" value="class" />
       <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="TestArray139Kt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.xinyu.test.TestArray139Kt" />
-      <module name="AlgorithmsLearn" />
-      <shortenClasspath name="NONE" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="TestArray140Kt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.xinyu.test.TestArray140Kt" />
-      <module name="AlgorithmsLearn" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -196,12 +207,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
-      <option name="filePath" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration default="true" type="TestNG">
       <option name="TEST_OBJECT" value="CLASS" />
       <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
@@ -221,19 +226,19 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="Kotlin.TestArray139Kt" />
-      <item itemvalue="Kotlin.TestArray140Kt" />
+      <item itemvalue="Application.StringTransactTest" />
+      <item itemvalue="Application.TestTree3" />
       <item itemvalue="Kotlin.TestArray141Kt" />
       <item itemvalue="Kotlin.TestTreeNode4Kt" />
       <item itemvalue="Kotlin.TestTreeNode5Kt" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.StringTransactTest" />
+        <item itemvalue="Application.TestTree3" />
         <item itemvalue="Kotlin.TestTreeNode5Kt" />
         <item itemvalue="Kotlin.TestTreeNode4Kt" />
         <item itemvalue="Kotlin.TestArray141Kt" />
-        <item itemvalue="Kotlin.TestArray140Kt" />
-        <item itemvalue="Kotlin.TestArray139Kt" />
       </list>
     </recent_temporary>
   </component>
@@ -666,7 +671,6 @@
         </entry>
       </map>
     </option>
-    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="https://leetcode.cn/problems/beautiful-arrangement/ v2" />

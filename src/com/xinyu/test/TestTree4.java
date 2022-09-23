@@ -1,6 +1,5 @@
 package com.xinyu.test;
 
-import com.sun.jmx.remote.internal.ArrayQueue;
 
 import java.util.ArrayDeque;
 
