@@ -61,7 +61,7 @@ class TestArray146 {
             }
         }
         //对于边增加便删除  建议考虑queue  防止ConcurrentModificationException
-        //只有一边遍历 一边删除 次可以用iterator  而且iterator 都没有add 方法还不清楚吗？  不想想为什么吗？
+        //只有一边遍历 一边删除 才可以用iterator  而且iterator 都没有add 方法还不清楚吗？  不想想为什么吗？
         while (!ended.isEmpty()) {
             val course = ended.pop()
             map[course]?.forEach {
