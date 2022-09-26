@@ -45,10 +45,10 @@ class TestArray144 {
             queue.offer(Pair(sr,sc))
             while (!queue.isEmpty()){
                 val pop = queue.pop()
-                if (pop.first in image.indices && pop.second in image[0].indices && image[pop.first][pop.second] == old) {
-                    image[pop.first][pop.second] = newColor
+                if (pop.key in image.indices && pop.value in image[0].indices && image[pop.key][pop.value] == old) {
+                    image[pop.key][pop.value] = newColor
                     for (i in 0..3){
-                        queue.offer(Pair(pop.first + srInts[i],pop.second + scInts[i]))
+                        queue.offer(Pair(pop.key + srInts[i],pop.value + scInts[i]))
                     }
                 }
             }
