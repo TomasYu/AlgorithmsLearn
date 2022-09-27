@@ -1,5 +1,7 @@
 package com.xinyu.test
 
+import kotlin.Pair
+
 /**
  * 731. 我的日程安排表 II
 实现一个 MyCalendar 类来存放你的日程安排。如果要添加的时间内不会导致三重预订时，则可以存储这个新的日程安排。
@@ -35,15 +37,61 @@ MyCalendar.book(25, 55); // returns true
 
 每个测试用例，调用 MyCalendar.book 函数最多不超过 1000次。
 调用函数 MyCalendar.book(start, end)时， start 和 end 的取值范围为 [0, 10^9]。
-
+https://leetcode.cn/problems/my-calendar-iii/
  */
 class MyCalendarTwo {
+    val map = mutableMapOf<Int, Int>()
+    val list = mutableListOf<Pair<Int, Int>>()
 
+    //超出时间限制
     fun book(start: Int, end: Int): Boolean {
-        return false
+        var success = true
+        for (i in start until end) {
+            if (map.getOrDefault(i, 0) >= 2) {
+                success = false
+                break
+            }
+        }
+        if (success) {
+            for (i in start until end) {
+                if (map.containsKey(i)) {
+                    map[i] = map[i]!!.plus(1)
+                } else {
+                    map[i] = 1
+                }
+            }
+        }
+        return success
+    }
+
+    fun book2(start: Int, end: Int): Boolean {
+        var success = true
+        out@ for (i in start until end) {
+            var count = 1
+            for (j in list.indices) {
+                if (i in list[j].first until list[j].second) {
+                    count++
+                }
+                if (count >= 3) {
+                    success = false
+                    break@out
+                }
+            }
+        }
+        if (success) {
+            list.add(Pair(start, end))
+        }
+        return success
     }
 }
 
 fun main() {
+    val myCalendarTwo = MyCalendarTwo()
+    myCalendarTwo.book(10, 20).also { println(it) } // returns true
+    myCalendarTwo.book(50, 60).also { println(it) } // returns true
+    myCalendarTwo.book(10, 40).also { println(it) } // returns true
+    myCalendarTwo.book(5, 15).also { println(it) } // returns false
+    myCalendarTwo.book(5, 10).also { println(it) } // returns true
+    myCalendarTwo.book(25, 55).also { println(it) } // returns true
 
 }
