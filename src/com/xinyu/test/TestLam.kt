@@ -16,7 +16,7 @@ fun main() {
 
     { println("D") }
 
-    printE()()
+    printE()
 
     when {
         true -> {
