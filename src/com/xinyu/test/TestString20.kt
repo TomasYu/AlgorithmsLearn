@@ -78,12 +78,37 @@ class TestString20 {
         }
         return result + 1
     }
+
+    /**
+     * 三指针
+     * 滑动窗口
+     */
+    fun compress2(chars: CharArray): Int {
+        //左边
+        var left = 0
+        //总长度（最新的位置）
+        var result = 0
+        //right 右边窗口索引
+        for (right in 0..chars.size){
+            //如果到达末尾  或者不一致的字符  更新
+            if (right == chars.size || chars[left] != chars[right]){
+                chars[result++] = chars[left]
+                if (right - left > 1){
+                    "${right - left}".toCharArray().forEach {
+                        chars[result++] = it
+                    }
+                }
+                left = right
+            }
+        }
+        return result
+    }
 }
 
 fun main() {
 //    val chars = charArrayOf('a', 'a', 'b', 'b', 'c', 'c', 'c')
     val chars = charArrayOf('a', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b')
-    println(TestString20().compress(chars))
+    println(TestString20().compress2(chars))
     println(chars.concatToString())
 
 
@@ -91,3 +116,16 @@ fun main() {
 
 //                    chars[result -1] = sameCount.toChar()
 //                    chars[result -1] = '0' + sameCount
+/**
+
+1.char  int.toChar 2.toChar  '0' + 2
+2.100 变成1  0   0
+3.
+
+
+滑动窗口
+https://leetcode.cn/problems/string-compression/solution/hua-dong-chuang-kou-fa-ya-suo-zi-fu-chuan-java-by-/
+
+
+
+ */
