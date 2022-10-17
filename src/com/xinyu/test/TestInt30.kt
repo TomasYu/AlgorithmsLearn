@@ -1,6 +1,6 @@
 package com.xinyu.test
 
-class TestInt {
+class TestInt30 {
     /**
      * https://leetcode.cn/problems/bu-yong-jia-jian-cheng-chu-zuo-jia-fa-lcof/
      *
