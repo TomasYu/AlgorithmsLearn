@@ -1,5 +1,7 @@
 package com.xinyu.test
 
+import java.util.*
+
 class TestArray147 {
     /**
      * https://leetcode.cn/problems/find-the-student-that-will-replace-the-chalk/
@@ -65,5 +67,28 @@ class TestArray147 {
             }
         }
         return 0
+    }
+
+
+    fun chalkReplacer2(chalk: IntArray, k: Int): Int {
+        //超过int的最大值
+        var all = 0L
+        val longArray = LongArray(chalk.size) { 0 }
+        chalk.forEachIndexed { index, i ->
+            all += i
+            if (all > k){
+                return index
+            }
+            longArray[i] = all
+        }
+
+        var leave = k % all
+        val binarySearch = Arrays.binarySearch(longArray, 0, longArray.size, leave.toLong())
+        if (binarySearch > 0){
+            return binarySearch + 1
+        }else{
+            //这里和binarySearch实现有关系  所以需要+1取反即可
+            return -(binarySearch + 1)
+        }
     }
 }
