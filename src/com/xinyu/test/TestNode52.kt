@@ -48,4 +48,27 @@ class TestNode52 {
 
         return false
     }
+
+    fun findTarget2(root: TreeNode?, k: Int): Boolean {
+        var temp: TreeNode
+        var stack = LinkedList<TreeNode>()
+        var set = HashSet<Int>()
+        stack.offer(root)
+        while (!stack.isEmpty()) {
+            temp = stack.pop()
+            if (set.contains(k - temp.`val`)) {
+                return true
+            }
+            set.add(temp.`val`)
+            temp?.let {
+                temp.left?.let {
+                    stack.offer(temp.left)
+                }
+                temp.right?.let {
+                    stack.offer(temp.right)
+                }
+            }
+        }
+        return false
+    }
 }
