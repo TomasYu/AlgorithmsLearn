@@ -60,4 +60,7 @@ class TestArray148 {
         }
         return count + helper(start + 1, end, nums)
     }
+    /***
+     * https://leetcode.cn/problems/arithmetic-slices/solution/hua-dong-chuang-kou-dong-tai-gui-hua-jav-3vpp/
+     */
 }
