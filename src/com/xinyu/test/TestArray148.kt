@@ -60,7 +60,33 @@ class TestArray148 {
         }
         return count + helper(start + 1, end, nums)
     }
+
     /***
      * https://leetcode.cn/problems/arithmetic-slices/solution/hua-dong-chuang-kou-dong-tai-gui-hua-jav-3vpp/
+     *
+     * 没有学到精髓
      */
+
+    fun numberOfArithmeticSlices2(nums: IntArray): Int {
+        val size = nums.size
+        if (size < 3) {
+            return 0
+        }
+        var result = 0
+        var dp = 0
+        var i = 0
+        var step = 0
+        while (i <= size - 1 - 2) {
+            step = nums[i + 1] - nums[i]
+            while (i < size - 1 && nums[i + 2] - nums[i + 1] == step) {
+                dp += 1
+                result += dp
+                i++
+            }
+            i++
+            dp = 0
+        }
+
+        return result
+    }
 }
