@@ -89,4 +89,22 @@ class TestArray148 {
 
         return result
     }
+
+    fun numberOfArithmeticSlices3(nums: IntArray): Int {
+        val size = nums.size
+        if (size < 3) {
+            return 0
+        }
+        var result = 0
+        var dp = 0
+        for (i in 2 until size) {
+            if (nums[i - 1] - nums[i - 2] == nums[i] - nums[i -1]){
+                dp += 1
+                result += dp
+            }else{
+                dp = 0
+            }
+        }
+        return result
+    }
 }
