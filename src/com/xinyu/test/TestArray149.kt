@@ -34,6 +34,10 @@ class TestArray149 {
      */
 
     fun findSquare(matrix: Array<IntArray>): IntArray {
-        return null
+        var result = IntArray(3) { 0 }
+
+
+
+        return result
     }
 }
