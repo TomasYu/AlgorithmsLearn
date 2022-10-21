@@ -35,6 +35,32 @@ class TestArray149 {
 
     fun findSquare(matrix: Array<IntArray>): IntArray {
         var result = IntArray(3) { 0 }
+        var row = matrix.size
+        var col = matrix[0].size
+        var toRight = Array(row) {
+            IntArray(col) { 0 }
+        }
+        var toBottom = Array(row) {
+            IntArray(col) { 0 }
+        }
+
+        for (i in row - 1 downTo 0) {
+            for (j in col - 1 downTo 0) {
+                if (matrix[i][j] == 0) {
+                    if (j == col - 1) {
+                        toRight[i][j] = 1
+                    } else {
+                        toRight[i][j] = toRight[i][j + 1] + 1
+                    }
+                    if (i == row - 1) {
+                        toBottom[i][j] = 1
+                    } else {
+                        toBottom[i][j] = toBottom[i + 1][j] + 1
+                    }
+                }
+            }
+        }
+
 
 
 
