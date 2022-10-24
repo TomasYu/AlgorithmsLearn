@@ -1,5 +1,7 @@
 package com.xinyu.test
 
+import kotlin.math.sign
+
 class TestArray149 {
     /**
      * https://leetcode.cn/problems/max-black-square-lcci/
@@ -61,9 +63,35 @@ class TestArray149 {
             }
         }
 
+        for (i in 0 until row){
+            for (j in 0 until col){
+                val side = toRight[i][j].coerceAtMost(toBottom[i][j])
+                if (side > result[2]){
+                    for (k in 0 until side){
+                        if (toRight[i + k][j] >= side && toBottom[i][j + k] >= side){
+                            result[0] = i
+                            result[1] = j
+                            result[2] = side
+                        }
+                    }
+                }
 
-
-
+            }
+        }
+        if (result[2] == 0){
+            return intArrayOf()
+        }
         return result
     }
+}
+
+fun main() {
+    /**
+     *   [
+    [0,1,1],
+    [1,0,1],
+    [1,1,0]
+    ]
+     */
+    println(TestArray149().findSquare(arrayOf(intArrayOf(0, 1, 1), intArrayOf(1, 0, 1), intArrayOf(1, 1, 0))).contentToString())
 }
