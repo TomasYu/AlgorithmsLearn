@@ -39,19 +39,24 @@ class TestArray149 {
         var result = IntArray(3) { 0 }
         var row = matrix.size
         var col = matrix[0].size
+        //记录当前点到右边的最大黑色连续边长
         var toRight = Array(row) {
             IntArray(col) { 0 }
         }
+        //记录当前点到下边的最大黑色连续边长
         var toBottom = Array(row) {
             IntArray(col) { 0 }
         }
 
         for (i in row - 1 downTo 0) {
             for (j in col - 1 downTo 0) {
+                //如果当前点是黑色
                 if (matrix[i][j] == 0) {
+                    //如果是最后一个元素  那么直接赋值为1
                     if (j == col - 1) {
                         toRight[i][j] = 1
                     } else {
+                        //否则为右边元素的黑色长度+1
                         toRight[i][j] = toRight[i][j + 1] + 1
                     }
                     if (i == row - 1) {
@@ -67,10 +72,13 @@ class TestArray149 {
         for (i in 0 until row) {
             for (j in 0 until col) {
                 if (matrix[i][j] == 0) {
+                    //取右边和下边最长的边长
                     val side = toRight[i][j].coerceAtMost(toBottom[i][j])
                     val old = result[2]
+                    //只有边长比之前的结果大  才有可能存在新的结果
                     if (side > old) {
                         for (k in side downTo 0) {
+                            //判断右边（右上角）顶点到底部黑色的最大长度  和  下面（左下）到右边的最大长度是否满足条件
                             if (k > old && toRight[i + k - 1][j] >= k && toBottom[i][j + k - 1] >= k) {
                                 result[0] = i
                                 result[1] = j
