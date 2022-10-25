@@ -66,12 +66,12 @@ class TestArray149 {
 
         for (i in 0 until row) {
             for (j in 0 until col) {
-                if (matrix[i][j] == 0){
+                if (matrix[i][j] == 0) {
                     val side = toRight[i][j].coerceAtMost(toBottom[i][j])
                     val old = result[2]
                     if (side > old) {
                         for (k in side downTo 0) {
-                            if (toRight[i + k - 1][j] >= side && toBottom[i][j + k - 1] >= side && k > old) {
+                            if (k > old && toRight[i + k - 1][j] >= k && toBottom[i][j + k - 1] >= k) {
                                 result[0] = i
                                 result[1] = j
                                 result[2] = k
