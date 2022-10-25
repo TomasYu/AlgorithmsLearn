@@ -63,22 +63,26 @@ class TestArray149 {
             }
         }
 
-        for (i in 0 until row){
-            for (j in 0 until col){
-                val side = toRight[i][j].coerceAtMost(toBottom[i][j])
-                if (side > result[2]){
-                    for (k in 0 until side){
-                        if (toRight[i + k][j] >= side && toBottom[i][j + k] >= side){
-                            result[0] = i
-                            result[1] = j
-                            result[2] = side
+
+        for (i in 0 until row) {
+            for (j in 0 until col) {
+                if (matrix[i][j] == 0){
+                    val side = toRight[i][j].coerceAtMost(toBottom[i][j])
+                    val old = result[2]
+                    if (side > old) {
+                        for (k in side downTo 0) {
+                            if (toRight[i + k - 1][j] >= side && toBottom[i][j + k - 1] >= side && k > old) {
+                                result[0] = i
+                                result[1] = j
+                                result[2] = k
+                                break
+                            }
                         }
                     }
                 }
-
             }
         }
-        if (result[2] == 0){
+        if (result[2] == 0) {
             return intArrayOf()
         }
         return result
@@ -93,5 +97,12 @@ fun main() {
     [1,1,0]
     ]
      */
-    println(TestArray149().findSquare(arrayOf(intArrayOf(0, 1, 1), intArrayOf(1, 0, 1), intArrayOf(1, 1, 0))).contentToString())
+    println(
+        TestArray149().findSquare(arrayOf(intArrayOf(0, 1, 1), intArrayOf(1, 0, 1), intArrayOf(1, 1, 0)))
+            .contentToString()
+//        TestArray149().findSquare(arrayOf(
+//            intArrayOf(1, 0, 1),
+//            intArrayOf(0, 0, 1),
+//            intArrayOf(0, 0, 1))).contentToString()
+    )
 }
