@@ -1,5 +1,7 @@
 package com.xinyu.test
 
+import kotlin.math.min
+
 class TestArray150 {
     /**
      * https://leetcode.cn/problems/largest-plus-sign/
@@ -35,9 +37,60 @@ class TestArray150 {
     1 <= mines.length <= 5000
     0 <= xi, yi < n
     每一对 (xi, yi) 都 不重复
+
+
+    思路？？？？
+    记录每一个坐标的上下左右边长
+    遍历4次  上下左右
+    遍历数组  每一个位置以最短的边长存放结果
+    最后拿到结果
+
+    思路是对的  也能写出来  可能有一点优化空间就是可以2次遍历就行
      */
 
     fun orderOfLargestPlusSign(n: Int, mines: Array<IntArray>): Int {
-        return -1
+        //左上右下
+        var dp = Array(n) { Array(n) { Array(4) { 0 } } }
+
+        var matrix = Array(n) { Array(n) { 1 } }
+        for (mine in mines) {
+            matrix[mine[0]][mine[1]] = 0
+        }
+
+        //左上
+        for (i in matrix.indices) {
+            for (j in matrix[0].indices) {
+                if (matrix[i][j] == 1) {
+                    dp[i][j][0] = if (j - 1 >= 0) dp[i][j - 1][0] + 1 else 1
+                    dp[i][j][1] = if (i - 1 >= 0) dp[i - 1][j][1] + 1 else 1
+                }
+            }
+        }
+
+        //右下
+        for (i in n - 1 downTo 0) {
+            for (j in n - 1 downTo 0) {
+                if (matrix[i][j] == 1) {
+                    dp[i][j][2] = if (j + 1 < n) dp[i][j + 1][2] + 1 else 1
+                    dp[i][j][3] = if (i + 1 < n) dp[i + 1][j][3] + 1 else 1
+                }
+            }
+        }
+
+        var result = 0
+        dp.forEachIndexed { i, arrays ->
+            arrays.forEachIndexed { j, _ ->
+                result = result.coerceAtLeast(
+                    (dp[i][j][0]).coerceAtMost(dp[i][j][1]).coerceAtMost(dp[i][j][2])
+                        .coerceAtMost(dp[i][j][3])
+                )
+            }
+        }
+
+        return result
     }
+}
+
+fun main() {
+    println(TestArray150().orderOfLargestPlusSign(5, arrayOf(intArrayOf(4, 2))))
 }
