@@ -1,5 +1,7 @@
 package com.xinyu.test
 
+import kotlin.math.abs
+
 class TestArray151 {
     /**
      * https://leetcode.cn/problems/minimum-average-difference/
@@ -42,8 +44,42 @@ class TestArray151 {
 
     1 <= nums.length <= 105
     0 <= nums[i] <= 105
+
+    思路？？？
+    正常思路去解决？
+    左右遍历两遍  拿到坐边的和以及右边的和？ 或者直接左边的平局值  右边的平均值  避免重复运算
+
+    右边的不能包含这个数字  左边的可以
      */
 
     fun minimumAverageDifference(nums: IntArray): Int {
+        //0位表示左边  1表示右边
+        var dp = Array(nums.size) {
+            LongArray(2) { 0 }
+        }
+        //
+        for (i in nums.indices) {
+            dp[i][0] = if (i >= 1) dp[i - 1][0] + nums[i].toLong() else nums[i].toLong()
+        }
+
+        for (i in nums.size - 1 downTo 0) {
+            dp[i][1] = if (i < nums.size - 1) (nums[i + 1] + dp[i + 1][1]) else 0
+        }
+
+        var cur = Int.MAX_VALUE
+        var result = Int.MAX_VALUE
+        for (i in nums.indices) {
+            val maximumValue =
+                Math.abs(dp[i][0] / (i + 1) - if (i == nums.size - 1) dp[i][1] else dp[i][1] / (nums.size - 1 - i))
+            if (maximumValue < cur) {
+                result = i
+            }
+            cur = cur.coerceAtMost(maximumValue.toInt())
+        }
+        return result
     }
+}
+
+fun main() {
+    println(TestArray151().minimumAverageDifference(intArrayOf(2, 5, 3, 9, 5, 3)))
 }
