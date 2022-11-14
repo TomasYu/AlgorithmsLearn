@@ -1,5 +1,7 @@
 package com.xinyu.test
 
+import java.util.*
+
 class TestArray153 {
     /**
      * https://leetcode.cn/problems/special-array-with-x-elements-greater-than-or-equal-x/
@@ -43,9 +45,29 @@ class TestArray153 {
 
     1 <= nums.length <= 100
     0 <= nums[i] <= 1000
+
+    思路；
+    排序  正常按照逻辑去做就可以
+
+     一定要注意 要有双重判断 不仅指定位置要大于某个数  他的前一位还要小于
+
      */
     fun specialArray(nums: IntArray): Int {
+        Arrays.sort(nums)
+        val size = nums.size
+        for (i in nums.indices) {
+            //一定要注意 要有双重判断 不仅指定位置要大于某个数  他的前一位还要小于
+            if (nums[i] >= size - i && (i == 0 || nums[i - 1] < size - i)) {
+                return size - i
+            }
+        }
         return -1
-
     }
+}
+
+fun main() {
+    println(TestArray153().specialArray(intArrayOf(3, 5)))
+//    println(TestArray153().specialArray(intArrayOf(0,4,3,0,4)))
+    println(TestArray153().specialArray(intArrayOf(3, 6, 7, 7, 0)))
+    //0 3 6 7 7
 }
