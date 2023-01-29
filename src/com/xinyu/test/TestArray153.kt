@@ -70,4 +70,21 @@ fun main() {
 //    println(TestArray153().specialArray(intArrayOf(0,4,3,0,4)))
     println(TestArray153().specialArray(intArrayOf(3, 6, 7, 7, 0)))
     //0 3 6 7 7
+
+
+    var temp = arrayOf("1" , "2" , "3")
+    showItems(*temp)
 }
+
+
+
+
+fun showItems(vararg items:String){
+
+    items.forEach {
+        println(it)
+
+    }
+
+}
+
