@@ -37,8 +37,46 @@ class TestArray156 {
     给定的图是连通的
      */
 
+    //想法  判断是否有环  从后往前尝试
     fun findRedundantConnection(edges: Array<IntArray>): IntArray {
-        return null
+        val intArray = IntArray(edges.size + 1) { it }
+        for (i in edges.indices) {
+            var p1 = findParent(edges[i][0], intArray)
+            var p2 = findParent(edges[i][1], intArray)
+            if (p1 == p2){
+                return edges[i]
+            }else{
+                intArray[p1] = intArray[p2]
+
+            }
+        }
+
+        return intArrayOf()
 
     }
+
+    fun findParent(num: Int, arrays: IntArray): Int {
+        var temp = num
+        while (arrays[temp] != temp) {
+            temp = arrays[temp]
+        }
+        return temp
+
+    }
+}
+
+fun main() {
+//    println(TestArray156().findRedundantConnection(arrayOf(intArrayOf(1, 2), intArrayOf(1, 3), intArrayOf(2, 3))).contentToString())
+//    [[1,4],[3,4],[1,3],[1,2],[4,5]]
+    println(
+        TestArray156().findRedundantConnection(
+            arrayOf(
+                intArrayOf(1, 4),
+                intArrayOf(3, 4),
+                intArrayOf(1, 3),
+                intArrayOf(1, 2),
+                intArrayOf(4, 5)
+            )
+        ).contentToString()
+    )
 }
