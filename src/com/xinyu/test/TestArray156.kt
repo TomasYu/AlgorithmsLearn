@@ -39,23 +39,28 @@ class TestArray156 {
 
     //想法  判断是否有环  从后往前尝试
     fun findRedundantConnection(edges: Array<IntArray>): IntArray {
+        //定义一个表示父节点的数组
         val intArray = IntArray(edges.size + 1) { it }
         for (i in edges.indices) {
+            //寻找第一个父节点
             var p1 = findParent(edges[i][0], intArray)
+            //寻找第二个父节点
             var p2 = findParent(edges[i][1], intArray)
+            //如果这两个父节点一致 说明两个节点是在同一个跟节点上  现在这两个节点链接 势必会造成环 所以直接返回这条边即可
             if (p1 == p2){
                 return edges[i]
             }else{
+                //如果这两个父节点不一致 则归并
                 intArray[p1] = intArray[p2]
 
             }
         }
-
         return intArrayOf()
 
     }
 
     fun findParent(num: Int, arrays: IntArray): Int {
+        //寻找父节点  如果父节点的值为自己 那么就说明找到了
         var temp = num
         while (arrays[temp] != temp) {
             temp = arrays[temp]
