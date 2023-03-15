@@ -96,4 +96,10 @@ fun main() {
 //    println(TestArray157().minSessions(intArrayOf(3,2,3,7,5,2,2,10,9,1,10), 11))
 //    println(TestArray157().minSessions(intArrayOf(2,2,2,3,3,4,5,5,7,8,8,10,10), 14))
     println(TestArray157().minSessions(intArrayOf(1,5,7,10,3,8,4,2,6,2), 10))
+
+    /**
+     *
+     *
+     *  一天做不出来  二天  两天不行三天 总有一天能做出来
+     */
 }
