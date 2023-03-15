@@ -1,5 +1,7 @@
 package com.xinyu.test;
 
+import java.util.HashMap;
+import java.util.Map;
 import java.util.concurrent.CountDownLatch;
 
 public class AtomicIntegerTest {

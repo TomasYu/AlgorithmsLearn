@@ -1,7 +1,9 @@
 package com.xinyu.test
 
 class TestArray157 {
+    //     https://leetcode.cn/problems/minimum-number-of-work-sessions-to-finish-the-tasks/
     /**
+     *
      * https://leetcode.cn/problems/minimum-number-of-work-sessions-to-finish-the-tasks/
      * 1986. 完成任务的最少工作时间段
     你被安排了 n 个任务。任务需要花费的时间用长度为 n 的整数数组 tasks 表示，第 i 个任务需要花费 tasks[i] 小时完成。一个 工作时间段 中，你可以 至多 连续工作 sessionTime 个小时，然后休息一会儿。
@@ -52,5 +54,46 @@ class TestArray157 {
         //这个思路不对 随便举一个特殊的case就可以否决 2 2 3  7  8   每一段最大是11  这样正常可以两次  你按照这个思路就是3次
 
 
+        //https://leetcode.cn/problems/minimum-number-of-work-sessions-to-finish-the-tasks/solution/zhuang-tai-ya-suo-by-linbuxiao-2y8h/
+        //https://leetcode.cn/problems/minimum-number-of-work-sessions-to-finish-the-tasks/solution/zhuang-tai-ya-suo-dong-tai-gui-hua-by-zh-txne/
+        //当数据量小的时候 可以人工计算 太大了 需要算法解决  需要计算机解决
+        val size = tasks.size
+        val dpSize = 1 shl size
+        var mask = Array(dpSize) { IntArray(2) { Int.MAX_VALUE } }
+        mask[0] = intArrayOf(1, 0)
+
+        for (i in 1 until dpSize) {
+            var j = 0
+            while ((1 shl j) <= i) {
+                if (i and (1 shl j) == 0){
+                    j++
+                    continue
+                }
+                if (mask[i xor (1 shl j)][1] + tasks[j] > sessionTime) {
+                    if (mask[i xor (1 shl j)][0] + 1 <= mask[i][0]) {
+                        mask[i][0] = mask[i xor (1 shl j)][0] + 1
+                        mask[i][1] = mask[i][1].coerceAtMost(tasks[j])
+                    }
+                } else {
+
+                    if (mask[i xor (1 shl j)][0]  <= mask[i][0]) {
+                        mask[i][0] = mask[i xor (1 shl j)][0]
+                        mask[i][1] = mask[i][1].coerceAtMost(mask[i xor (1 shl j)][1] + tasks[j])
+                    }
+                }
+                j++
+            }
+        }
+        return mask[mask.size - 1][0]
     }
+
+
+}
+
+fun main() {
+//    println(TestArray157().minSessions(intArrayOf(1, 2, 3), 3))
+//    println(TestArray157().minSessions(intArrayOf(9, 6, 9), 14))
+//    println(TestArray157().minSessions(intArrayOf(3,2,3,7,5,2,2,10,9,1,10), 11))
+//    println(TestArray157().minSessions(intArrayOf(2,2,2,3,3,4,5,5,7,8,8,10,10), 14))
+    println(TestArray157().minSessions(intArrayOf(1,5,7,10,3,8,4,2,6,2), 10))
 }
