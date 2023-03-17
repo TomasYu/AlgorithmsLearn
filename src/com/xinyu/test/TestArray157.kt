@@ -57,9 +57,14 @@ class TestArray157 {
         //https://leetcode.cn/problems/minimum-number-of-work-sessions-to-finish-the-tasks/solution/zhuang-tai-ya-suo-by-linbuxiao-2y8h/
         //https://leetcode.cn/problems/minimum-number-of-work-sessions-to-finish-the-tasks/solution/zhuang-tai-ya-suo-dong-tai-gui-hua-by-zh-txne/
         //当数据量小的时候 可以人工计算 太大了 需要算法解决  需要计算机解决
+
+        //任务的长度
         val size = tasks.size
+        //计算size长度的二进制对应的十进制
         val dpSize = 1 shl size
+        //创建数组空间 每个元素都是2个 第0位表示当前的占用多少个工作段  第一位表示最后一段已经用了多少工作时间
         var mask = Array(dpSize) { IntArray(2) { Int.MAX_VALUE } }
+
         mask[0] = intArrayOf(1, 0)
 
         for (i in 1 until dpSize) {
@@ -69,13 +74,14 @@ class TestArray157 {
                     j++
                     continue
                 }
+                //如果最后一个工作段放不下了
                 if (mask[i xor (1 shl j)][1] + tasks[j] > sessionTime) {
                     if (mask[i xor (1 shl j)][0] + 1 <= mask[i][0]) {
                         mask[i][0] = mask[i xor (1 shl j)][0] + 1
                         mask[i][1] = mask[i][1].coerceAtMost(tasks[j])
                     }
                 } else {
-
+                    //最后一个总做段还可以放下 如果当前用的时间段比之前小 更新
                     if (mask[i xor (1 shl j)][0]  <= mask[i][0]) {
                         mask[i][0] = mask[i xor (1 shl j)][0]
                         mask[i][1] = mask[i][1].coerceAtMost(mask[i xor (1 shl j)][1] + tasks[j])
