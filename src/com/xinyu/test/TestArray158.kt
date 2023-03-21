@@ -32,6 +32,42 @@ class TestArray158 {
      */
 
     fun makesquare(matchsticks: IntArray): Boolean {
+        //暴力尝试？ 回朔？
+        //dp数组 表示当前到最后的总和
+        //当选择一个长度 后面的总和不满足 那么肯定不满足
+        //因为不能折断 如果循环过程中某条边不满足 那么肯定不满足
+        //回朔剪纸简直是程序员必备的 dfs  可能是各种变形
+
+        val sum = matchsticks.sum()
+        if (sum % 4 != 0) {
+            return false
+        }
+        val edges = IntArray(4) { 0 }
+
+        return dfs(0, matchsticks, edges, sum / 4)
+    }
+
+    private fun dfs(index: Int, matchsticks: IntArray, edges: IntArray, length: Int): Boolean {
+        if (index == matchsticks.size) {
+            return true
+        }
+
+        for (i in 0..3) {
+            if (edges[i] + matchsticks[index] > length) {
+                continue
+            }
+            edges[i] += matchsticks[index]
+            if (dfs(index + 1, matchsticks, edges, length)) {
+                return true
+            }
+            edges[i] -= matchsticks[index]
+        }
+
         return false
     }
+}
+
+fun main() {
+//    println(TestArray158().makesquare(intArrayOf(1, 1, 2, 2, 2)))
+    println(TestArray158().makesquare(intArrayOf(3, 3, 3, 3, 4)))
 }
