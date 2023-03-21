@@ -1,5 +1,8 @@
 package com.xinyu.test
 
+import java.util.Arrays
+import java.util.Comparator
+
 class TestArray158 {
     /**
      * https://leetcode.cn/problems/matchsticks-to-square/
@@ -43,6 +46,8 @@ class TestArray158 {
             return false
         }
         val edges = IntArray(4) { 0 }
+        //为什么逆序排了一下 效率这么高？
+        matchsticks.sortDescending()
 
         return dfs(0, matchsticks, edges, sum / 4)
     }
