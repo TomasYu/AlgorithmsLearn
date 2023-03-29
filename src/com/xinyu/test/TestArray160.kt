@@ -46,8 +46,75 @@ class TestArray160 {
     0 <= clickc < n
     board[clickr][clickc] 为 'M' 或 'E'
      */
-    fun updateBoard(board: Array<CharArray>, click: IntArray): Array<CharArray> {
 
+    private val arrayOfIntArrays = arrayOf(
+        //上
+        intArrayOf(0, -1),
+        //下
+        intArrayOf(0, 1),
+        //左下
+        intArrayOf(-1, 1),
+        //左
+        intArrayOf(-1, 0),
+        //右下
+        intArrayOf(1, 1),
+        //右
+        intArrayOf(1, 0),
+        //左上
+        intArrayOf(-1, -1),
+        //右上
+        intArrayOf(1, -1)
+
+    )
+    fun updateBoard(board: Array<CharArray>, click: IntArray): Array<CharArray> {
+        if (board[click[0]][click[1]] == 'M'){
+            board[click[0]][click[1]] = 'X'
+            return board
+        }
+        dfs(board,click)
         return board
     }
+
+    fun dfs(board: Array<CharArray>, click: IntArray){
+
+        var count = 0
+        arrayOfIntArrays.forEach {
+            if (click[0] + it[0] in board.indices && click[1] + it[1] in 0 until  board[0].size){
+                when (board[click[0] + it[0]][click[1] + it[1]]) {
+                    'M' -> {
+                        count += 1
+                    }
+                }
+            }
+
+        }
+        if(count == 0){
+            board[click[0]][click[1]] = 'B'
+            arrayOfIntArrays.forEach {
+                if (click[0] + it[0] in board.indices && click[1] + it[1] in 0 until  board[0].size){
+                    when (board[click[0] + it[0]][click[1] + it[1]]){
+                        'E' -> {
+                            dfs(board, intArrayOf(click[0] + it[0],click[1] + it[1]))
+                        }
+                    }
+                }
+            }
+        }else{
+            board[click[0]][click[1]] = '0' + count
+        }
+    }
+
+    //事例1怎么看不懂？
+    //看了好几天没明白 看评论 一语点醒梦中人
+}
+
+fun main() {
+//    TestArray160().updateBoard(
+//        arrayOf(
+//            charArrayOf('')
+//
+//
+//        ), intArrayOf(3,0)
+//
+//    )
 }
