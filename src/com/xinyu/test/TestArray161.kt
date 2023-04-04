@@ -36,7 +36,47 @@ class TestArray161 {
     isConnected[i][i] == 1
     isConnected[i][j] == isConnected[j][i]
      */
+    //同一祖先问题？？
+    //数组怎么转化成树呢？
+    //并查集
     fun findCircleNum(isConnected: Array<IntArray>): Int {
-        return -1
+
+        val size = isConnected.size
+        val visit = BooleanArray(size) { false }
+        var result = 0
+        for (i in visit.indices){
+            if (!visit[i]){
+                visit[i] = true
+                dfs(visit,i,isConnected)
+                result ++
+
+            }
+        }
+        return result
     }
+
+    fun dfs(visit:BooleanArray, i : Int,isConnected: Array<IntArray>){
+        for (j in isConnected[i].indices){
+            if (isConnected[i][j] == 1) {
+                if (!visit[j]){//防止死循环  1-3 3-1
+                    visit[j] = true
+                    dfs(visit,j,isConnected)
+                }
+            }
+        }
+    }
+}
+
+fun main() {
+    println(
+        TestArray161().findCircleNum(
+            arrayOf(
+                intArrayOf(1, 0, 0, 1),
+                intArrayOf(0, 1, 1, 0),
+                intArrayOf(0, 1, 1, 1),
+                intArrayOf(1, 0, 1, 1),
+
+                )
+        )
+    )
 }
