@@ -1,5 +1,8 @@
 package com.xinyu.test
 
+import java.util.stream.Collector
+import kotlin.math.max
+
 class TestArray167 {
     //https://leetcode.cn/problems/adding-two-negabinary-numbers/
     /**
@@ -38,11 +41,66 @@ class TestArray167 {
     来源：力扣（LeetCode）
     链接：https://leetcode.cn/problems/adding-two-negabinary-numbers
     著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
+
+
+    https://leetcode.cn/problems/adding-two-negabinary-numbers/solution/python3javacgotypescript-yi-ti-yi-jie-mo-mg0a/
      */
 
     fun addNegabinary(arr1: IntArray, arr2: IntArray): IntArray {
+        //想法是？？？？
+        //题目思路很清晰  但是问题是-2的多少次方？
 
-        return
+        //搞成-2进制  不过跟dfs有什么关系呢？？？？
+        //不停的处以-2
+        //不停的得到的余数
+        //直接dfs计算
+        //但是我怎么知道他的长度呢？？？？
+        var size1 = arr1.size
+        var size2 = arr2.size
+        var bit = 0
+        var i: Int
+        var j: Int
+        var temp: Int
+        val resultList = ArrayList<Int>()
+        while (size1 > 0 || size2 > 0 || bit != 0){
+            i = if (size1 > 0){
+                arr1[--size1]
+            }else{
+                0
+            }
+            j = if (size2 > 0){
+                arr2[--size2]
+            }else{
+                0
+            }
+            temp = i + j + bit
+            if (temp >= 2){
+                temp -= 2
+                bit = -1
+            }else if (temp == -1){
+                temp = 1
+                bit = 1
+            }else{
+                bit = 0
+            }
+            resultList.add(temp)
+        }
+        while (resultList.size > 1 &&  resultList[resultList.lastIndex] == 0){
+            resultList.removeAt(resultList.lastIndex)
+        }
+        resultList.reverse()
+        return resultList.toIntArray()
     }
 
+
+    //原来不是很复杂的数学公式 是简单的公式
+
+
+
+}
+
+fun main() {
+//    println(TestArray167().addNegabinary(intArrayOf(1, 1, 1, 1, 1), intArrayOf(1, 0, 1)).contentToString())
+//    println(TestArray167().addNegabinary(intArrayOf(0), intArrayOf(0)).contentToString())
+    println(TestArray167().addNegabinary(intArrayOf(1), intArrayOf(1)).contentToString())
 }
