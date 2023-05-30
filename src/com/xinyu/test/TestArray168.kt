@@ -48,12 +48,14 @@ class TestArray168 {
     0 <= col < n
      */
 
+    //一定要注意是边界
     fun colorBorder(grid: Array<IntArray>, row: Int, col: Int, color: Int): Array<IntArray> {
         //简单粗暴 直接按照思路走
         //题意有点难懂 边界 边界 那怎么办呢？？？
         val dp = Array(grid.size) {
             BooleanArray(grid[0].size) { false }
         }
+        //注意这里需要对二维数组 进行深copy
         val copyOf = grid.map { t -> t.copyOf() }.toTypedArray()
 
         dfs(grid, grid[row][col], color, row, col, dp,copyOf)
