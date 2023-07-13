@@ -90,4 +90,24 @@ class TestTreeNode6 {
         }
         return depth
     }
+
+
+    fun lowestCommonAncestor(root: TreeNode?, p: TreeNode?, q: TreeNode?): TreeNode? {
+        if (root == null){
+            return null
+        }
+        if (root == p || root == q){
+            return root
+        }
+        val left = lowestCommonAncestor(root.left,p,q)
+        val right = lowestCommonAncestor(root.right,p,q)
+        if (left != null && right != null){
+            return root
+        }else if (left != null){
+            return left
+        }else{
+            return right
+        }
+
+    }
 }
