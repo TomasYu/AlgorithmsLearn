@@ -40,7 +40,31 @@ class TestNode10 {
     0 <= Node.val <= 104
 
      */
-    fun kthSmallest(root: TreeNode?, k: Int): Int {
+    public fun kthSmallest(root: TreeNode?, k: Int): Int {
+
+        //想法：遍历  放到数组里面 直接获取k位
+
+        //其实也不用数组 直接返回也没问题
+        //中序遍历就可以
+        val list = ArrayList<TreeNode>()
+        dfs(root, list)
+        return list[k - 1].`val`
 
     }
+
+    public fun dfs(root: TreeNode?, list: ArrayList<TreeNode>) {
+        if (root == null) {
+            return
+        }
+        dfs(root.left, list)
+        list.add(root)
+        dfs(root.right, list)
+    }
+}
+
+fun main() {
+
+    val treeNode = TreeNode(3, TreeNode(1, null, TreeNode(2)), TreeNode(4))
+    println(TestNode10().kthSmallest(treeNode, 1))
+
 }
