@@ -49,7 +49,6 @@ class TestNode53 {
         //其实也不用数组 直接返回也没问题
         //中序遍历就可以
 
-        val linkedList = LinkedList<TreeNode>()
 
         //zuo 自己 有
         //会改变原来的结构
@@ -61,25 +60,25 @@ class TestNode53 {
         //大部分还都是平凡人
         //有的时候需要忘的差不多了才去些算法才能记忆深刻
 
+        val linkedList = LinkedList<TreeNode>()
         var cur: TreeNode? = null
         if (root != null) {
             linkedList.add(root)
         }
-
         var curIndex = 1
         while (!linkedList.isEmpty()) {
             //当前cur为空 说明有一个新的根节点 需要遍历左孩子
-            if (cur == null){
+            if (cur == null) {
                 cur = linkedList.peek()
                 while (cur?.left != null) {
                     linkedList.push(cur.left)
                     cur = cur.left
                 }
-            }else{
+            } else {
                 cur = linkedList.peek()
             }
 
-            if (curIndex++ == k){
+            if (curIndex++ == k) {
                 return cur!!.`val`
             }
             //当前节点不满足 移出去
@@ -92,7 +91,29 @@ class TestNode53 {
             }
         }
         return -1
+    }
 
+
+    //思路不清晰
+    //完全可以先放后取
+    //而不是边取边放
+    fun kthSmallest2(root: TreeNode?, k: Int): Int {
+        val linkedList = LinkedList<TreeNode>()
+        var cur: TreeNode? = root
+        var curIndex = 1
+        while (!linkedList.isEmpty() || cur != null) {
+            while (cur != null) {
+                linkedList.push(cur)
+                cur = cur.left
+            }
+            cur = linkedList.pop()
+            if (curIndex++ == k) {
+                return cur!!.`val`
+            }
+            //当前节点不满足 移出去
+            cur = cur?.right
+        }
+        return -1
     }
 
     public fun dfs(root: TreeNode?, list: ArrayList<TreeNode>) {
