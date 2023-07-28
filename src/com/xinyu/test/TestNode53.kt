@@ -61,10 +61,37 @@ class TestNode53 {
         //大部分还都是平凡人
         //有的时候需要忘的差不多了才去些算法才能记忆深刻
 
+        var cur: TreeNode? = null
+        if (root != null) {
+            linkedList.add(root)
+        }
 
-        linkedList
+        var curIndex = 1
+        while (!linkedList.isEmpty()) {
+            //当前cur为空 说明有一个新的根节点 需要遍历左孩子
+            if (cur == null){
+                cur = linkedList.peek()
+                while (cur?.left != null) {
+                    linkedList.push(cur.left)
+                    cur = cur.left
+                }
+            }else{
+                cur = linkedList.peek()
+            }
 
-        return -2
+            if (curIndex++ == k){
+                return cur!!.`val`
+            }
+            //当前节点不满足 移出去
+            linkedList.pop()
+
+            //右边有孩子 那么需要遍历左孩子
+            if (cur?.right != null) {
+                linkedList.push(cur.right)
+                cur = null
+            }
+        }
+        return -1
 
     }
 
