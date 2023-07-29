@@ -58,8 +58,13 @@ class TestNode54 {
      * 1.常数范围内获取最小？？ 每次push pop 更新一遍？
      *
      * 除非联表加数组  数组维护栈的顺序 连标维护大小关系
+     *
+     *
+     *
      */
 
+    //一定要知道 栈是单向进出的 所以才可以保证每一步操作都是最小的
+    //
     class MinStack() {
         val stack = LinkedList<Int>()
         val miniStack = LinkedList<Int>()
