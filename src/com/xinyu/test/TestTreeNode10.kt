@@ -43,10 +43,35 @@ class TestTreeNode10 {
      */
 
     fun maxPathSum(root: TreeNode?): Int {
+        var max = Int.MIN_VALUE
 
+        if (root == null){
+            return Int.MIN_VALUE
+        }
         //只是知道节点和  那应该简单
         //每个节点 肯定知道 左右孩子的合
         //每一步记录更新最大的合
-        return -1
+        //层序遍历就可以
+        val maxLeft = maxPathSum(root.left)
+        val maxRight = maxPathSum(root.right)
+        max = max.coerceAtLeast(root.`val`)
+        max = max.coerceAtLeast(maxLeft)
+        max = max.coerceAtLeast(maxRight)
+        if (maxLeft != Int.MIN_VALUE && maxRight != Int.MIN_VALUE) {
+            max = max.coerceAtLeast(maxLeft + maxRight + root.`val`)
+        }
+        if (maxRight != Int.MIN_VALUE){
+            max = max.coerceAtLeast(maxRight + root.`val`)
+        }
+        if (maxLeft != Int.MIN_VALUE){
+            max = max.coerceAtLeast(maxLeft + root.`val`)
+        }
+        return max
+    }
+
+    //逻辑有漏洞  需要考虑连接性
+
+    fun dfs(root: TreeNode?){
+
     }
 }
