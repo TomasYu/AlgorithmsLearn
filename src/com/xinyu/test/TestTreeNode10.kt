@@ -41,37 +41,43 @@ class TestTreeNode10 {
     -1000 <= Node.val <= 1000
 
      */
+    private var finalMax = Int.MIN_VALUE
 
     fun maxPathSum(root: TreeNode?): Int {
-        var max = Int.MIN_VALUE
+        dfs(root)
+        return finalMax
+    }
 
-        if (root == null){
-            return Int.MIN_VALUE
+    fun dfs(root: TreeNode?): Int {
+        if (root == null) {
+            return 0
         }
-        //只是知道节点和  那应该简单
-        //每个节点 肯定知道 左右孩子的合
-        //每一步记录更新最大的合
-        //层序遍历就可以
-        val maxLeft = maxPathSum(root.left)
-        val maxRight = maxPathSum(root.right)
-        max = max.coerceAtLeast(root.`val`)
-        max = max.coerceAtLeast(maxLeft)
-        max = max.coerceAtLeast(maxRight)
-        if (maxLeft != Int.MIN_VALUE && maxRight != Int.MIN_VALUE) {
-            max = max.coerceAtLeast(maxLeft + maxRight + root.`val`)
-        }
-        if (maxRight != Int.MIN_VALUE){
-            max = max.coerceAtLeast(maxRight + root.`val`)
-        }
-        if (maxLeft != Int.MIN_VALUE){
-            max = max.coerceAtLeast(maxLeft + root.`val`)
-        }
+        //左右两个子节点贡献值最小为0 如果是负数那么就直接不归属，相当于取0
+        val maxLeft = dfs(root.left).coerceAtLeast(0)
+        val maxRight = dfs(root.right).coerceAtLeast(0)
+        var max = (maxRight + root.`val`).coerceAtLeast(maxLeft + root.`val`)
+        //当前节点当作整个路径的最大值计算一下
+        finalMax = finalMax.coerceAtLeast(maxLeft + maxRight + root.`val`)
+        //返回的max表示当前节点的最大贡献值
         return max
     }
 
-    //逻辑有漏洞  需要考虑连接性
+    /**
+    返回指是贡献的值
+    不包含左右节点
+    而最大值是可以包含的
 
-    fun dfs(root: TreeNode?){
 
-    }
+
+
+
+
+    核心是注意当前节点的最大路径，与当前节点作为子节点时的贡献是两个不同的值
+
+    当前节点的最大路径： max(自己，自己+左边，自己+右边，自己 + 左边 + 右边）
+    当前节点作为子节点时的贡献：max(自己，自己+左边，自己+右边）
+    后者相对前者，少了左右都存在的情况。因为作为子节点时，一条路如果同时包含左右，根就被包含了2次，不符合题目只出现一次的限制了。
+
+
+     */
 }
