@@ -42,8 +42,36 @@ class TestArray170 {
 
     1 <= n <= 16
 
-     */
-    fun grayCode(n: Int): List<Int> {
 
+
+    怎么样把一个数的最高位从0变成1呢
+    在原来的基础上增加2的n次就可以
+    但是怎么求出来一个数2进制有几位呢
+
+
+    二进制操作还是有些问题啊
+    怎么知道二进制的最高位？？？
+     */
+
+    fun grayCode(n: Int): List<Int> {
+        val result = mutableListOf<Int>()
+        dfs(n , result)
+        return result
     }
+
+    fun dfs(n: Int, list: MutableList<Int>): Int {
+        if (n == 0) {
+            list.add(0)
+            return 0
+        }
+        val shift = dfs(n - 1, list)
+        for (j in list.size - 1 downTo 0) {
+            list.add(list[j] + (1 shl shift))
+        }
+        return shift + 1
+    }
+}
+
+fun main() {
+    println(TestArray170().grayCode(2))
 }
