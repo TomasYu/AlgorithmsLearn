@@ -1,5 +1,7 @@
 package com.xinyu.test
 
+import java.util.ArrayList
+
 class TestArray171 {
     //https://leetcode.cn/problems/spiral-matrix/
     /**
@@ -38,20 +40,48 @@ class TestArray171 {
     然后进行递归调用
 
 
-     能看懂就不错了
-     写不出来的
-     费很大劲才能看懂
-     别说让他做出来了
+    能看懂就不错了
+    写不出来的
+    费很大劲才能看懂
+    别说让他做出来了
 
-     但是看了别人的就很简单
+    但是看了别人的就很简单
 
+
+    谁有功夫鼓励谁啊？只能自己鼓励自己，
+    自己夸奖自己，让自己往前发展。
+    自己安慰自己
 
      */
     fun spiralOrder(matrix: Array<IntArray>): List<Int> {
         val row = matrix.size
         val col = matrix[0].size
         val list = mutableListOf<Int>()
-        dfs(row, col, matrix, 0, list)
+        val direction = listOf(intArrayOf(0, 1), intArrayOf(1, 0), intArrayOf(0, -1), intArrayOf(-1, 0))
+        val visited = Array(row) { BooleanArray(col) { false } }
+        var dIndex = 0
+        var x = 0
+        var y = 0
+//        for (i in 0 until row){
+//            for (j in 0 until col){
+//
+//            }
+//        }
+        while (list.size < row * col) {
+            list.add(matrix[x][y])
+            visited[x][y] = true
+
+            val i = x + direction[dIndex][0]
+            val j = y + direction[dIndex][1]
+            if (i >= row || i < 0 ||
+                j >= col || j < 0 ||
+                visited [i][j]
+            ) {
+                dIndex = (dIndex + 1) % 4
+            }
+            x += direction[dIndex][0]
+            y += direction[dIndex][1]
+        }
         return list
     }
 
@@ -63,10 +93,16 @@ class TestArray171 {
 
         // 一共有几圈呢？？？ 重复的问题怎么处理？？？
         //还要记SP？？？
-        for (i in 0..col){
+        for (i in 0..col) {
 
         }
-        dfs(row,col,matrix,cur + 1,list)
+        dfs(row, col, matrix, cur + 1, list)
     }
 
+}
+
+fun main() {
+    println(9 < 9)
+    //null 可以是任何类型
+    ArrayList<Int>(null)
 }
