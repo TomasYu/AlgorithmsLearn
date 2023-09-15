@@ -52,6 +52,11 @@ class TestArray171 {
     自己夸奖自己，让自己往前发展。
     自己安慰自己
 
+
+    终于做出来了
+    看题解做出来的
+    是不是没有体会到数学的乐趣？？
+    逻辑的乐趣？？？？
      */
     fun spiralOrder(matrix: Array<IntArray>): List<Int> {
         val row = matrix.size
@@ -60,27 +65,22 @@ class TestArray171 {
         val direction = listOf(intArrayOf(0, 1), intArrayOf(1, 0), intArrayOf(0, -1), intArrayOf(-1, 0))
         val visited = Array(row) { BooleanArray(col) { false } }
         var dIndex = 0
-        var x = 0
-        var y = 0
-//        for (i in 0 until row){
-//            for (j in 0 until col){
-//
-//            }
-//        }
+        var curRow = 0
+        var curCol = 0
         while (list.size < row * col) {
-            list.add(matrix[x][y])
-            visited[x][y] = true
+            list.add(matrix[curRow][curCol])
+            visited[curRow][curCol] = true
 
-            val i = x + direction[dIndex][0]
-            val j = y + direction[dIndex][1]
-            if (i >= row || i < 0 ||
-                j >= col || j < 0 ||
-                visited [i][j]
+            val nextRow = curRow + direction[dIndex][0]
+            val nextCol = curCol + direction[dIndex][1]
+            if (nextRow >= row || nextRow < 0 ||
+                nextCol >= col || nextCol < 0 ||
+                visited [nextRow][nextCol]
             ) {
                 dIndex = (dIndex + 1) % 4
             }
-            x += direction[dIndex][0]
-            y += direction[dIndex][1]
+            curRow += direction[dIndex][0]
+            curCol += direction[dIndex][1]
         }
         return list
     }
