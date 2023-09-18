@@ -73,5 +73,64 @@ class TestString27 {
 
     fun myAtoi(s: String): Int {
         //简单 从前开始计算值 前面的值*10 + 后面的值就可以了
+        val charArray = s.toCharArray()
+        var result = 0L
+        var fu = false
+        var get = false
+        var start = false
+        for (c in charArray){
+            if (c == ' '){
+                //
+                if (start || get){
+                    break
+                }
+            }else if (c - '0' in 0..9){
+                result = result * 10 + (c - '0')
+                start = true
+            }else if (c == '-'){
+                if (start){
+                    break
+                }else{
+                    fu = true
+                }
+                if (get){
+                    break
+                }
+                get = true
+
+            }else if (c == '+'){
+                if (get){
+                    break
+                }
+                get = true
+            }else{
+                    break
+            }
+            if (result > Int.MAX_VALUE){
+                if (fu){
+                    return Int.MIN_VALUE
+                }else{
+                    return Int.MAX_VALUE
+                }
+            }
+        }
+        if (result > Int.MAX_VALUE){
+            if (fu){
+                return Int.MIN_VALUE
+            }else{
+                return Int.MAX_VALUE
+            }
+        }else{
+            if (fu){
+                result = -result
+            }
+        }
+
+        return result.toInt()
     }
+}
+
+fun main() {
+    println(TestString27().myAtoi("-42"))
+    println(TestString27().myAtoi("words and 987"))
 }
