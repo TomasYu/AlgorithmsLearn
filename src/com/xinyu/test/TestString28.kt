@@ -1,6 +1,6 @@
 package com.xinyu.test
 
-class TestString27 {
+class TestString28 {
     /**
     https://leetcode.cn/problems/string-to-integer-atoi/
 
@@ -74,56 +74,101 @@ class TestString27 {
     最怕理解不对题意
     写个代码 九九八十一难
 
-     原来是自动机思想
+    原来是自动机思想
 
-     这他妈也叫代码？
+    这他妈也叫代码？
      */
 
     fun myAtoi(s: String): Int {
         //简单 从前开始计算值 前面的值*10 + 后面的值就可以了
         val charArray = s.toCharArray()
-        var result = 0L
-        var fuShu = false
-        var start = false
+        val autoMaton = AutoMaton()
         for (c in charArray) {
-            if (c == ' ') {
-                if (start) {
-                    break
-                }
-            } else if (c - '0' in 0..9) {
-                result = result * 10 + (c - '0')
-                start = true
-            } else if (c == '-') {
-                if (start) {
-                    break
-                } else {
-                    fuShu = true
-                }
-                start = true
-            } else if (c == '+') {
-                if (start) {
-                    break
-                }
-                start = true
-            } else {
+            if (autoMaton.getNextState(c) == State.End) {
                 break
             }
-            if (result > Int.MAX_VALUE) {
-                return if (fuShu) {
-                    Int.MIN_VALUE
-                } else {
-                    Int.MAX_VALUE
-                }
-            }
         }
-        if (fuShu) {
-            result = -result
-        }
-        return result.toInt()
+
+        return autoMaton.result.toInt()
     }
 }
 
+enum class State {
+    Start,
+    Symbol,
+    ReadNumber,
+    End
+}
+
+class AutoMaton {
+    private var map = mutableMapOf<State, MutableList<State>>()
+    private var curState = State.Start
+    var result: Long = 0L
+    var temp: Long = 0L
+    private var fushu = false
+
+    init {
+        //+- 空格 数字 其他
+        map.put(State.Start, mutableListOf(State.Symbol, State.Start, State.ReadNumber, State.End))
+        map.put(State.Symbol, mutableListOf(State.End, State.End, State.ReadNumber, State.End))
+        map.put(State.ReadNumber, mutableListOf(State.End, State.End, State.ReadNumber, State.End))
+        map.put(State.End, mutableListOf(State.End, State.End, State.End, State.End))
+    }
+
+    fun getNextState(c: Char): State {
+        curState = map[curState]!![getCharIndex(c)]
+        when (curState) {
+            State.Start -> {}
+            State.Symbol -> {
+                // 0 * -1???
+                fushu = c == '-'
+            }
+
+            State.ReadNumber -> {
+                //0
+                temp = (temp.coerceAtMost(Int.MAX_VALUE.toLong()) * 10 + (c - '0'))
+                result = if (fushu) {
+//                    (temp * 10 + (c - '0')).coerceAtMost(Int.MAX_VALUE.toLong())
+                    (-temp).coerceAtLeast(Int.MIN_VALUE.toLong())
+                }else{
+                    temp.coerceAtMost(Int.MAX_VALUE.toLong())
+                }
+            }
+
+            State.End -> {
+            }
+        }
+        return curState
+    }
+
+    private fun getCharIndex(c: Char): Int {
+        when (c) {
+            '+', '-' -> {
+                return 0
+            }
+
+            ' ' -> {
+                return 1
+            }
+
+            in '0'..'9' -> {
+                return 2
+            }
+
+            else -> {
+                return 3
+            }
+        }
+    }
+
+
+}
+
 fun main() {
-    println(TestString27().myAtoi("-42"))
-    println(TestString27().myAtoi("words and 987"))
+    println(TestString28().myAtoi("9223372036854775808"))
+    println(TestString28().myAtoi("42"))
+    println(TestString28().myAtoi("-42"))
+    println(TestString28().myAtoi("words and 987"))
+    println(TestString28().myAtoi("4193 and 987"))
+    println(Int.MIN_VALUE.toLong())
 }
