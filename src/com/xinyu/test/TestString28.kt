@@ -104,7 +104,6 @@ class AutoMaton {
     private var map = mutableMapOf<State, MutableList<State>>()
     private var curState = State.Start
     var result: Long = 0L
-    var temp: Long = 0L
     private var fushu = false
 
     init {
@@ -125,13 +124,11 @@ class AutoMaton {
             }
 
             State.ReadNumber -> {
-                //0
-                temp = (temp.coerceAtMost(Int.MAX_VALUE.toLong()) * 10 + (c - '0'))
+                //竟然让一个负数给我难住了 真蔡了当时
                 result = if (fushu) {
-//                    (temp * 10 + (c - '0')).coerceAtMost(Int.MAX_VALUE.toLong())
-                    (-temp).coerceAtLeast(Int.MIN_VALUE.toLong())
-                }else{
-                    temp.coerceAtMost(Int.MAX_VALUE.toLong())
+                    (result * 10 - (c - '0')).coerceAtLeast(Int.MIN_VALUE.toLong())
+                } else {
+                    (result * 10 + (c - '0')).coerceAtMost(Int.MAX_VALUE.toLong())
                 }
             }
 
@@ -141,6 +138,7 @@ class AutoMaton {
         return curState
     }
 
+    //+- 空格 数字 其他
     private fun getCharIndex(c: Char): Int {
         when (c) {
             '+', '-' -> {
