@@ -84,16 +84,7 @@ class TestLru2 {
             val orDefault = map.getOrDefault(key, -1)
             if (orDefault != -1) {
                 val find = find(key)
-                if (find != null) {
-                    find.nex!!.pre = find.pre
-                    find.pre!!.nex = find.nex
-
-                    dumpHead.nex!!.pre = find
-                    find.nex = dumpHead.nex
-
-                    dumpHead.nex = find
-                    find.pre = dumpHead
-                }
+                updateNodeToHeadNext(find)
             }
             return orDefault
         }
@@ -102,16 +93,7 @@ class TestLru2 {
 
             if (map.containsKey(key)) {
                 val find = find(key)
-                if (find != null) {
-                    find.nex!!.pre = find.pre
-                    find.pre!!.nex = find.nex
-
-                    dumpHead.nex!!.pre = find
-                    find.nex = dumpHead.nex
-
-                    dumpHead.nex = find
-                    find.pre = dumpHead
-                }
+                updateNodeToHeadNext(find)
             } else {
                 val node = Node(key)
                 dumpHead.nex!!.pre = node
@@ -128,6 +110,19 @@ class TestLru2 {
                     dumpTail.pre = it.pre
                     map.remove(it.value)
                 }
+            }
+        }
+
+        private fun updateNodeToHeadNext(find: Node?) {
+            if (find != null) {
+                find.nex!!.pre = find.pre
+                find.pre!!.nex = find.nex
+
+                dumpHead.nex!!.pre = find
+                find.nex = dumpHead.nex
+
+                dumpHead.nex = find
+                find.pre = dumpHead
             }
         }
 
