@@ -57,21 +57,23 @@ class TestLru2 {
     这个继承都继承不了？？
 
      */
-    class Node(value: Int) {
+    class Node(key: Int, value: Int) {
         var pre: Node? = null
         var nex: Node? = null
         var value: Int
+        var key: Int
 
         init {
             this.value = value
+            this.key = key
         }
     }
 
 
     class LRUCache(capacity: Int) {
         var map = mutableMapOf<Int, Node>()
-        var dumpHead: Node = Node(-1)
-        private var dumpTail: Node = Node(-1)
+        private var dumpHead: Node = Node(-1, -1)
+        private var dumpTail: Node = Node(-1, -1)
         var mCapability = capacity
 
         init {
@@ -82,7 +84,7 @@ class TestLru2 {
         fun get(key: Int): Int {
             val value = map.getOrDefault(key, null)
             if (value != null) {
-                updateNodeToHeadNext(value)
+                updateNodeToHeadNext(map[key])
             }
             return value?.value ?: -1
         }
@@ -91,8 +93,9 @@ class TestLru2 {
 
             if (map.containsKey(key)) {
                 updateNodeToHeadNext(map[key])
+                map[key]!!.value = value
             } else {
-                val node = Node(key)
+                val node = Node(key, value)
                 dumpHead.nex!!.pre = node
                 node.nex = dumpHead.nex
                 dumpHead.nex = node
@@ -104,7 +107,7 @@ class TestLru2 {
                 dumpTail.pre?.let {
                     it.pre!!.nex = dumpTail
                     dumpTail.pre = it.pre
-                    map.remove(it.value)
+                    map.remove(it.key)
                 }
             }
         }
