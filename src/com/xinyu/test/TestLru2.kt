@@ -69,7 +69,7 @@ class TestLru2 {
 
 
     class LRUCache(capacity: Int) {
-        var map = mutableMapOf<Int, Int>()
+        var map = mutableMapOf<Int, Node>()
         var dumpHead: Node = Node(-1)
         private var dumpTail: Node = Node(-1)
         var mCapability = capacity
@@ -80,29 +80,25 @@ class TestLru2 {
         }
 
         fun get(key: Int): Int {
-
-            val orDefault = map.getOrDefault(key, -1)
-            if (orDefault != -1) {
-                val find = find(key)
-                updateNodeToHeadNext(find)
+            val value = map.getOrDefault(key, null)
+            if (value != null) {
+                updateNodeToHeadNext(value)
             }
-            return orDefault
+            return value?.value ?: -1
         }
 
         fun put(key: Int, value: Int) {
 
             if (map.containsKey(key)) {
-                val find = find(key)
-                updateNodeToHeadNext(find)
+                updateNodeToHeadNext(map[key])
             } else {
                 val node = Node(key)
                 dumpHead.nex!!.pre = node
                 node.nex = dumpHead.nex
                 dumpHead.nex = node
                 node.pre = dumpHead
+                map[key] = node
             }
-            map[key] = value
-
 
             while (map.size > mCapability) {
                 dumpTail.pre?.let {
@@ -124,17 +120,6 @@ class TestLru2 {
                 dumpHead.nex = find
                 find.pre = dumpHead
             }
-        }
-
-        fun find(key: Int): Node? {
-            var cur = dumpHead.nex
-            while (cur != null) {
-                if (cur.value == key) {
-                    return cur
-                }
-                cur = cur.nex
-            }
-            return null
         }
 
     }
