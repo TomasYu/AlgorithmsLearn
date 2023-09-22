@@ -36,8 +36,24 @@ class TestList {
 
     /**
      dfs 搜索这个是
+     回溯
+
+     最可恶的是 之前做过
      */
     fun permute(nums: IntArray): List<List<Int>> {
 
+    }
+
+    fun dfs(nums: IntArray,list:List<List<Int>>, visist:BooleanArray){
+        //什么时候开始呢？ 什么时候结束呢？？？
+
+        for (i in nums.indices){
+            if (!visist[i]){
+                visist[i] = true
+                dfs(nums,list,visist)
+                visist[i] = false
+            }
+
+        }
     }
 }
