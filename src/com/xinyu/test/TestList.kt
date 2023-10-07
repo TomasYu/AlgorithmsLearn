@@ -1,5 +1,7 @@
 package com.xinyu.test
 
+import java.util.ArrayList
+
 class TestList {
     //https://leetcode.cn/problems/permutations/
     /**
@@ -35,25 +37,46 @@ class TestList {
     //直接N*N???
 
     /**
-     dfs 搜索这个是
-     回溯
+    dfs 搜索这个是
+    回溯
 
-     最可恶的是 之前做过
+    最可恶的是 之前做过
      */
     fun permute(nums: IntArray): List<List<Int>> {
 
+        val list = mutableListOf<List<Int>>()
+        for (i in nums.indices) {
+            val one = mutableListOf<Int>()
+            one.add(nums[i])
+            val booleanArray = BooleanArray(nums.size) { false }
+            booleanArray[i] = true
+            if (one.size == nums.size) {
+                list.add(ArrayList(one))
+            }
+            dfs(nums, list, one, booleanArray, 0)
+        }
+        return list
     }
 
-    fun dfs(nums: IntArray,list:List<List<Int>>, visist:BooleanArray){
+    fun dfs(nums: IntArray, list: MutableList<List<Int>>, one: MutableList<Int>, visist: BooleanArray, length: Int) {
         //什么时候开始呢？ 什么时候结束呢？？？
 
-        for (i in nums.indices){
-            if (!visist[i]){
+        for (i in nums.indices) {
+            if (!visist[i]) {
                 visist[i] = true
-                dfs(nums,list,visist)
+                one.add(nums[i])
+                dfs(nums, list, one, visist, length + 1)
+                if (one.size == nums.size) {
+                    list.add(ArrayList(one))
+                }
+                one.remove(nums[i])
                 visist[i] = false
             }
-
         }
     }
+}
+
+fun main() {
+    println(TestList().permute(intArrayOf(1, 2, 3)))
+    println(TestList().permute(intArrayOf(1)))
 }
