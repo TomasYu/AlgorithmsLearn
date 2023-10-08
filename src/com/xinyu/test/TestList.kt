@@ -45,32 +45,25 @@ class TestList {
     fun permute(nums: IntArray): List<List<Int>> {
 
         val list = mutableListOf<List<Int>>()
-        for (i in nums.indices) {
-            val one = mutableListOf<Int>()
-            one.add(nums[i])
-            val booleanArray = BooleanArray(nums.size) { false }
-            booleanArray[i] = true
-            if (one.size == nums.size) {
-                list.add(ArrayList(one))
-            }
-            dfs(nums, list, one, booleanArray, 0)
-        }
+        val visited = BooleanArray(nums.size) { false }
+        val curList = mutableListOf<Int>()
+        dfs(nums, list, curList, visited)
         return list
     }
 
-    fun dfs(nums: IntArray, list: MutableList<List<Int>>, one: MutableList<Int>, visist: BooleanArray, length: Int) {
-        //什么时候开始呢？ 什么时候结束呢？？？
-
+    fun dfs(nums: IntArray, list: MutableList<List<Int>>, curList: MutableList<Int>, visited: BooleanArray) {
+        //成功后保存快照
+        //经典回溯
         for (i in nums.indices) {
-            if (!visist[i]) {
-                visist[i] = true
-                one.add(nums[i])
-                dfs(nums, list, one, visist, length + 1)
-                if (one.size == nums.size) {
-                    list.add(ArrayList(one))
+            if (!visited[i]) {
+                visited[i] = true
+                curList.add(nums[i])
+                dfs(nums, list, curList, visited)
+                if (curList.size == nums.size) {
+                    list.add(ArrayList(curList))
                 }
-                one.remove(nums[i])
-                visist[i] = false
+                curList.remove(nums[i])
+                visited[i] = false
             }
         }
     }
