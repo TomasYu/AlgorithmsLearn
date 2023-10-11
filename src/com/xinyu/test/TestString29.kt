@@ -61,37 +61,46 @@ class TestString29 {
     动态规划 都是从少到多
     把大问题分解为小问题
 
+    一定要明白start 和 end的含义
+
      */
     fun longestPalindrome(s: String): String {
         var start = 0
         var end = 1
 
-        val length = s.length
+        val size = s.length
         val charArray = s.toCharArray()
-        val booleanArray = Array(length) {
-            BooleanArray(length) { false }
+        val dpArray = Array(size) {
+            BooleanArray(size) { false }
         }
 
-        for (i in 0 until length) {
-            booleanArray[i][i] = true
+        for (i in 0 until size) {
+            dpArray[i][i] = true
         }
-
-        for (i in 2..length) {
-            for (j in 0..length) {
-                if (i == 2) {
-                    if (j + 1 < length) {
-                        booleanArray[j][j + i - 1] = charArray[j] == charArray[j + 1]
+        //i 表示字串的长度
+        for (length in 2..size) {
+            //j 表示字串的起始位置
+            for (startIndex in 0 until size) {
+                val endIndex = startIndex + length - 1
+                if (endIndex >= size) {
+                    break
+                }
+                //长度是2
+                if (length == 2) {
+                    if (startIndex + 1 < size) {
+                        dpArray[startIndex][endIndex] = charArray[startIndex] == charArray[startIndex + 1]
                     }
                 } else {
-                    if (j + i - 1 < length) {
-                        booleanArray[j][j + i - 1] =
-                            booleanArray[j + 1][j + i - 2] and (charArray[j] == charArray[j + i - 1])
+                    //长度是3以上
+                    if (endIndex < size) {
+                        dpArray[startIndex][endIndex] =
+                            dpArray[startIndex + 1][startIndex + length - 2] && charArray[startIndex] == charArray[endIndex]
                     }
                 }
 
-                if (j + i - 1 < length && booleanArray[j][j + i - 1] && (i > end - start)) {
-                    end = j + i
-                    start = j
+                if (dpArray[startIndex][endIndex] && length > end - start) {
+                    start = startIndex
+                    end = startIndex + length
                 }
             }
         }
