@@ -79,6 +79,8 @@ class TestString30 {
 
     如果没有 就没有 哎
 
+    确实有点麻烦了
+    完全不用count 这个变量就可以
      */
     fun numWays(s: String): Int {
         val chars = s.toCharArray()
@@ -92,20 +94,17 @@ class TestString30 {
             }
         }
 
-        if (count == 0) {
+        return if (count == 0) {
             val size = chars.size.toLong()
             var split = size - 1
-            return if (size < 3) {
-                0
-            } else {
-                ((split * (split - 1) / 2) % base).toInt()
-            }
+            ((split * (split - 1) / 2) % base).toInt()
+
         } else if (count % 3 == 0) {
             val split = count / 3
-            //long 也能越界？？？？
-            return (((map[split]!! - map[split - 1]!!).toLong() * (map[split * 2]!! - map[split * 2 - 1]!!) % base).toInt())
+            //long 也能越界？？？？  这个越界不了 是上面的在越界
+            (((map[split]!! - map[split - 1]!!).toLong() * (map[split * 2]!! - map[split * 2 - 1]!!) % base).toInt())
         } else {
-            return 0
+            0
         }
     }
 
