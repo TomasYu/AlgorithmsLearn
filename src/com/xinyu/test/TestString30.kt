@@ -1,5 +1,7 @@
 package com.xinyu.test
 
+import kotlin.math.pow
+
 class TestString30 {
     //https://leetcode.cn/problems/number-of-ways-to-split-a-string/description/
     /**
@@ -51,36 +53,66 @@ class TestString30 {
      */
 
     /**
-     这什么玩意 我擦
-     这个得回溯 去做吧
-     但是结果量  计算量是个考验
-     dfs????
-     应该不行  固定了3组
+    这什么玩意 我擦
+    这个得回溯 去做吧
+    但是结果量  计算量是个考验
+    dfs????
+    应该不行  固定了3组
 
-     首先 整个1的个数
-     然后分完成三个
-     每个的数量
-     然后计算两个1之间的0的数量
-     绝对有公式
+    首先 整个1的个数
+    然后分完成三个
+    每个的数量
+    然后计算两个1之间的0的数量
+    绝对有公式
 
-     全0的单独计算
-     3！ 阶乘 几个0 的阶乘
-     好像不对
-
-
-
-     高中数学没学好啊
-     这本应该在15-17岁就懂得年纪
-     30了还没有懂
+    全0的单独计算
+    3！ 阶乘 几个0 的阶乘
+    好像不对
 
 
 
-     如果没有 就没有 哎
+    高中数学没学好啊
+    这本应该在15-17岁就懂得年纪
+    30了还没有懂
+
+
+
+    如果没有 就没有 哎
 
      */
     fun numWays(s: String): Int {
+        val chars = s.toCharArray()
+        val map = mutableMapOf<Int, Int>()
+        var count = 0
+        val base = 10.0.pow(9.0) + 7
+        chars.forEachIndexed { index, c ->
+            if (c == '1') {
+                map[count] = index
+                count++
+            }
+        }
 
+        if (count == 0) {
+            val size = chars.size.toLong()
+            var split = size - 1
+            return if (size < 3) {
+                0
+            } else {
+                ((split * (split - 1) / 2) % base).toInt()
+            }
+        } else if (count % 3 == 0) {
+            val split = count / 3
+            //long 也能越界？？？？
+            return (((map[split]!! - map[split - 1]!!).toLong() * (map[split * 2]!! - map[split * 2 - 1]!!) % base).toInt())
+        } else {
+            return 0
+        }
     }
 
 
+}
+
+fun main() {
+//    println(TestString30().numWays("100100010100110"))
+    println(TestString30().numWays("010010000000001000"))
 }
