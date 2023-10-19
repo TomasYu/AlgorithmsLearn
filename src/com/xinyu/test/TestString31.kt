@@ -1,5 +1,7 @@
 package com.xinyu.test
 
+import java.lang.StringBuilder
+
 class TestString31 {
     /**
 
@@ -45,9 +47,25 @@ class TestString31 {
 
     1 <= word1.length, word2.length <= 100
     word1 和 word2 由小写英文字母组成
+
+
+    这题绝对简单 但是怎么写才能优雅？？？
+    取最长的长度
+    使用SB遍历添加
      */
 
     fun mergeAlternately(word1: String, word2: String): String {
+        val stringBuilder = StringBuilder()
+        val largeLength = word1.length.coerceAtLeast(word2.length)
+        for (i in 0 until largeLength) {
+            if (i < word1.length){
+                stringBuilder.append(word1[i])
+            }
+            if (i < word2.length){
+                stringBuilder.append(word2[i])
+            }
+        }
 
+        return stringBuilder.toString()
     }
 }
