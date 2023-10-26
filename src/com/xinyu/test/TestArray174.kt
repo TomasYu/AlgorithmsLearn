@@ -82,6 +82,7 @@ class TestArray174 {
 
 
 
+    最次最次也要自己写
 
      */
 
@@ -104,8 +105,36 @@ class TestArray174 {
         }
 
         for (i in 1 until size - 1) {
-            if (nums[i] > left[i] && nums[i] < right[i]){
+            if (nums[i] > left[i] && nums[i] < right[i]) {
                 return true
+            }
+        }
+        return false
+    }
+
+
+    fun increasingTriplet2(nums: IntArray): Boolean {
+        val size = nums.size
+        if (size < 3) {
+            return false
+        }
+        var first = nums[0]
+        var second = Int.MIN_VALUE
+        for (i in 1 until size) {
+            if (second == Int.MIN_VALUE) {
+                if (nums[i] > first) {
+                    second = nums[i]
+                }else{
+                    first = nums[i]
+                }
+            } else {
+                if (nums[i] > second) {
+                    return true
+                } else if (nums[i] > first) {
+                    second = nums[i]
+                }else{
+                    first = nums[i]
+                }
             }
         }
         return false
