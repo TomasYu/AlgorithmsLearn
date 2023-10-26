@@ -114,6 +114,7 @@ class TestArray174 {
 
 
     fun increasingTriplet2(nums: IntArray): Boolean {
+        //保存两个变量
         val size = nums.size
         if (size < 3) {
             return false
