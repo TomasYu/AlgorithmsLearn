@@ -119,22 +119,14 @@ class TestArray174 {
             return false
         }
         var first = nums[0]
-        var second = Int.MIN_VALUE
+        var second = Int.MAX_VALUE
         for (i in 1 until size) {
-            if (second == Int.MIN_VALUE) {
-                if (nums[i] > first) {
-                    second = nums[i]
-                }else{
-                    first = nums[i]
-                }
+            if (nums[i] > second) {
+                return true
+            } else if (nums[i] > first) {
+                second = nums[i]
             } else {
-                if (nums[i] > second) {
-                    return true
-                } else if (nums[i] > first) {
-                    second = nums[i]
-                }else{
-                    first = nums[i]
-                }
+                first = nums[i]
             }
         }
         return false
