@@ -38,47 +38,47 @@ class TestArray174 {
 
     进阶：你能实现时间复杂度为 O(n) ，空间复杂度为 O(1) 的解决方案吗？
 
-     这个题有点意思
+    这个题有点意思
 
-     到底连续不连续呢？？？
-     动态规划去做？
-     连续两个
-     记录当前最小值 i  curLast j
-       x  > i  x = i j ++
-     不行
+    到底连续不连续呢？？？
+    动态规划去做？
+    连续两个
+    记录当前最小值 i  curLast j
+    x  > i  x = i j ++
+    不行
 
-     非要很笨的方法的话
-     肯定能做
-     但是重复工作量太大了
+    非要很笨的方法的话
+    肯定能做
+    但是重复工作量太大了
 
 
-     思路不对啊
+    思路不对啊
 
-     只记录当前比我大的
-     每一步 取最小值
+    只记录当前比我大的
+    每一步 取最小值
 
-     到底应该什么思路呢？
-     来个map
-     key
-     min length
+    到底应该什么思路呢？
+    来个map
+    key
+    min length
     你比我小就放进去
     可以还是要遍历一下最小的
-     必须可以！！！
+    必须可以！！！
 
-     也不对啊
+    也不对啊
 
-     用单调栈？？？
-     队列？？？？
+    用单调栈？？？
+    队列？？？？
 
 
-     貌似一遍搞不定啊
-     主要是你遇到突然变小的怎么办？
-     怎么处理？？
+    貌似一遍搞不定啊
+    主要是你遇到突然变小的怎么办？
+    怎么处理？？
 
-     这道题仿佛做过啊
-     方法一感觉好做
+    这道题仿佛做过啊
+    方法一感觉好做
 
-     方法二我想到了50% 记录一个数确实不行
+    方法二我想到了50% 记录一个数确实不行
 
 
 
@@ -87,7 +87,27 @@ class TestArray174 {
 
     fun increasingTriplet(nums: IntArray): Boolean {
         val size = nums.size
-        
+        if (size < 3) {
+            return false
+        }
+        val left = IntArray(size) { Int.MAX_VALUE }
+        val right = IntArray(size) { Int.MIN_VALUE }
+        left[0] = nums[0]
+        right[size - 1] = nums[size - 1]
+        //不用考虑等于的情况
+        for (i in 1 until size - 1) {
+            left[i] = nums[i].coerceAtMost(left[i - 1])
+        }
 
+        for (i in size - 2 downTo 1) {
+            right[i] = nums[i].coerceAtLeast(right[i + 1])
+        }
+
+        for (i in 1 until size - 1) {
+            if (nums[i] > left[i] && nums[i] < right[i]){
+                return true
+            }
+        }
+        return false
     }
 }
