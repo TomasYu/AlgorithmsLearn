@@ -58,18 +58,16 @@ class TestArray175 {
     找到第一个不为负数的就是了
     如果没有那就是N+ 1
 
+
+     面试就是 此处不留爷 自有留爷处
      */
 
     fun firstMissingPositive(nums: IntArray): Int {
         val size = nums.size
-            //最后一个问题 越界？？？
+        //最后一个问题 越界？？？
         nums.forEachIndexed { index, i ->
             if (i <= 0) {
-                if (i == Int.MIN_VALUE){
-                    nums[index] = Int.MAX_VALUE
-                }else{
-                    nums[index] = size + i.absoluteValue + 1
-                }
+               nums[index] = size + 1
             }
         }
         nums.forEachIndexed { index, i ->

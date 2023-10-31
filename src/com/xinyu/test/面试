@@ -9,6 +9,7 @@ Handler 有什么优点？？？
 2.GcRoot 集合
 3.Handler Loop Message 引用关系
 4.页面平分 Linearlayout conslayout
+我竟然写了gravity 忘了是weight 权重！！！！ 我的记性啊。。。。
 5.连续两行进行更新View
 6.系统的流程  发现问题 解决问题 防范以后
 7.长链接 怎么包活
