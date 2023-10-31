@@ -59,7 +59,7 @@ class TestArray175 {
     如果没有那就是N+ 1
 
 
-     面试就是 此处不留爷 自有留爷处
+    面试就是 此处不留爷 自有留爷处
      */
 
     fun firstMissingPositive(nums: IntArray): Int {
@@ -67,19 +67,45 @@ class TestArray175 {
         //最后一个问题 越界？？？
         nums.forEachIndexed { index, i ->
             if (i <= 0) {
-               nums[index] = size + 1
+                nums[index] = size + 1
             }
         }
         nums.forEachIndexed { index, i ->
-            if (i.absoluteValue in 1..size && nums[i.absoluteValue -1]  > 0) {
-                nums[i.absoluteValue -1] = -nums[i.absoluteValue -1]
+            if (i.absoluteValue in 1..size && nums[i.absoluteValue - 1] > 0) {
+                nums[i.absoluteValue - 1] = -nums[i.absoluteValue - 1]
             }
         }
 
 //        有一个问题 我把后面的给变成负数了？
         //咋办？？我自己今天刚看到的题 就忘了 绝对值？？
         nums.forEachIndexed { index, i ->
-            if (i >= 0){
+            if (i >= 0) {
+                return index + 1
+            }
+        }
+
+        return size + 1
+
+    }
+
+
+    fun firstMissingPositive2(nums: IntArray): Int {
+        val size = nums.size
+        var temp = 0
+
+        nums.forEachIndexed { index, value ->
+
+            var curValue = value
+            while (curValue in 1 until size && curValue != index + 1 && nums[curValue - 1] != curValue) {
+
+                temp = nums[curValue - 1]
+                nums[curValue - 1] = curValue
+                nums[index] = temp
+                curValue = temp
+            }
+        }
+        nums.forEachIndexed { index, i ->
+            if (index != i - 1){
                 return index + 1
             }
         }
