@@ -93,19 +93,17 @@ class TestArray175 {
         val size = nums.size
         var temp = 0
 
-        nums.forEachIndexed { index, value ->
+        nums.forEachIndexed { index, _ ->
 
-            var curValue = value
-            while (curValue in 1 until size && curValue != index + 1 && nums[curValue - 1] != curValue) {
+            while (nums[index] in 1 until size && nums[nums[index] - 1] != nums[index]) {
 
-                temp = nums[curValue - 1]
-                nums[curValue - 1] = curValue
+                temp = nums[nums[index] - 1]
+                nums[nums[index] - 1] = nums[index]
                 nums[index] = temp
-                curValue = temp
             }
         }
         nums.forEachIndexed { index, i ->
-            if (index != i - 1){
+            if (index != i - 1) {
                 return index + 1
             }
         }
