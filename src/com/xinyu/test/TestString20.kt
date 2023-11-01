@@ -1,7 +1,5 @@
 package com.xinyu.test
 
-import java.lang.StringBuilder
-
 class TestString20 {
     /**
     443. 压缩字符串
@@ -115,7 +113,7 @@ class TestString20 {
             //如果到达末尾  或者不一致的字符  更新
             if (right == chars.size || chars[left] != chars[right]) {
                 chars[result++] = chars[left]
-                if (right - left > 1){
+                if (right - left > 1) {
                     "${right - left}".toCharArray().forEach {
                         chars[result++] = it
                     }
@@ -128,35 +126,50 @@ class TestString20 {
 
 
     fun compress3(chars: CharArray): Int {
-        var curChar: Char = chars[0]
-        var result = 1
-        var curCount = 0
-        var sb = StringBuilder();
-        sb.append(curChar)
-
-        for (i in 1 until chars.size) {
-            if (chars[i] == curChar) {
-                curCount++
-            } else {
-                while (curCount > 0) {
-                    curCount /= 10
-                    result++
+        //左边
+        var left = 0
+        //总长度（最新的位置）
+        var result = 0
+        //right 右边窗口索引
+        for (right in 0..chars.size) {
+            //如果到达末尾  或者不一致的字符  更新
+            if (right == chars.size || chars[left] != chars[right]) {
+                chars[result++] = chars[left]
+                var length = right - left
+                var start = result
+                if (length > 1) {
+                    while (length > 0) {
+                        chars[result++] = '0' + length % 10
+                        length /= 10
+                    }
                 }
-                curCount = 0
-                curChar = chars[i]
-                result++
+                reverse(chars, start, result - 1)
+                left = right
             }
         }
         return result
     }
+
+    fun reverse(chars: CharArray, leftIndex: Int, rightIndex: Int) {
+        var left = leftIndex
+        var right = rightIndex
+        var temp: Char
+        while (left < right) {
+            temp = chars[right]
+            chars[right] = chars[left]
+            chars[left] = temp
+            left++
+            right--
+        }
+    }
 }
 
 fun main() {
-    println(66.toChar())
-    println('0' + 66)
+//    println(66.toChar())
+//    println('0' + 66)
 //    val chars = charArrayOf('a', 'a', 'b', 'b', 'c', 'c', 'c')
     val chars = charArrayOf('a', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b')
-    println(TestString20().compress2(chars))
+    println(TestString20().compress3(chars))
     println(chars.concatToString())
 
 
