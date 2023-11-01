@@ -1,5 +1,7 @@
 package com.xinyu.test
 
+import java.lang.StringBuilder
+
 class TestString20 {
     /**
     443. 压缩字符串
@@ -38,6 +40,26 @@ class TestString20 {
 
     1 <= chars.length <= 2000
     chars[i] 可以是小写英文字母、大写英文字母、数字或符号
+
+
+    整体思路是：
+    curChar curCount
+    if(curChar != charAt){
+    }else{
+    计算
+    }
+
+    12的字符串长度是多少？
+    100的字符长度怎么计算？？？
+    如果>0 不停的/10
+    就可以知道他的长度了
+
+
+    int怎么转成char??
+    1+'0'
+
+
+
      */
     fun compress(chars: CharArray): Int {
         var curChar: Char? = null
@@ -89,9 +111,9 @@ class TestString20 {
         //总长度（最新的位置）
         var result = 0
         //right 右边窗口索引
-        for (right in 0..chars.size){
+        for (right in 0..chars.size) {
             //如果到达末尾  或者不一致的字符  更新
-            if (right == chars.size || chars[left] != chars[right]){
+            if (right == chars.size || chars[left] != chars[right]) {
                 chars[result++] = chars[left]
                 if (right - left > 1){
                     "${right - left}".toCharArray().forEach {
@@ -103,9 +125,35 @@ class TestString20 {
         }
         return result
     }
+
+
+    fun compress3(chars: CharArray): Int {
+        var curChar: Char = chars[0]
+        var result = 1
+        var curCount = 0
+        var sb = StringBuilder();
+        sb.append(curChar)
+
+        for (i in 1 until chars.size) {
+            if (chars[i] == curChar) {
+                curCount++
+            } else {
+                while (curCount > 0) {
+                    curCount /= 10
+                    result++
+                }
+                curCount = 0
+                curChar = chars[i]
+                result++
+            }
+        }
+        return result
+    }
 }
 
 fun main() {
+    println(66.toChar())
+    println('0' + 66)
 //    val chars = charArrayOf('a', 'a', 'b', 'b', 'c', 'c', 'c')
     val chars = charArrayOf('a', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b')
     println(TestString20().compress2(chars))
