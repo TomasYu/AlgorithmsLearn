@@ -5,10 +5,9 @@ import java.util.Arrays;
 /**
  * Created by zy on 2019/1/4.
  */
-public class TestArray
-{
+public class TestArray {
     public static void main(String[] args) {
-        int [] testArray = new int[]{1,4,3,33,5,0,2,0,53,0,24,0};
+        int[] testArray = new int[]{1, 4, 3, 33, 5, 0, 2, 0, 53, 0, 24, 0};
 //        int [] testArray = new int[]{-50,-49,-49,-48,-47,-45,-43,-41,-41,-41,-40,-40,-39,-39,-38,-37,-37,-36,-36,-35,-35,-33,-33,-32,-31,-31,-30,-30,-29,-28,-25,-24,-21,-19,-18,-18,-14,-13,-10,-10,-9,-9,-9,-6,-6,-5,-1,1,7,10,10,11,13,14,14,15,20,21,21,22,23,25,26,27,30,30,31,32,33,35,36,38,40,40,41,41,42,44,46,46,46,46,46,47,48,0};
 //        int [] testArray2 = new int[]{33};
         moveZeroes(testArray);
@@ -38,17 +37,17 @@ public class TestArray
          */
 
         int maxArea = maxArea(new int[]{1, 2, 4, 3});
-        System.out.println("maxArea: "+maxArea);
+        System.out.println("maxArea: " + maxArea);
 
 
         /**
          * test minSubArrayLen
          */
-        int minSubArrayLen = minSubArrayLen(5, new int[]{1,1,1,3,2,1,1});
+        int minSubArrayLen = minSubArrayLen(5, new int[]{1, 1, 1, 3, 2, 1, 1});
         System.out.println("minSubArrayLen : " + minSubArrayLen);
 
 
-        System.out.println("耗时："+(System.nanoTime() - l)+"纳秒");
+        System.out.println("耗时：" + (System.nanoTime() - l) + "纳秒");
         printArray(testArray);
         System.out.println(testArray);
 
@@ -56,20 +55,27 @@ public class TestArray
 
 
     //https://leetcode.cn/problems/move-zeroes/description/?envType=study-plan-v2&envId=leetcode-75
+
     /**
-     *
      * 移动零
      * 给定一个数组 nums，编写一个函数将所有 0 移动到数组的末尾，同时保持非零元素的相对顺序。
-
-     示例:
-
-     输入: [0,1,0,3,12]
-     输出: [1,3,12,0,0]
-     说明:
-
-     必须在原数组上操作，不能拷贝额外的数组。
-     尽量减少操作次数。
+     * <p>
+     * 示例:
+     * <p>
+     * 输入: [0,1,0,3,12]
+     * 输出: [1,3,12,0,0]
+     * 说明:
+     * <p>
+     * 必须在原数组上操作，不能拷贝额外的数组。
+     * 尽量减少操作次数。
+     * <p>
+     * left right
+     * 0 1 0002
+     * 1 0  0002
+     * 1 2 000
      */
+
+
     public static void moveZeroes(int[] nums) {
         //下面是我的解决方法
 //        int len = nums.length;
@@ -136,18 +142,18 @@ public class TestArray
             return;
         }
         int length = nums.length;
-        int j = 0 ,temp ;
+        int j = 0, temp;
         for (int i = 0; i < length; i++) {
             if (nums[i] == 0) {
 //                if (j == -1) {
 //                    j =i;
 //                }
-            }else {
+            } else {
 //                if (j != -1) {
-                    temp = nums[j];
-                    nums[j] = nums[i];
-                    nums[i] = temp;
-                    j ++ ;
+                temp = nums[j];
+                nums[j] = nums[i];
+                nums[i] = temp;
+                j++;
 //                }
             }
         }
@@ -156,16 +162,17 @@ public class TestArray
     }
 
     @Deprecated
-    public static void printArray(int[] array){
+    public static void printArray(int[] array) {
         Utils.printArray(array);
     }
 
     /**
      * 冒泡排序
+     *
      * @param nums
      */
     public static void MaoPao(int nums[]) {
-        if (nums ==null) {
+        if (nums == null) {
             return;
         }
         int len = nums.length;
@@ -183,32 +190,33 @@ public class TestArray
 
     /**
      * 给定一个数组 nums 和一个值 val，你需要原地移除所有数值等于 val 的元素，返回移除后数组的新长度。
-
-     不要使用额外的数组空间，你必须在原地修改输入数组并在使用 O(1) 额外空间的条件下完成。
-
-     元素的顺序可以改变。你不需要考虑数组中超出新长度后面的元素。
-
-     示例 1:
-
-     给定 nums = [3,2,2,3], val = 3,
-
-     函数应该返回新的长度 2, 并且 nums 中的前两个元素均为 2。
-
-     你不需要考虑数组中超出新长度后面的元素。
-     示例 2:
-
-     给定 nums = [0,1,2,2,3,0,4,2], val = 2,
-
-     函数应该返回新的长度 5, 并且 nums 中的前五个元素为 0, 1, 3, 0, 4。
-
-     注意这五个元素可为任意顺序。
-
-     你不需要考虑数组中超出新长度后面的元素。
-     说明:
-
-     为什么返回数值是整数，但输出的答案是数组呢?
-
-     请注意，输入数组是以“引用”方式传递的，这意味着在函数里修改输入数组对于调用者是可见的。
+     * <p>
+     * 不要使用额外的数组空间，你必须在原地修改输入数组并在使用 O(1) 额外空间的条件下完成。
+     * <p>
+     * 元素的顺序可以改变。你不需要考虑数组中超出新长度后面的元素。
+     * <p>
+     * 示例 1:
+     * <p>
+     * 给定 nums = [3,2,2,3], val = 3,
+     * <p>
+     * 函数应该返回新的长度 2, 并且 nums 中的前两个元素均为 2。
+     * <p>
+     * 你不需要考虑数组中超出新长度后面的元素。
+     * 示例 2:
+     * <p>
+     * 给定 nums = [0,1,2,2,3,0,4,2], val = 2,
+     * <p>
+     * 函数应该返回新的长度 5, 并且 nums 中的前五个元素为 0, 1, 3, 0, 4。
+     * <p>
+     * 注意这五个元素可为任意顺序。
+     * <p>
+     * 你不需要考虑数组中超出新长度后面的元素。
+     * 说明:
+     * <p>
+     * 为什么返回数值是整数，但输出的答案是数组呢?
+     * <p>
+     * 请注意，输入数组是以“引用”方式传递的，这意味着在函数里修改输入数组对于调用者是可见的。
+     *
      * @param nums
      * @param val
      * @return
@@ -216,7 +224,7 @@ public class TestArray
     public static int removeElement(int[] nums, int val) {
 
         //我的解决方法  9ms
-        if (nums ==null || nums.length == 0) {
+        if (nums == null || nums.length == 0) {
             return 0;
         }
         int length = nums.length;
@@ -254,25 +262,25 @@ public class TestArray
     }
 
     /**
-     *   删除排序数组中的重复项
-     给定一个排序数组，你需要在原地删除重复出现的元素，使得每个元素只出现一次，返回移除后数组的新长度。
-
-     不要使用额外的数组空间，你必须在原地修改输入数组并在使用 O(1) 额外空间的条件下完成。
-
-     示例 1:
-
-     给定数组 nums = [1,1,2],
-
-     函数应该返回新的长度 2, 并且原数组 nums 的前两个元素被修改为 1, 2。
-
-     你不需要考虑数组中超出新长度后面的元素。
-     示例 2:
-
-     给定 nums = [0,0,1,1,1,2,2,3,3,4],
-
-     函数应该返回新的长度 5, 并且原数组 nums 的前五个元素被修改为 0, 1, 2, 3, 4。
-
-     你不需要考虑数组中超出新长度后面的元素。
+     * 删除排序数组中的重复项
+     * 给定一个排序数组，你需要在原地删除重复出现的元素，使得每个元素只出现一次，返回移除后数组的新长度。
+     * <p>
+     * 不要使用额外的数组空间，你必须在原地修改输入数组并在使用 O(1) 额外空间的条件下完成。
+     * <p>
+     * 示例 1:
+     * <p>
+     * 给定数组 nums = [1,1,2],
+     * <p>
+     * 函数应该返回新的长度 2, 并且原数组 nums 的前两个元素被修改为 1, 2。
+     * <p>
+     * 你不需要考虑数组中超出新长度后面的元素。
+     * 示例 2:
+     * <p>
+     * 给定 nums = [0,0,1,1,1,2,2,3,3,4],
+     * <p>
+     * 函数应该返回新的长度 5, 并且原数组 nums 的前五个元素被修改为 0, 1, 2, 3, 4。
+     * <p>
+     * 你不需要考虑数组中超出新长度后面的元素。
      */
 
     public static int removeDuplicates(int[] nums) {
@@ -332,23 +340,23 @@ public class TestArray
 
     /**
      * 给定一个排序数组，你需要在原地删除重复出现的元素，使得每个元素最多出现两次，返回移除后数组的新长度。
-
-     不要使用额外的数组空间，你必须在原地修改输入数组并在使用 O(1) 额外空间的条件下完成。
-
-     示例 1:
-
-     给定 nums = [1,1,1,2,2,3],
-
-     函数应返回新长度 length = 5, 并且原数组的前五个元素被修改为 1, 1, 2, 2, 3 。
-
-     你不需要考虑数组中超出新长度后面的元素。
-     示例 2:
-
-     给定 nums = [0,0,1,1,1,1,2,3,3],
-
-     函数应返回新长度 length = 7, 并且原数组的前五个元素被修改为 0, 0, 1, 1, 2, 3, 3 。
-
-     你不需要考虑数组中超出新长度后面的元素。
+     * <p>
+     * 不要使用额外的数组空间，你必须在原地修改输入数组并在使用 O(1) 额外空间的条件下完成。
+     * <p>
+     * 示例 1:
+     * <p>
+     * 给定 nums = [1,1,1,2,2,3],
+     * <p>
+     * 函数应返回新长度 length = 5, 并且原数组的前五个元素被修改为 1, 1, 2, 2, 3 。
+     * <p>
+     * 你不需要考虑数组中超出新长度后面的元素。
+     * 示例 2:
+     * <p>
+     * 给定 nums = [0,0,1,1,1,1,2,3,3],
+     * <p>
+     * 函数应返回新长度 length = 7, 并且原数组的前五个元素被修改为 0, 0, 1, 1, 2, 3, 3 。
+     * <p>
+     * 你不需要考虑数组中超出新长度后面的元素。
      */
     public static int removeDuplicates2(int[] nums) {
         long l = System.nanoTime();
@@ -369,11 +377,11 @@ public class TestArray
          * 同时，数组的长度减一
          */
         for (int i = 0; i <= j; i++) {//遍历每一个数
-            for (int k = i + 1,iCount =0; k <= j; ) {
+            for (int k = i + 1, iCount = 0; k <= j; ) {
                 if (nums[i] == nums[k]) {
-                    iCount ++;
+                    iCount++;
                 }
-                if (nums[i] == nums[k] && iCount >=2) {
+                if (nums[i] == nums[k] && iCount >= 2) {
                     int m = k + 1;
                     for (int q = k; m <= j; m++) {
                         if (nums[q] != nums[m]) {
@@ -389,7 +397,7 @@ public class TestArray
                 }
             }
         }
-        System.out.println("耗时："+(System.nanoTime() - l)+"纳秒");
+        System.out.println("耗时：" + (System.nanoTime() - l) + "纳秒");
         return ++j;
 
         /**
@@ -409,7 +417,7 @@ public class TestArray
         /**
          * 以下为网上解答
          *         int [] testArray = new int[]{4,4,1,1,1,0,0,4,4,0};
-            这个测试用例通不过
+         这个测试用例通不过
          */
 //        if(nums == null || nums.length == 0 ){
 //            return 0;
@@ -428,10 +436,10 @@ public class TestArray
     }
 
     public static int findKthLargest(int[] nums, int k) {
-        if (nums ==null) {
+        if (nums == null) {
             return 0;
         }
-        if (k <1) {
+        if (k < 1) {
             return -1;
         }
         int len = nums.length;
@@ -448,7 +456,7 @@ public class TestArray
                 break;
             }
         }
-                return nums[k -1];
+        return nums[k - 1];
 //
 //        int left=0,right=nums.length-1;
 //        while(left<right){
@@ -464,39 +472,41 @@ public class TestArray
 //        return nums[left];
     }
 
-    private static int partition(int[] nums,int left,int right) {
+    private static int partition(int[] nums, int left, int right) {
         //先获取三个数的中位数
-        int pivot = median3(nums,left,right);
+        int pivot = median3(nums, left, right);
         //int pivot = nums[left];
 
-        int start=left,end=right-1;
-        while(start<end) {
+        int start = left, end = right - 1;
+        while (start < end) {
             //从pivot左边找起，停在第一个比pivot小的地方，等待交换
-            while(nums[++start]>pivot) {}
+            while (nums[++start] > pivot) {
+            }
             //从pivot右边朝气，停在第一个比pivot大的地方，等待交换
-            while(nums[--end]<pivot) {}
-            if(start<end) {
-                swap(nums,start,end);
+            while (nums[--end] < pivot) {
+            }
+            if (start < end) {
+                swap(nums, start, end);
             }
         }
         //此时，交换start与pivot
-        swap(nums,start, right-1);
+        swap(nums, start, right - 1);
         return start;
     }
 
-    private static int median3(int[] nums,int left, int right){
-        int median=(left+right)/2;
-        if(nums[left]<nums[median]) {
+    private static int median3(int[] nums, int left, int right) {
+        int median = (left + right) / 2;
+        if (nums[left] < nums[median]) {
             swap(nums, left, median);
         }
-        if(nums[left]<nums[right]) {
-            swap(nums,left, right);
+        if (nums[left] < nums[right]) {
+            swap(nums, left, right);
         }
-        if(nums[median]<nums[right]) {
+        if (nums[median] < nums[right]) {
             swap(nums, median, right);
         }
-        swap(nums, median, right-1);
-        return nums[right-1];
+        swap(nums, median, right - 1);
+        return nums[right - 1];
 
     }
 
@@ -509,29 +519,29 @@ public class TestArray
 
     /**
      * 合并两个有序数组
-     给定两个有序整数数组 nums1 和 nums2，将 nums2 合并到 nums1 中，使得 num1 成为一个有序数组。
-
-     说明:
-
-     初始化 nums1 和 nums2 的元素数量分别为 m 和 n。
-     你可以假设 nums1 有足够的空间（空间大小大于或等于 m + n）来保存 nums2 中的元素。
-     示例:
-
-     输入:
-     nums1 = [1,2,3,0,0,0], m = 3
-     nums2 = [2,5,6],       n = 3
-
-     输出: [1,2,2,3,5,6]
+     * 给定两个有序整数数组 nums1 和 nums2，将 nums2 合并到 nums1 中，使得 num1 成为一个有序数组。
+     * <p>
+     * 说明:
+     * <p>
+     * 初始化 nums1 和 nums2 的元素数量分别为 m 和 n。
+     * 你可以假设 nums1 有足够的空间（空间大小大于或等于 m + n）来保存 nums2 中的元素。
+     * 示例:
+     * <p>
+     * 输入:
+     * nums1 = [1,2,3,0,0,0], m = 3
+     * nums2 = [2,5,6],       n = 3
+     * <p>
+     * 输出: [1,2,2,3,5,6]
      */
 
     public static void merge(int[] nums1, int m, int[] nums2, int n) {
-        if (nums1 == null || nums1.length == 0 || nums1.length < m+n) {
+        if (nums1 == null || nums1.length == 0 || nums1.length < m + n) {
             return;
         }
         if (nums2 == null || nums2.length == 0) {
             return;
         }
-        if (m ==0) {
+        if (m == 0) {
             for (int i : nums2) {
                 nums1[m++] = i;
             }
@@ -541,29 +551,29 @@ public class TestArray
         // 找到第二个数组应该插入的起始位置  startInset 这个位置开始往后插入数组2的数据。包好startInset 这个位置
         int startInsert = 0;
         int nums2Min = nums2[0];
-        while (nums2Min >= nums1[startInsert] && startInsert <m){
+        while (nums2Min >= nums1[startInsert] && startInsert < m) {
             startInsert++;
         }
         // 找到第二个数组应该结束插入的位置   这个位置之后的数组1里面的数据  会被直接挪到最后面  不包含该位置
-        int endInsert = m>=1 ? m -1 : 0;
-        int nums2Max = nums2[n-1];
+        int endInsert = m >= 1 ? m - 1 : 0;
+        int nums2Max = nums2[n - 1];
         if (nums2Max > nums1[endInsert]) {
 //            endInsert = m;
-        }else {
-            while (endInsert >=0 && nums2Max <= nums1[endInsert] ){
-                    endInsert--;
+        } else {
+            while (endInsert >= 0 && nums2Max <= nums1[endInsert]) {
+                endInsert--;
             }
         }
         //需要处理有些时候  startInsert 比 endInsert 还要大的问题  该场景是1,2,3,4,5,0  插入数字3 就会出现
-        if (endInsert <=startInsert) {
-            endInsert =startInsert;
+        if (endInsert <= startInsert) {
+            endInsert = startInsert;
         }
 
         /**
          * 将数组1里面比数组2大的部分  挪到最后
          */
-        for (int i = m-1; i > endInsert; i--) {
-            nums1[i+n] = nums1[i];
+        for (int i = m - 1; i > endInsert; i--) {
+            nums1[i + n] = nums1[i];
             nums1[i] = 0;
         }
 
@@ -571,19 +581,19 @@ public class TestArray
          * 从起始插入位置startInsert 到插入完数组1中最大的数的索引位置之间
          * 从后往前，插入n1 n2 中比较大的数字
          */
-        for (int j =m + n  -(m > endInsert ? (m- endInsert -1) : 0) -1; j>=startInsert;j--){
+        for (int j = m + n - (m > endInsert ? (m - endInsert - 1) : 0) - 1; j >= startInsert; j--) {
 
-            if (endInsert>=0) {
-                if (n>=1 && nums2[n-1] > nums1[endInsert]) {
-                    nums1[j]=nums2[n-1];
+            if (endInsert >= 0) {
+                if (n >= 1 && nums2[n - 1] > nums1[endInsert]) {
+                    nums1[j] = nums2[n - 1];
                     n--;
-                }else {
+                } else {
                     nums1[j] = nums1[endInsert];
                     endInsert--;
                 }
-            }else {
-                if (n>=1 ) {
-                    nums1[j]=nums2[n-1];
+            } else {
+                if (n >= 1) {
+                    nums1[j] = nums2[n - 1];
                     n--;
                 }
             }
@@ -621,28 +631,28 @@ public class TestArray
 
     /**
      * 两数之和 II - 输入有序数组
-     给定一个已按照升序排列 的有序数组，找到两个数使得它们相加之和等于目标数。
-
-     函数应该返回这两个下标值 index1 和 index2，其中 index1 必须小于 index2。
-
-     说明:
-
-     返回的下标值（index1 和 index2）不是从零开始的。
-     你可以假设每个输入只对应唯一的答案，而且你不可以重复使用相同的元素。
-     示例:
-
-     输入: numbers = [2, 7, 11, 15], target = 9
-     输出: [1,2]
-     解释: 2 与 7 之和等于目标数 9 。因此 index1 = 1, index2 = 2 。
+     * 给定一个已按照升序排列 的有序数组，找到两个数使得它们相加之和等于目标数。
+     * <p>
+     * 函数应该返回这两个下标值 index1 和 index2，其中 index1 必须小于 index2。
+     * <p>
+     * 说明:
+     * <p>
+     * 返回的下标值（index1 和 index2）不是从零开始的。
+     * 你可以假设每个输入只对应唯一的答案，而且你不可以重复使用相同的元素。
+     * 示例:
+     * <p>
+     * 输入: numbers = [2, 7, 11, 15], target = 9
+     * 输出: [1,2]
+     * 解释: 2 与 7 之和等于目标数 9 。因此 index1 = 1, index2 = 2 。
      */
 
     public static int[] twoSum(int[] numbers, int target) {
-        int[]result = {0,0};
+        int[] result = {0, 0};
         int length = numbers.length;
-        if (length <2) {
+        if (length < 2) {
             return result;
         }
-        int endIndex = length -1;
+        int endIndex = length - 1;
         int startIndex = 0;
         //找到比target 小的第一个数  需要考虑有负数的情况
 //        while (endIndex >=0 && numbers[endIndex] >= target){
@@ -658,12 +668,13 @@ public class TestArray
         //直接遍历下一个数
 
         //优化点：  1. 一层for 循环就可以  不要想的太复杂  2.遍历的时候，当前的数和在遍历的数 如果比要找的数小 前面的直接不用遍历
-        out:for (; endIndex > 0; endIndex--) {
-            for (; startIndex <endIndex; startIndex++) {
+        out:
+        for (; endIndex > 0; endIndex--) {
+            for (; startIndex < endIndex; startIndex++) {
                 int sum = numbers[endIndex] + numbers[startIndex];
                 if (sum == target) {
                     break out;
-                }else if (sum > target){
+                } else if (sum > target) {
                     //结束层循环
 //                    i = endIndex;
                     break;
@@ -727,19 +738,19 @@ public class TestArray
 
 
     /**
-     *  验证回文串
-     给定一个字符串，验证它是否是回文串，只考虑字母和数字字符，可以忽略字母的大小写。
-
-     说明：本题中，我们将空字符串定义为有效的回文串。
-
-     示例 1:
-
-     输入: "A man, a plan, a canal: Panama"
-     输出: true
-     示例 2:
-
-     输入: "race a car"
-     输出: false
+     * 验证回文串
+     * 给定一个字符串，验证它是否是回文串，只考虑字母和数字字符，可以忽略字母的大小写。
+     * <p>
+     * 说明：本题中，我们将空字符串定义为有效的回文串。
+     * <p>
+     * 示例 1:
+     * <p>
+     * 输入: "A man, a plan, a canal: Panama"
+     * 输出: true
+     * 示例 2:
+     * <p>
+     * 输入: "race a car"
+     * 输出: false
      */
     public static boolean isPalindrome(String s) {
 //        第一版本
@@ -798,7 +809,6 @@ public class TestArray
 //        return true;
 
 
-
         // 第三版本   去掉s.replaceAll(" ", "")  直接减低了20ms
 //        char[] chars = s.toCharArray();
 //        int length = chars.length;
@@ -833,27 +843,27 @@ public class TestArray
         if (length == 0 || length == 1) {
             return true;
         }
-        for (int i = 0,j =length-1; j>i;) {
+        for (int i = 0, j = length - 1; j > i; ) {
             char headChar = s.charAt(i);
-            if (headChar >= 'A' && headChar<= 'Z'){//抓换成小写
-                headChar +=32;
-            }else if (! ((headChar >= 'a' && headChar<= 'z')  || (headChar >= '0' && headChar<='9'))){
+            if (headChar >= 'A' && headChar <= 'Z') {//抓换成小写
+                headChar += 32;
+            } else if (!((headChar >= 'a' && headChar <= 'z') || (headChar >= '0' && headChar <= '9'))) {
                 i++;
                 continue;
             }
 
 
             char endChar = s.charAt(j);
-            if (endChar >= 'A' && endChar<= 'Z'){//抓换成小写
-                endChar +=32;
-            }else if (! ((endChar >= 'a' && endChar<= 'z')  || (endChar >= '0' && endChar<='9'))){
+            if (endChar >= 'A' && endChar <= 'Z') {//抓换成小写
+                endChar += 32;
+            } else if (!((endChar >= 'a' && endChar <= 'z') || (endChar >= '0' && endChar <= '9'))) {
                 j--;
                 continue;
             }
 
-            if (headChar != endChar ) {
+            if (headChar != endChar) {
                 return false;
-            }else {
+            } else {
                 i++;
                 j--;
             }
@@ -880,27 +890,27 @@ public class TestArray
     */
 
     public static String reverseVowels(String s) {
-        if (s == null || s.length()==0) {
+        if (s == null || s.length() == 0) {
             return s;
         }
         char[] chars = s.toCharArray();
         int length = chars.length;
         char temp;
-        for (int i = 0 , j = length -1 ; j > i ;){
-            if (!(chars[i] == 'a' || chars[i] == 'e' ||chars[i] == 'i' ||chars[i] == 'o' ||chars[i] == 'u'||chars[i] == 'A' || chars[i] == 'E' ||chars[i] == 'I' ||chars[i] == 'O' ||chars[i] == 'U')) {
+        for (int i = 0, j = length - 1; j > i; ) {
+            if (!(chars[i] == 'a' || chars[i] == 'e' || chars[i] == 'i' || chars[i] == 'o' || chars[i] == 'u' || chars[i] == 'A' || chars[i] == 'E' || chars[i] == 'I' || chars[i] == 'O' || chars[i] == 'U')) {
                 i++;
                 continue;
             }
 
-            if (!(chars[j] == 'a' || chars[j] == 'e' ||chars[j] == 'i' ||chars[j] == 'o' ||chars[j] == 'u'|| chars[j] == 'A' || chars[j] == 'E' ||chars[j] == 'I' ||chars[j] == 'O' ||chars[j] == 'U')) {
+            if (!(chars[j] == 'a' || chars[j] == 'e' || chars[j] == 'i' || chars[j] == 'o' || chars[j] == 'u' || chars[j] == 'A' || chars[j] == 'E' || chars[j] == 'I' || chars[j] == 'O' || chars[j] == 'U')) {
                 j--;
                 continue;
             }
             temp = chars[i];
             chars[i] = chars[j];
             chars[j] = temp;
-            i ++ ;
-            j -- ;
+            i++;
+            j--;
         }
 
         return String.valueOf(chars);
@@ -943,16 +953,16 @@ public class TestArray
 
     /**
      * 盛最多水的容器
-     给定 n 个非负整数 a1，a2，...，an，每个数代表坐标中的一个点 (i, ai) 。在坐标内画 n 条垂直线，垂直线 i 的两个端点分别为 (i, ai) 和 (i, 0)。找出其中的两条线，使得它们与 x 轴共同构成的容器可以容纳最多的水。
-
-     说明：你不能倾斜容器，且 n 的值至少为 2。
-
-     备注：图片在pic/question_11.jpg
-     图中垂直线代表输入数组 [1,8,6,2,5,4,8,3,7]。在此情况下，容器能够容纳水（表示为蓝色部分）的最大值为 49。
-     示例:
-
-     输入: [1,8,6,2,5,4,8,3,7]
-     输出: 49
+     * 给定 n 个非负整数 a1，a2，...，an，每个数代表坐标中的一个点 (i, ai) 。在坐标内画 n 条垂直线，垂直线 i 的两个端点分别为 (i, ai) 和 (i, 0)。找出其中的两条线，使得它们与 x 轴共同构成的容器可以容纳最多的水。
+     * <p>
+     * 说明：你不能倾斜容器，且 n 的值至少为 2。
+     * <p>
+     * 备注：图片在pic/question_11.jpg
+     * 图中垂直线代表输入数组 [1,8,6,2,5,4,8,3,7]。在此情况下，容器能够容纳水（表示为蓝色部分）的最大值为 49。
+     * 示例:
+     * <p>
+     * 输入: [1,8,6,2,5,4,8,3,7]
+     * 输出: 49
      */
 
     public static int maxArea(int[] height) {
@@ -976,20 +986,19 @@ public class TestArray
 //        return max;
 
 
-
         int length = height.length;
         if (length == 0) {
             return 0;
-        }else if (length == 1){
+        } else if (length == 1) {
             return height[0];
         }
 
         int max = 0;
-        for (int i =0, j =length -1; j > i ;  ){
+        for (int i = 0, j = length - 1; j > i; ) {
             int start = height[i];
             int end = height[j];
             int minHeight = Math.min(start, end);
-            max = Math.max(max,minHeight * (j -i));
+            max = Math.max(max, minHeight * (j - i));
 //            if (start > end) {
 //                while (height[--j]<end && j> i);
 //            }else {
@@ -1011,16 +1020,14 @@ public class TestArray
             if (start > end) {
                 do {
                     j--;
-                }while (height[j]<end && j> i);
-            }else {
+                } while (height[j] < end && j > i);
+            } else {
                 do {
                     i++;
-                }while (height[i]<start && j> i);
+                } while (height[i] < start && j > i);
             }
         }
         return max;
-
-
 
 
         //网上最快的
@@ -1160,12 +1167,16 @@ public class TestArray
 //        return ++minCont;
 
         // copy from leetcode.com
-        if (null == nums || nums.length == 0) { return 0; }
+        if (null == nums || nums.length == 0) {
+            return 0;
+        }
         int i = 0, j = 0;
         int sum = 0, minLen = Integer.MAX_VALUE;
         while (j < nums.length) {
             sum += nums[j++];
-            if (sum < s) { continue; }
+            if (sum < s) {
+                continue;
+            }
             while (sum >= s) {
                 sum -= nums[i];
                 i++;
@@ -1173,7 +1184,6 @@ public class TestArray
             minLen = Math.min(minLen, j - i + 1);
         }
         return (minLen == Integer.MAX_VALUE) ? 0 : minLen;
-
 
 
     }
