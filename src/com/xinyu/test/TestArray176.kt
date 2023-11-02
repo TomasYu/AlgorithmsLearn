@@ -55,6 +55,13 @@ class TestArray176 {
         }
     }
 
+    /**
+    left是第一个为0的位置
+    right是第一个不为0的位置
+    不停的进行left 和 right 位置的数据交换就可以
+
+
+     */
 
     fun moveZeroes2(nums: IntArray) {
         //left左边是整理好的索引
