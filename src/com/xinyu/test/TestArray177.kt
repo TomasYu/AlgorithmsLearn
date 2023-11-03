@@ -1,5 +1,7 @@
 package com.xinyu.test
 
+import java.lang.StringBuilder
+
 class TestArray177 {
     /**
     2390. 从字符串中移除星号
@@ -45,6 +47,16 @@ class TestArray177 {
      */
 
     fun removeStars(s: String): String {
+        val stringBuilder = StringBuilder()
+        val length = s.length
+        for (i in 0 until length){
+            if (s[i] == '*'){
+                stringBuilder.deleteAt(stringBuilder.lastIndex)
+            }else{
+                stringBuilder.append(s[i]);
+            }
+        }
+        return stringBuilder.toString()
 
     }
 }
