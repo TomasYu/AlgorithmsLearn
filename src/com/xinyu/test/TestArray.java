@@ -1,6 +1,7 @@
 package com.xinyu.test;
 
 import java.util.Arrays;
+import java.util.HashMap;
 
 /**
  * Created by zy on 2019/1/4.
@@ -137,6 +138,8 @@ public class TestArray {
 //                }
 //            }
 //        }
+        //java里面不能直接用Char
+//        new HashMap<Char,Character>();
 
         if (nums == null || nums.length == 0) {
             return;

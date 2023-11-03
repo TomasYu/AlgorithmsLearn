@@ -1,6 +1,8 @@
 package com.xinyu.test
 
 import java.lang.StringBuilder
+import java.util.HashMap
+import java.util.LinkedList
 
 class TestArray177 {
     /**
@@ -58,5 +60,19 @@ class TestArray177 {
         }
         return stringBuilder.toString()
 
+    }
+
+
+    fun removeStars2(s: String): String {
+        val deque = ArrayDeque<Char>()
+        val length = s.length
+        for (i in 0 until length){
+            if (s[i] == '*'){
+                deque.removeLast()
+            }else{
+                deque.add(s[i])
+            }
+        }
+        return String(deque.toCharArray())
     }
 }
