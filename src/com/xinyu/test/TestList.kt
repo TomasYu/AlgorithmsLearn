@@ -84,10 +84,18 @@ fun main() {
     //源字符串：7BVz75MBX8HSm+PNo6yNlVyu1titpIrAMkYZ4A0mwzY=
     //直接解码
     println(URLDecoder.decode("7BVz75MBX8HSm+PNo6yNlVyu1titpIrAMkYZ4A0mwzY=","UTF-8"))
-    //编码
-    println(URLEncoder.encode("7BVz75MBX8HSm+PNo6yNlVyu1titpIrAMkYZ4A0mwzY=","UTF-8"))
+
     //解码
+    println(URLDecoder.decode("7BVz75MBX8HSm%20PNo6yNlVyu1titpIrAMkYZ4A0mwzY%3D","UTF-8"))
+
+
+    //先编码
+    println(URLEncoder.encode("7BVz75MBX8HSm+PNo6yNlVyu1titpIrAMkYZ4A0mwzY=","UTF-8"))
+    //后解码
     println(URLDecoder.decode("7BVz75MBX8HSm%2BPNo6yNlVyu1titpIrAMkYZ4A0mwzY%3D","UTF-8"))
+
+
+
 
     //https://tools.fun/url.html
 }
