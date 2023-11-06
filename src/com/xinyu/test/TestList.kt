@@ -1,5 +1,7 @@
 package com.xinyu.test
 
+import java.net.URLDecoder
+import java.net.URLEncoder
 import java.util.ArrayList
 
 class TestList {
@@ -72,4 +74,20 @@ class TestList {
 fun main() {
     println(TestList().permute(intArrayOf(1, 2, 3)))
     println(TestList().permute(intArrayOf(1)))
+    println(
+        URLDecoder.decode(
+            "{\"extra\":\"{\\\"FILE_HASH\\\":\\\"7BVz75MBX8HSm+PNo6yNlVyu1titpIrAMkYZ4A0mwzY=\\\",\\\"FILE_SIZE\\\":\\\"893629651\\\",\\\"androidBuildVariant\\\":\\\"userdebug\\\",\\\"METADATA_HASH\\\":\\\"n3Z0lcNwy6mKnkxiKKTpqoFQ3372XQ0cdFJ3EBHsqpw=\\\",\\\"METADATA_SIZE\\\":\\\"101648\\\"}\",\"checksum\":\"fc79c1709e35182034e9f9f18ea0b765\",\"version\":\"2.0.107\",\"url\":\"http://10.142.117.1/download/mico/x8f/daily/2.0.107-userdebug/payload_2.0.107_0b765.bin\",\"hardware\":\"X8F\"}",
+            "UTF-8"
+        )
+    )
+
+    //源字符串：7BVz75MBX8HSm+PNo6yNlVyu1titpIrAMkYZ4A0mwzY=
+    //直接解码
+    println(URLDecoder.decode("7BVz75MBX8HSm+PNo6yNlVyu1titpIrAMkYZ4A0mwzY=","UTF-8"))
+    //编码
+    println(URLEncoder.encode("7BVz75MBX8HSm+PNo6yNlVyu1titpIrAMkYZ4A0mwzY=","UTF-8"))
+    //解码
+    println(URLDecoder.decode("7BVz75MBX8HSm%2BPNo6yNlVyu1titpIrAMkYZ4A0mwzY%3D","UTF-8"))
+
+    //https://tools.fun/url.html
 }
