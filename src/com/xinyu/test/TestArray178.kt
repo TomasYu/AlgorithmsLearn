@@ -30,7 +30,20 @@ class TestArray178 {
     0 <= n <= flowerbed.length
 
 
+     贪心？？？
+     其实就是两个1之间的0的个数？？
+     万一全都没有1呢？？
+     那就是连续0的个数
+     连续3个0  有可能是2个啊
+     因为在边上
 
+
+     只能判断左右两边是否是0 是有有1
+     然后放入之后 就改变数组状态
+
+     顺序遍历吧
+     如果能放就放
+     不能放就往后
      */
 
     fun canPlaceFlowers(flowerbed: IntArray, n: Int): Boolean {
