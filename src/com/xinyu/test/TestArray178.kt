@@ -44,6 +44,12 @@ class TestArray178 {
      顺序遍历吧
      如果能放就放
      不能放就往后
+    从前往后和从后往前一样的
+    只要0的个数一样
+    10000 001
+
+     个人感觉是可能有是数学方法的
+
      */
 
     fun canPlaceFlowers(flowerbed: IntArray, n: Int): Boolean {
