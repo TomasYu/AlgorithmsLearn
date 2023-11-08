@@ -95,6 +95,9 @@ class TestArray178 {
                     if (index + 1 == size || flowerbed[index + 1] == 0) {
                         result++
                         index += 2
+                        if (result >= n){
+                            return true
+                        }
                     } else {
                         index += 3
                     }
@@ -104,10 +107,7 @@ class TestArray178 {
                 }
             }
         }
-
-
         return result >= n
-
     }
 }
 
