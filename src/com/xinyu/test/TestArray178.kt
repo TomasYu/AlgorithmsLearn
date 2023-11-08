@@ -99,10 +99,9 @@ class TestArray178 {
                         index += 3
                     }
                 }
-                1 -> {
+                else -> {
                     index += 2
                 }
-                else -> {}
             }
         }
 
