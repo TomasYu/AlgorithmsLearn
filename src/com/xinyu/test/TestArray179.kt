@@ -28,24 +28,53 @@ class TestArray179 {
     30 <= temperatures[i] <= 100
 
 
-     最笨的方法 肯定能做出来
-     只不过是需要多遍历
+    最笨的方法 肯定能做出来
+    只不过是需要多遍历
 
-     创建同样的长度的数据
-     遍历一遍的时候
-     从后往前遍历
-     不断更新当前位置的最大值
-     这样就可以输出对应的结果了
+    创建同样的长度的数据
+    遍历一遍的时候
+    从后往前遍历
+    不断更新当前位置的最大值
+    这样就可以输出对应的结果了
 
 
-     我擦 想简单了
-     还是输出第几天。。。。
+    我擦 想简单了
+    还是输出第几天。。。。
 
-     这跟栈有啥关系？？？？
+    这跟栈有啥关系？？？？
+
+    栈怎么可能有index？？？？（直接入栈的是索引）
+    两个栈？？？？
+    一块pop push
+    我擦
+    逻辑？？？
+    乱想？？？？
+
+    这题有意思
+    如何保证的第一个大的index？ 因为本来就是顺序遍历
+
+
+    map的能力
 
      */
 
     fun dailyTemperatures(temperatures: IntArray): IntArray {
+        val size = temperatures.size
+        val stack = ArrayDeque<Int>()
+        var result = IntArray(size) { 0 }
+        temperatures.forEachIndexed { index, i ->
+            while (!stack.isEmpty()) {
+                val lastIndex = stack.last()
+                if (i > temperatures[lastIndex]) {
+                    result[lastIndex] = index - lastIndex
+                    stack.removeLastOrNull()
+                } else {
+                    break
+                }
+            }
+            stack.addLast(index)
 
+        }
+        return result
     }
 }
