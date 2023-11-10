@@ -1,5 +1,7 @@
 package com.xinyu.test
 
+import java.util.*
+
 class TestArray180 {
     //https://leetcode.cn/problems/online-stock-span/description/?envType=study-plan-v2&envId=leetcode-75
     /**
@@ -42,12 +44,31 @@ class TestArray180 {
     1 <= price <= 105
     最多调用 next 方法 104 次
 
+     ??? 数组参数怎么没有传递
+
+     奥 是单个数一个个穿的
+     用单调递增栈就解决解决
+     初始化栈
+    遍历数组
+     如果为空就放入元素 返回栈的长度
+     否则判断当前的股价是否大于栈顶
+     是的话 放入栈 返回栈的长度
+     否则 清空栈 并放入当前元素
+
+     逻辑有点漏洞
+
+又是审题不严密
      */
     class StockSpanner() {
-
+        var stack = LinkedList<Int>()
         fun next(price: Int): Int {
-
+            if (!stack.isEmpty() && price < stack.peek()){
+                //不能直接清空 最后一个数超级大 怎么处理？？？“”
+                //难道只能往前对比？但是pop了不好办了
+                stack.clear()
+            }
+            stack.push(price)
+            return stack.size
         }
-
     }
 }
