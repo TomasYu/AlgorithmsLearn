@@ -1,6 +1,7 @@
 package com.xinyu.test
 
 import java.util.*
+import kotlin.Pair
 
 class TestArray180 {
     //https://leetcode.cn/problems/online-stock-span/description/?envType=study-plan-v2&envId=leetcode-75
@@ -44,42 +45,64 @@ class TestArray180 {
     1 <= price <= 105
     最多调用 next 方法 104 次
 
-     ??? 数组参数怎么没有传递
+    ??? 数组参数怎么没有传递
 
-     奥 是单个数一个个穿的
-     用单调递增栈就解决解决
-     初始化栈
+    奥 是单个数一个个穿的
+    用单调递增栈就解决解决
+    初始化栈
     遍历数组
-     如果为空就放入元素 返回栈的长度
-     否则判断当前的股价是否大于栈顶
-     是的话 放入栈 返回栈的长度
-     否则 清空栈 并放入当前元素
+    如果为空就放入元素 返回栈的长度
+    否则判断当前的股价是否大于栈顶
+    是的话 放入栈 返回栈的长度
+    否则 清空栈 并放入当前元素
 
-     逻辑有点漏洞
+    逻辑有点漏洞
 
-又是审题不严密
+    又是审题不严密
 
-     是不是从后往前比较好做啊？？
-     比我小的如栈
-     大了清空栈
-     但是可能得费空间了
-     而且需要从后往前
+    是不是从后往前比较好做啊？？
+    比我小的如栈
+    大了清空栈
+    但是可能得费空间了
+    而且需要从后往前
 
 
-     需要计算索引的话
-     栈里面只有元素确实不太行、
-     思路要打开
+    需要计算索引的话
+    栈里面只有元素确实不太行、
+    思路要打开
+
+    最次最次 也可以借助一个Map
+    map不行 因为可能一个数 有多次出现
+    数对确实更合适
+
+    写了一半思路有点问题
+
+    5 3 1
+    678
+    递减栈
+
+    不对啊
+
+     数组真是个好东西啊
+     数对可以做
+     数组也可以做
      */
     class StockSpanner() {
-        var stack = LinkedList<Int>()
+        var stack = LinkedList<Pair<Int, Int>>()
+        private var curIndex = 0
+
+        init {
+            stack.push(Pair(0, Int.MAX_VALUE))
+        }
+
         fun next(price: Int): Int {
-            if (!stack.isEmpty() && price < stack.peek()){
-                //不能直接清空 最后一个数超级大 怎么处理？？？“”
-                //难道只能往前对比？但是pop了不好办了
-                stack.clear()
+            curIndex++
+            while (price >= stack.peek().second) {
+                stack.pop()
             }
-            stack.push(price)
-            return stack.size
+            val result = curIndex - stack.peek().first
+            stack.push(Pair(curIndex, price))
+            return result
         }
     }
 }
