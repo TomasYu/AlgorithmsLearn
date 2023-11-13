@@ -34,6 +34,18 @@ class TestArray181 {
 
     1 <= nums.length <= 105
     nums[i] 要么是 0 要么是 1 。
+
+     其实就是获取最长1的长度
+     如果不是等于原来的长度 +1就行？
+     不对
+     还有两个1合并的情况
+
+
+     我靠 这我怎么知道删除哪里？？？
+     最笨的是一个一个删除
+     然后不停的寻找新的数组里面最长1的个数
+
+
      */
 
     fun longestSubarray(nums: IntArray): Int {
