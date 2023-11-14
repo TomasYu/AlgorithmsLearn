@@ -43,31 +43,25 @@ class TestInt34 {
 
      */
     fun tribonacci(n: Int): Int {
-        var result = 0
+        var result: Int
         when (n) {
             0 -> {
-                0
+                result = 0
             }
 
-            1 -> {
+            1, 2 -> {
                 result = 1
             }
-
-            2 -> {
-                result = 1
-            }
-
             else -> {
                 var t1 = 0
                 var t2 = 1
                 var t3 = 1
                 var i = 3
-                var temp = 0
                 while (i <= n) {
-                    temp = t1 + t2 + t3
+                    result = t1 + t2 + t3
                     t1 = t2
                     t2 = t3
-                    t3 = temp
+                    t3 = result
                     i++
                 }
                 result = t3
