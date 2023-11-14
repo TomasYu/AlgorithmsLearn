@@ -35,21 +35,50 @@ class TestArray181 {
     1 <= nums.length <= 105
     nums[i] 要么是 0 要么是 1 。
 
-     其实就是获取最长1的长度
-     如果不是等于原来的长度 +1就行？
-     不对
-     还有两个1合并的情况
+    其实就是获取最长1的长度
+    如果不是等于原来的长度 +1就行？
+    不对
+    还有两个1合并的情况
 
 
-     我靠 这我怎么知道删除哪里？？？
-     最笨的是一个一个删除
-     然后不停的寻找新的数组里面最长1的个数
+    我靠 这我怎么知道删除哪里？？？
+    最笨的是一个一个删除
+    然后不停的寻找新的数组里面最长1的个数
 
 
+    dp思想
+    当前的数和前一个数有关系就不用重复的遍历了
+
+
+
+    优先考虑通用的解决方法
+    转变问题的能力需要加强
+
+
+    转变成最长子序列问题
+    其中子序列中0的个数不能超过1
+
+    哎呀 做一遍之后就会了
      */
 
     fun longestSubarray(nums: IntArray): Int {
-
-        return 0
+        var left = 0
+        var right = 0
+        var result = 0
+        var curCount = 0
+        while (right < nums.size) {
+            if (nums[right] == 0) {
+                curCount++
+            }
+            while (curCount > 1){
+                if (nums[left] == 0){
+                    curCount--
+                }
+                left++
+            }
+            result = result.coerceAtLeast(right - left)
+            right++
+        }
+        return result
     }
 }
