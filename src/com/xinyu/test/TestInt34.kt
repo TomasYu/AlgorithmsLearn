@@ -36,8 +36,44 @@ class TestInt34 {
     0 <= n <= 37
     答案保证是一个 32 位整数，即 answer <= 2^31 - 1。
 
+
+    递归就行了吧？？？
+    递归有一个问题 就是重复计算
+    所以可以用动态规划
+
      */
     fun tribonacci(n: Int): Int {
+        var result = 0
+        when (n) {
+            0 -> {
+                0
+            }
 
+            1 -> {
+                result = 1
+            }
+
+            2 -> {
+                result = 1
+            }
+
+            else -> {
+                var t1 = 0
+                var t2 = 1
+                var t3 = 1
+                var i = 3
+                var temp = 0
+                while (i <= n) {
+                    temp = t1 + t2 + t3
+                    t1 = t2
+                    t2 = t3
+                    t3 = temp
+                    i++
+                }
+                result = t3
+            }
+        }
+
+        return result
     }
 }
