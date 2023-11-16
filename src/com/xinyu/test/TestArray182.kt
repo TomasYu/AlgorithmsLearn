@@ -59,6 +59,11 @@ class TestArray182 {
     想起来就复杂 做起来就肯定不简单
     没有办法 Hash表太实用了
 
+
+    又要自责了。卧槽,看了几遍还是没有一遍做对
+     感觉思路自己懂了
+     但是其实没有完全懂
+
      */
     fun equalPairs(grid: Array<IntArray>): Int {
         val map = mutableMapOf<List<Int>, Int>()
