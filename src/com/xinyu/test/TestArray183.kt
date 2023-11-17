@@ -55,9 +55,9 @@ class TestArray183 {
     预期结果
     [-2,-1,1,2]
 
-     我又理解错了？？？
-     卧槽 还有方向的问题！！！
-     左右方向的问题
+    我又理解错了？？？
+    卧槽 还有方向的问题！！！
+    左右方向的问题
      */
     fun asteroidCollision(asteroids: IntArray): IntArray {
         //遍历顺序的问题 并不是傻了吧唧的从头开始遍历
@@ -66,32 +66,24 @@ class TestArray183 {
         // 遇到碰撞的话就 出栈
         val linkedList = LinkedList<Int>()
         asteroids.forEach {
-            if (linkedList.isEmpty()){
-                linkedList.push(it)
-                return@forEach
-            }
-            while (!linkedList.isEmpty()) {
-                if (it > 0 && linkedList.peek() < 0) {
-                    if (it.absoluteValue > linkedList.peek().absoluteValue) {
-                        linkedList.pop()
-                        if (linkedList.isEmpty()){
-                            linkedList.push(it)
-                            break
-                        }
-                    }else if (it.absoluteValue == linkedList.peek().absoluteValue){
-                        linkedList.pop()
-                        break
-                    }else{
-                        break
-                    }
+            var needPush = true
+            while (!linkedList.isEmpty() && it < 0 && linkedList.peek() > 0) {
+                if (it.absoluteValue > linkedList.peek().absoluteValue) {
+                    linkedList.pop()
+                } else if (it.absoluteValue == linkedList.peek().absoluteValue) {
+                    needPush = false
+                    linkedList.pop()
+                    break
                 }else{
-                    linkedList.push(it)
+                    needPush = false
                     break
                 }
+            }
+            if (needPush) {
+                linkedList.push(it)
             }
         }
         linkedList.reverse()
         return linkedList.toIntArray()
-
     }
 }
