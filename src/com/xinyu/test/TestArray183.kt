@@ -71,10 +71,13 @@ class TestArray183 {
                 return@forEach
             }
             while (!linkedList.isEmpty()) {
-                if (it > 0 && linkedList.peek() < 0 || it < 0 && linkedList.peek() > 0) {
+                if (it > 0 && linkedList.peek() < 0) {
                     if (it.absoluteValue > linkedList.peek().absoluteValue) {
                         linkedList.pop()
-                        linkedList.push(it)
+                        if (linkedList.isEmpty()){
+                            linkedList.push(it)
+                            break
+                        }
                     }else if (it.absoluteValue == linkedList.peek().absoluteValue){
                         linkedList.pop()
                         break
