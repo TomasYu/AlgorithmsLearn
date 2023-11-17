@@ -68,15 +68,12 @@ class TestArray183 {
         asteroids.forEach {
             var needPush = true
             while (!linkedList.isEmpty() && it < 0 && linkedList.peek() > 0) {
-                if (it.absoluteValue > linkedList.peek().absoluteValue) {
-                    linkedList.pop()
-                } else if (it.absoluteValue == linkedList.peek().absoluteValue) {
-                    needPush = false
-                    linkedList.pop()
-                    break
-                }else{
+                if (it.absoluteValue <= linkedList.peek().absoluteValue) {
                     needPush = false
                     break
+                }
+                if (it.absoluteValue >= linkedList.peek().absoluteValue) {
+                    linkedList.pop()
                 }
             }
             if (needPush) {
