@@ -93,20 +93,16 @@ class TestArray184 {
         var notBad = 0
         //把坏的坐标记录进队列
         val listBad = LinkedList<IntArray>()
+        var bad = 2
+        var good = 1
         grid.forEachIndexed { row, ints ->
             ints.forEachIndexed { col, i ->
                 when (i) {
-                    /**
-                     *
-                    值 0 代表空单元格；
-                    值 1 代表新鲜橘子；
-                    值 2 代表腐烂的橘子。
-                     */
-                    1 -> {
+                    good -> {
                         notBad++
                     }
 
-                    2 -> {
+                    bad -> {
                         listBad += intArrayOf(row, col)
                     }
 
@@ -122,12 +118,8 @@ class TestArray184 {
             intArrayOf(1, 0),
         )
 
-
         //记录轮次
         var count = 0
-        //记录队列的个数 start end index
-        var start = 0
-        var end = 0
         //不停的取出来
         while (listBad.isNotEmpty() && notBad != 0) {
             val size = listBad.size
@@ -136,20 +128,16 @@ class TestArray184 {
                 for (array in direction) {
                     if (first[0] + array[0] in grid.indices && first[1] + array[1] in grid[0].indices) {
                         when (grid[first[0] + array[0]][first[1] + array[1]]) {
-                            /**
-                             *
-                            值 0 代表空单元格；
-                            值 1 代表新鲜橘子；
-                            值 2 代表腐烂的橘子。
-                             */
-                            1 -> {
-                                listBad.addLast(intArrayOf(first[0] + array[0],first[1] + array[1]))
+                            good -> {
+                                listBad.addLast(intArrayOf(first[0] + array[0], first[1] + array[1]))
                                 grid[first[0] + array[0]][first[1] + array[1]] = 2
                                 notBad--
                             }
-                            2 -> {
+
+                            bad -> {
                                 //不是我传染的 我不应该管吧 不然死循环了
                             }
+
                             else -> {}
                         }
                     }
@@ -157,8 +145,6 @@ class TestArray184 {
             }
             count++
         }
-        //开始传播 没坏的--
-        //结束循环
         //判断没坏的是不是等于0 等于0 返回次数 否则返回-1
         return if (notBad == 0) count else -1
 
