@@ -129,7 +129,7 @@ class TestArray184 {
         var start = 0
         var end = 0
         //不停的取出来
-        while (listBad.isNotEmpty()) {
+        while (listBad.isNotEmpty() && notBad != 0) {
             val size = listBad.size
             for (i in 1..size) {
                 val first = listBad.pollFirst()
@@ -144,6 +144,7 @@ class TestArray184 {
                              */
                             1 -> {
                                 listBad.addLast(intArrayOf(first[0] + array[0],first[1] + array[1]))
+                                grid[first[0] + array[0]][first[1] + array[1]] = 2
                                 notBad--
                             }
                             2 -> {
@@ -162,4 +163,16 @@ class TestArray184 {
         return if (notBad == 0) count else -1
 
     }
+}
+
+fun main() {
+    println(
+        TestArray184().orangesRotting(
+            arrayOf(
+                intArrayOf(2, 1, 1),
+                intArrayOf(1, 1, 0),
+                intArrayOf(0, 1, 1)
+            )
+        )
+    )
 }
