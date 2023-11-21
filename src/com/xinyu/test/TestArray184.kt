@@ -93,8 +93,8 @@ class TestArray184 {
         var notBad = 0
         //把坏的坐标记录进队列
         val listBad = LinkedList<IntArray>()
-        var bad = 2
-        var good = 1
+        val bad = 2
+        val good = 1
         grid.forEachIndexed { row, ints ->
             ints.forEachIndexed { col, i ->
                 when (i) {
