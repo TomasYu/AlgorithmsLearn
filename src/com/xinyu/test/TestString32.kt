@@ -50,6 +50,30 @@ class TestString32 {
     1 <= k <= s.length
      */
     fun maxVowels(s: String, k: Int): Int {
-
+        val charSet = setOf('a', 'e', 'i', 'o', 'u')
+        val length = s.length
+        var left = 0
+        var right = 0
+        var curResult = 0
+        var result = 0
+        while (left < length) {
+            if (s[left] in charSet) {
+                curResult = 0
+                curResult++
+                right = left + 1
+                while (right < left + k && right < length) {
+                    if (s[right++] in charSet) {
+                        curResult++
+                    }
+                }
+                result = result.coerceAtLeast(curResult)
+            }
+            left ++
+        }
+        return result
     }
+}
+
+fun main() {
+    println(TestString32().maxVowels("abciiidef", 3))
 }
