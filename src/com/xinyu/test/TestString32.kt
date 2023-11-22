@@ -56,7 +56,7 @@ class TestString32 {
         var right = 0
         var curResult = 0
         var result = 0
-        while (left < length && right < length) {
+        while (right < length) {
             while (right - left < k){
                 if (s[right++] in charSet) {
                     curResult++
