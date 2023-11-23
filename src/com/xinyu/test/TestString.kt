@@ -57,6 +57,17 @@ class TestString {
 
      挪位置是不是可以忽略？？
      还真不能忽略啊
+     服了 是在不行直接排序
+     其实是每个元素的个数一致就一定可以
+
+     其实就是1个元素的个数
+     2个元素的个数
+     这种能对上就可以
+     所以两次遍历
+
+     key
+     a 1
+     1 1
      */
     fun closeStrings(word1: String, word2: String): Boolean {
 
