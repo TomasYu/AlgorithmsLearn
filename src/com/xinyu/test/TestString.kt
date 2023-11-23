@@ -51,6 +51,12 @@ class TestString {
 
     1 <= word1.length, word2.length <= 105
     word1 和 word2 仅包含小写英文字母
+
+     操作一和操作二的顺序不影响结果
+     怎么证明呢？
+
+     挪位置是不是可以忽略？？
+     还真不能忽略啊
      */
     fun closeStrings(word1: String, word2: String): Boolean {
 
