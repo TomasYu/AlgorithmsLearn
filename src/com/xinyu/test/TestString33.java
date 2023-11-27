@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
-public class TestString {
+public class TestString33 {
     /**
      * 复原IP地址
      * 给定一个只包含数字的字符串，复原它并返回所有可能的 IP 地址格式。
@@ -20,7 +20,7 @@ public class TestString {
      */
 
     public static void main(String[] args) {
-        TestString testString = new TestString();
+        TestString33 testString = new TestString33();
         System.out.println(testString.restoreIpAddresses("010010"));
     }
 

@@ -1,5 +1,7 @@
 package com.xinyu.test
 
+import java.util.*
+
 class TestString {
     //https://leetcode.cn/problems/determine-if-two-strings-are-close/description/?envType=study-plan-v2&envId=leetcode-75
     /**
@@ -52,24 +54,63 @@ class TestString {
     1 <= word1.length, word2.length <= 105
     word1 和 word2 仅包含小写英文字母
 
-     操作一和操作二的顺序不影响结果
-     怎么证明呢？
+    操作一和操作二的顺序不影响结果
+    怎么证明呢？
 
-     挪位置是不是可以忽略？？
-     还真不能忽略啊
-     服了 是在不行直接排序
-     其实是每个元素的个数一致就一定可以
+    挪位置是不是可以忽略？？
+    还真不能忽略啊
+    服了 是在不行直接排序
+    其实是每个元素的个数一致就一定可以
 
-     其实就是1个元素的个数
-     2个元素的个数
-     这种能对上就可以
-     所以两次遍历
+    其实就是1个元素的个数
+    2个元素的个数
+    这种能对上就可以
+    所以两次遍历
 
-     key
-     a 1
-     1 1
+    key
+    a 1
+    1 1
+    这样肯定是可以的
+    但是如果要问几步可以操作出来
+    那真的挺难的
+
+    但是同样是1个元素
+    a和c其实是不行的
+
+     //treeMap是根据key排序的
      */
     fun closeStrings(word1: String, word2: String): Boolean {
+        val map1 = TreeMap<Int, Int> { o1, o2 -> o1 - o2 }
+        val map2 = TreeMap<Int, Int> { o1, o2 -> o1 - o2 }
+        word1.forEach {
+            val key = it - 'a'
+            map1[key] = map1.getOrDefault(key, 0) + 1
+        }
+        word2.forEach {
+            val key = it - 'a'
+            map2[key] = map2.getOrDefault(key, 0) + 1
+        }
+        for (i in 0..26){
+            if (!map1.contains(i).xor(map2.contains(i))){
+                continue
+            }
+            return false
+        }
+
+
+        val intOne = map1.values.toIntArray().also { it.sort() }
+        val intTwo = map2.values.toIntArray().also { it.sort() }
+        return intOne.contentEquals(intTwo)
 
     }
+}
+
+fun main() {
+    println(TestString().closeStrings("cabbba", "abbccc"))
+//    println(TestString().closeStrings("abc", "bca"))
+    //xor 是啥？ 同或怎么表达？？？
+    //
+    println(!true.xor(false))
+    println(!true.xor(true))
+    println(!false.xor(false))
 }
