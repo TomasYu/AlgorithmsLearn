@@ -77,7 +77,7 @@ class TestString {
     但是同样是1个元素
     a和c其实是不行的
 
-     //treeMap是根据key排序的
+    //treeMap是根据key排序的
      */
     fun closeStrings(word1: String, word2: String): Boolean {
         val map1 = TreeMap<Int, Int> { o1, o2 -> o1 - o2 }
@@ -90,8 +90,8 @@ class TestString {
             val key = it - 'a'
             map2[key] = map2.getOrDefault(key, 0) + 1
         }
-        for (i in 0..26){
-            if (!map1.contains(i).xor(map2.contains(i))){
+        for (i in 0..26) {
+            if (!map1.contains(i).xor(map2.contains(i))) {
                 continue
             }
             return false
@@ -103,11 +103,43 @@ class TestString {
         return intOne.contentEquals(intTwo)
 
     }
+
+
+    /**
+     * 没啥好说的
+     * 有时候map真没数组好用
+     */
+    fun closeStrings2(word1: String, word2: String): Boolean {
+        val countArray1 = IntArray(26) { 0 }
+        val countArray2 = IntArray(26) { 0 }
+
+        word1.forEach {
+            val key = it - 'a'
+            countArray1[key] = countArray1[key] + 1
+        }
+        word2.forEach {
+            val key = it - 'a'
+            countArray2[key] = countArray2[key] + 1
+        }
+
+        for (i in 0 until 26) {
+            if (countArray1[i] + countArray2[i] == 0) {
+                continue
+            }
+            if (countArray1[i] == 0 || countArray2[i] == 0) {
+                return false
+            }
+        }
+        Arrays.sort(countArray1)
+        Arrays.sort(countArray2)
+        return countArray1.contentEquals(countArray2)
+
+    }
 }
 
 fun main() {
-    println(TestString().closeStrings("cabbba", "abbccc"))
-//    println(TestString().closeStrings("abc", "bca"))
+//    println(TestString().closeStrings("cabbba", "abbccc"))
+    println(TestString().closeStrings2("abc", "bca"))
     //xor 是啥？ 同或怎么表达？？？
     //
     println(!true.xor(false))
