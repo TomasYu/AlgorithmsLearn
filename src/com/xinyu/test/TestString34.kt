@@ -34,27 +34,41 @@ class TestString34 {
     1 <= str1.length, str2.length <= 1000
     str1 和 str2 由大写英文字母组成
 
-     思路：
-     感觉就是有的话
-     也是其中一个字符串
+    思路：
+    感觉就是有的话
+    也是其中一个字符串
 
 
-     没有想到很巧妙的
-     两个字符串
-     先找到端的
-     从1开始到最长
-     不停的看能不能作为共因子
-     是的话
-     不停的更新最长的共因子值
+    没有想到很巧妙的
+    两个字符串
+    先找到端的
+    从1开始到最长
+    不停的看能不能作为共因子
+    是的话
+    不停的更新最长的共因子值
 
     https://zhuanlan.zhihu.com/p/346479426?ivk_sa=1024320u
     https://blog.csdn.net/wzx15927662183/article/details/90212839
     最大公约数算法
 
-     没想到最后可以转成数学问题
-     真的是
+    没想到最后可以转成数学问题
+    真的是
      */
     fun gcdOfStrings(str1: String, str2: String): String {
+        if (str1 + str2 == str2 + str1) {
+            val gcd = gcd(str1.length, str2.length)
+            return str1.substring(0, gcd)
+        } else {
+            return ""
+        }
 
+    }
+
+    fun gcd(x: Int, y: Int): Int {
+        if (y == 0) {
+            return x
+        } else {
+            return gcd(y, x % y)
+        }
     }
 }
