@@ -36,7 +36,6 @@ class TestArray185 {
     fun findMaxAverage(nums: IntArray, k: Int): Double {
         //哎呀 这不简单嘛
         var max:Double
-
         var left = 0
         var right = 0
 
@@ -45,19 +44,11 @@ class TestArray185 {
             curValue += nums[right]
             right ++
         }
-
-
         max = curValue / k
-
         while (right < nums.size){
-
-
             curValue +=nums[right++]
-
             curValue-=nums[left++]
             max = max.coerceAtLeast(curValue / k)
-
-
         }
         return max
     }
