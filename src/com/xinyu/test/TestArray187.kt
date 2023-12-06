@@ -42,16 +42,29 @@ class TestArray187 {
 
     1 <= num <= 1000
     最多调用 popSmallest 和 addBack 方法 共计 1000 次
+
+
+     难道我要放一个不存在的集合？？？
+     这个集合是有有限的
+     这样就可以解决这个问题了吧
      */
 
     class SmallestInfiniteSet() {
+        var set:HashSet<Int> = HashSet()
 
         fun popSmallest(): Int {
-
+            for (i in 1..Int.MAX_VALUE){
+                if (set.contains(i)){
+                    continue
+                }
+                set.add(i)
+                return i
+            }
+            return -1
         }
 
         fun addBack(num: Int) {
-
+            set.remove(num)
         }
 
     }
