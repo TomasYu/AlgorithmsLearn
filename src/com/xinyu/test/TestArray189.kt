@@ -39,6 +39,16 @@ class TestArray189 {
     1 <= nums.length <= 105
     1 <= nums[i] <= 109
     1 <= k <= 109
+
+     其实就是看有几对和为K
+     那这样的话 用Map吧
+     记录每个数的个数
+     然后计算
+
+     has 确实算是个方法
+     不用排序了
+
+     当然排序后双指针也肯定是可以的
      */
     fun maxOperations(nums: IntArray, k: Int): Int {
 
