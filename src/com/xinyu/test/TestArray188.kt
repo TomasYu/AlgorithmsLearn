@@ -41,10 +41,32 @@ class TestArray188 {
     0 <= rooms[i][j] < n
     所有 rooms[i] 的值 互不相同
 
+    其实就是dfs
+    需要保存当前房间是否已经访问过
+    访问过了就不需要访问了
+
      */
 
     fun canVisitAllRooms(rooms: List<List<Int>>): Boolean {
+        val visited = BooleanArray(rooms.size) { false }
+
+        dfs(visited, rooms , 0)
+        visited.forEach {
+            if (!it) {
+                return false
+            }
+        }
 
         return true
+    }
+
+    fun dfs(visited: BooleanArray, rooms: List<List<Int>>, curRoom: Int) {
+        visited[curRoom] = true
+        rooms[curRoom].forEach{
+            if (!visited[it]){
+                dfs(visited,rooms,it)
+            }
+        }
+
     }
 }
