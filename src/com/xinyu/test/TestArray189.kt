@@ -40,18 +40,42 @@ class TestArray189 {
     1 <= nums[i] <= 109
     1 <= k <= 109
 
-     其实就是看有几对和为K
-     那这样的话 用Map吧
-     记录每个数的个数
-     然后计算
+    其实就是看有几对和为K
+    那这样的话 用Map吧
+    记录每个数的个数
+    然后计算
 
-     has 确实算是个方法
-     不用排序了
+    has 确实算是个方法
+    不用排序了
 
-     当然排序后双指针也肯定是可以的
+    当然排序后双指针也肯定是可以的
      */
     fun maxOperations(nums: IntArray, k: Int): Int {
+        var map = mutableMapOf<Int, Int>()
+        var result = 0
+        nums.forEach {
+            map[it] = map.getOrDefault(it, 0) + 1
+        }
 
-        return 0
+        nums.forEach {
+            if (it == k - it && map.contains(it) && map[it]!! <= 1) {
+                return@forEach
+            }
+            if (map.contains(k - it) && map.contains(it)) {
+                result++
+                if (map[it] == 1) {
+                    map.remove(it)
+                } else {
+                    map[it] = map[it]!! - 1
+                }
+                if (map[k - it] == 1) {
+                    map.remove(k - it)
+                } else {
+                    map[k - it] = map[k - it]!! - 1
+                }
+            }
+        }
+
+        return result
     }
 }
