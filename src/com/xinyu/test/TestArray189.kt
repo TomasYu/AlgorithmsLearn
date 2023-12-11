@@ -58,14 +58,12 @@ class TestArray189 {
         }
 
         nums.forEach {
-            if (it == k - it && map[it]!! < 2) {
+            if (map[it]!! <= 0) {
                 return@forEach
             }
-            if (map.contains(k - it) && map[k - it]!! >= 1
-                && map[it]!! >= 1
-            ) {
+            map[it] = map[it]!! - 1
+            if (map.contains(k - it) && map[k - it]!! >= 1) {
                 result++
-                map[it] = map[it]!! - 1
                 map[k - it] = map[k - it]!! - 1
             }
         }
