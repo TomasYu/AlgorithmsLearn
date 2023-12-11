@@ -34,10 +34,33 @@ class Testarray190 {
     0 <= k <= nums.length
 
 
-     滑动窗口？？？
+    滑动窗口？？？
+    只要不超过k个0就可以
      */
     fun longestOnes(nums: IntArray, k: Int): Int {
+        //记录最大值
+        //统计当前的0的个数
+        //如果超过k个 移动左指针 否则移动右指针
+        var max = 0
+        var left = 0
+        var right = 0
+        var curNum = 0
+        var curMax = 0
+        while (right < nums.size) {
+            if (nums[right++] == 0) {
+                curNum++
+            } else {
 
-        return 0
+            }
+            while (curNum > k) {
+                if (nums[left++] == 0) {
+                    curNum--
+                }
+            }
+            max = max.coerceAtLeast(right - left)
+
+        }
+
+        return max
     }
 }
