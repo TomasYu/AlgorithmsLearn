@@ -36,6 +36,9 @@ class Testarray190 {
 
     滑动窗口？？？
     只要不超过k个0就可以
+
+     有个问题就是right指针 已经往后挪了一位 所以计算的时候可以直接right - left
+     还有就是 不满足条件了 确实需要左边移动一下
      */
     fun longestOnes(nums: IntArray, k: Int): Int {
         //记录最大值
@@ -45,12 +48,9 @@ class Testarray190 {
         var left = 0
         var right = 0
         var curNum = 0
-        var curMax = 0
         while (right < nums.size) {
             if (nums[right++] == 0) {
                 curNum++
-            } else {
-
             }
             while (curNum > k) {
                 if (nums[left++] == 0) {
