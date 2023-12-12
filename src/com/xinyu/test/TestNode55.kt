@@ -50,6 +50,8 @@ class TestNode55 {
 
     链表中节点的数目在范围 [1, 105] 内
     1 <= Node.val <= 105
+
+     快满指针是单链表的标准解决思路
      */
     var length = -1
     var result = 0
