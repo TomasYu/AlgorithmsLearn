@@ -51,12 +51,30 @@ class TestNode55 {
     链表中节点的数目在范围 [1, 105] 内
     1 <= Node.val <= 105
      */
+    var length = -1
+    var result = 0
     fun deleteMiddle(head: ListNode?): ListNode? {
         //长度怎么获取？
         //怎么删除？
         //这还是单链表
-
-
-        return null
+        //单链表怎么返回呢？？
+        //简单一点就是来两遍 第一遍数有多少个 第二遍开始删除 递归
+        var listNode = ListNode(-1,head)
+        dfs(listNode)
+        return listNode.next
+    }
+    fun dfs(head: ListNode?){
+        if (head == null){
+            //得到长度
+            result =  length - length /2
+            return
+        }
+        length++
+        dfs(head.next)
+        result--
+        if (result == -1){
+            //删除
+            head.next = head.next.next
+        }
     }
 }
