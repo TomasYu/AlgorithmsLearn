@@ -65,6 +65,7 @@ class TestNode55 {
         dfs(listNode)
         return listNode.next
     }
+    //递归真神奇 递归调用之前执行前半段 之后执行后半段
     fun dfs(head: ListNode?){
         if (head == null){
             //得到长度
