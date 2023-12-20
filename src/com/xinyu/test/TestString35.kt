@@ -1,5 +1,7 @@
 package com.xinyu.test
 
+import java.util.LinkedList
+
 class TestString35 {
     //https://leetcode.cn/problems/dota2-senate/?envType=study-plan-v2&envId=leetcode-75
     /**
@@ -86,11 +88,33 @@ class TestString35 {
 
 
 
+    LinkedList
+     push pop 都是对第一个操作
 
-
+     offer 对最后一个操作
      */
     fun predictPartyVictory(senate: String): String {
-        return ""
+        //Radiant  Dire
+        val listR = LinkedList<Int>()
+        val listD = LinkedList<Int>()
+        for (i in senate.indices){
+            if (senate[i] == 'R'){
+                listR.offer(i)
+            }else{
+                listD.offer(i)
+            }
+        }
 
+        while (listR.isNotEmpty() && listD.isNotEmpty()){
+            val r = listR.pop()
+            val d = listD.pop()
+            if (r < d){
+                listR.offer(r + senate.length)
+            }else{
+                listD.offer(d + senate.length)
+            }
+        }
+
+        return if (listR.isEmpty()) "Dire" else "Radiant"
     }
 }
