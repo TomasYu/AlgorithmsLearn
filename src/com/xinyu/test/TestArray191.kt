@@ -50,6 +50,18 @@ class TestArray191 {
     queries[i].length == 2
     1 <= Cj.length, Dj.length <= 5
     Ai, Bi, Cj, Dj 由小写英文字母与数字组成
+
+     想法是什么？？？
+     1/x
+
+     a/b 这个值怎么记录呢？
+
+
+     b/c
+
+     c/d
+
+     wokao  这深度搜索啊
      */
     fun calcEquation(equations: List<List<String>>, values: DoubleArray, queries: List<List<String>>): DoubleArray {
 
